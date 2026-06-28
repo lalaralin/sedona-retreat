@@ -1,0 +1,1300 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Big ॐ | Sedona Wellness Retreat</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&family=Montserrat:wght@300;400;500&display=swap" rel="stylesheet">
+    <style>
+        /* ============================================
+           RESET & BASE
+           ============================================ */
+        *, *::before, *::after {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --cream: #F5F0EB;
+            --warm-white: #FAF8F5;
+            --sand: #E8DFD4;
+            --terracotta: #C4703F;
+            --terracotta-light: #D4884F;
+            --deep-brown: #3D2B1F;
+            --charcoal: #2C2C2C;
+            --muted-sage: #8B9A7E;
+            --dusty-rose: #B8908A;
+            --gold: #C9A96E;
+            --night: #1A1A2E;
+            --rustic-orange: #BE5103;
+        }
+
+        html {
+            scroll-behavior: smooth;
+            font-size: 16px;
+        }
+
+        body {
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 300;
+            color: var(--charcoal);
+            background-color: var(--warm-white);
+            line-height: 1.8;
+            letter-spacing: 0.02em;
+            overflow-x: hidden;
+        }
+
+        /* ============================================
+           TYPOGRAPHY
+           ============================================ */
+        h1, h2, h3, h4 {
+            font-family: 'Cormorant Garamond', serif;
+            font-weight: 300;
+            letter-spacing: 0.04em;
+        }
+
+        .section-overline {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 0.65rem;
+            font-weight: 500;
+            letter-spacing: 0.35em;
+            text-transform: uppercase;
+            color: var(--terracotta);
+            margin-bottom: 1.5rem;
+        }
+
+        .section-title {
+            font-size: clamp(2rem, 4vw, 3.5rem);
+            color: var(--deep-brown);
+            line-height: 1.2;
+            margin-bottom: 1.5rem;
+        }
+
+        .section-body {
+            font-size: 0.95rem;
+            max-width: 560px;
+            line-height: 2;
+            color: #5A5A5A;
+        }
+
+        /* ============================================
+           NAVIGATION
+           ============================================ */
+        nav {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            z-index: 1000;
+            padding: 1.5rem 3rem;
+            display: flex;
+            justify-content: flex-end;
+            align-items: center;
+            transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        nav.scrolled {
+            background: rgba(245, 240, 235, 0.95);
+            backdrop-filter: blur(20px);
+            padding: 1rem 3rem;
+            box-shadow: 0 1px 0 rgba(0,0,0,0.05);
+        }
+
+        .nav-logo {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 1.1rem;
+            font-weight: 400;
+            letter-spacing: 0.25em;
+            color: var(--rustic-orange);
+            text-decoration: none;
+            transition: color 0.5s;
+        }
+
+        nav.scrolled .nav-logo {
+            color: var(--rustic-orange);
+        }
+
+        .nav-mascot {
+            width: 120px;
+            height: 120px;
+            border-radius: 50%;
+            object-fit: cover;
+            object-position: center 30%;
+            transition: transform 0.3s;
+        }
+
+        .nav-mascot:hover {
+            transform: scale(1.15);
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 2.5rem;
+            list-style: none;
+        }
+
+        .nav-links a {
+            font-size: 0.7rem;
+            font-weight: 400;
+            letter-spacing: 0.2em;
+            text-transform: uppercase;
+            color: rgba(255,255,255,0.85);
+            text-decoration: none;
+            transition: color 0.3s;
+            position: relative;
+        }
+
+        .nav-links a::after {
+            content: '';
+            position: absolute;
+            bottom: -4px;
+            left: 0;
+            width: 0;
+            height: 1px;
+            background: var(--terracotta);
+            transition: width 0.3s;
+        }
+
+        .nav-links a:hover::after {
+            width: 100%;
+        }
+
+        nav.scrolled .nav-links a {
+            color: var(--charcoal);
+        }
+
+        /* ============================================
+           HERO
+           ============================================ */
+        .hero {
+            position: relative;
+            height: 100vh;
+            min-height: 700px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            overflow: hidden;
+        }
+
+        .hero-image {
+            position: absolute;
+            inset: 0;
+            z-index: 0;
+        }
+
+        .hero-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            filter: brightness(0.6);
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 1;
+            text-align: center;
+            color: white;
+            padding: 2rem;
+        }
+
+        .hero-overline {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 0.85rem;
+            font-weight: 600;
+            letter-spacing: 0.5em;
+            text-transform: uppercase;
+            margin-bottom: 2rem;
+            color: white;
+        }
+
+        .hero-title {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: clamp(3.5rem, 8vw, 8rem);
+            font-weight: 300;
+            letter-spacing: 0.06em;
+            line-height: 1;
+            margin-bottom: 1.5rem;
+            color: white;
+        }
+
+        .hero-title .ohm {
+            font-size: 0.85em;
+            display: inline-block;
+        }
+
+        .hero-subtitle {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: clamp(1.4rem, 2.5vw, 2rem);
+            font-weight: 600;
+            font-style: italic;
+            letter-spacing: 0.08em;
+            color: white;
+            margin-bottom: 2.5rem;
+        }
+
+        .hero-date {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 0.9rem;
+            font-weight: 600;
+            letter-spacing: 0.35em;
+            text-transform: uppercase;
+            color: white;
+        }
+
+        .hero-divider {
+            width: 40px;
+            height: 1px;
+            background: rgba(255,255,255,0.4);
+            margin: 2rem auto;
+        }
+
+        .hero-scroll {
+            position: absolute;
+            bottom: 3rem;
+            left: 50%;
+            transform: translateX(-50%);
+            z-index: 1;
+            color: white;
+            text-decoration: none;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 0.8rem;
+            opacity: 0.6;
+            transition: opacity 0.3s;
+        }
+
+        .hero-scroll:hover {
+            opacity: 1;
+        }
+
+        .hero-scroll span {
+            font-size: 0.6rem;
+            letter-spacing: 0.3em;
+            text-transform: uppercase;
+        }
+
+        .scroll-line {
+            width: 1px;
+            height: 40px;
+            background: white;
+            animation: scrollPulse 2s ease-in-out infinite;
+        }
+
+        @keyframes scrollPulse {
+            0%, 100% { opacity: 0.3; transform: scaleY(0.5); }
+            50% { opacity: 1; transform: scaleY(1); }
+        }
+
+        /* ============================================
+           SECTIONS — GENERAL
+           ============================================ */
+        section {
+            padding: 8rem 3rem;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .container-narrow {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        /* ============================================
+           ABOUT SECTION
+           ============================================ */
+        .about {
+            background: var(--warm-white);
+            text-align: center;
+        }
+
+        .about .section-body {
+            margin: 0 auto 3rem;
+            max-width: 620px;
+        }
+
+        .about-details {
+            display: flex;
+            justify-content: center;
+            gap: 4rem;
+            margin-top: 3rem;
+            flex-wrap: wrap;
+        }
+
+        .about-detail {
+            text-align: center;
+        }
+
+        .about-detail-label {
+            font-size: 0.6rem;
+            font-weight: 500;
+            letter-spacing: 0.3em;
+            text-transform: uppercase;
+            color: var(--terracotta);
+            margin-bottom: 0.5rem;
+        }
+
+        .about-detail-value {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 1.3rem;
+            font-weight: 400;
+            color: var(--deep-brown);
+        }
+
+        .divider {
+            width: 60px;
+            height: 1px;
+            background: var(--sand);
+            margin: 0 auto;
+        }
+
+        /* ============================================
+           THE RETREAT SECTION
+           ============================================ */
+        .retreat {
+            background: var(--cream);
+        }
+
+        .retreat-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+            align-items: center;
+        }
+
+        .retreat-image {
+            position: relative;
+            overflow: hidden;
+        }
+
+        .retreat-image img {
+            width: 100%;
+            height: 500px;
+            object-fit: cover;
+            transition: transform 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        .retreat-image:hover img {
+            transform: scale(1.03);
+        }
+
+        .retreat-text {
+            padding: 2rem 0;
+        }
+
+        .retreat-features {
+            margin-top: 2rem;
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+        }
+
+        .retreat-feature {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            font-size: 0.85rem;
+            color: #5A5A5A;
+        }
+
+        .retreat-feature-icon {
+            width: 32px;
+            height: 32px;
+            border: 1px solid var(--sand);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 0.85rem;
+            flex-shrink: 0;
+        }
+
+        .accommodation-link {
+            display: inline-block;
+            font-size: 0.9rem;
+            font-weight: 500;
+            letter-spacing: 0.15em;
+            text-transform: uppercase;
+            color: var(--terracotta);
+            text-decoration: none;
+            border-bottom: 2px solid var(--terracotta);
+            padding-bottom: 3px;
+            margin-bottom: 1.5rem;
+            transition: color 0.3s, border-color 0.3s;
+        }
+
+        .accommodation-link:hover {
+            color: var(--deep-brown);
+            border-color: var(--deep-brown);
+        }
+
+        /* ============================================
+           EXPERIENCES SECTION
+           ============================================ */
+        .experiences {
+            background: var(--warm-white);
+        }
+
+        .experiences-header {
+            text-align: center;
+            margin-bottom: 5rem;
+        }
+
+        .experiences-header .section-body {
+            margin: 0 auto;
+        }
+
+        .experience-cards {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 2.5rem;
+        }
+
+        .experience-card {
+            text-align: center;
+            padding: 0;
+            background: var(--cream);
+            border: 1px solid transparent;
+            transition: all 0.5s;
+            overflow: hidden;
+        }
+
+        .experience-card:hover {
+            border-color: var(--sand);
+            transform: translateY(-4px);
+        }
+
+        .experience-card-img {
+            width: 100%;
+            height: auto;
+            aspect-ratio: 1 / 1;
+            object-fit: cover;
+        }
+
+        .experience-card-body {
+            padding: 2rem;
+        }
+
+        .experience-icon {
+            font-size: 2.2rem;
+            margin-bottom: 1.5rem;
+            display: block;
+        }
+
+        .experience-name {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 1.6rem;
+            font-weight: 400;
+            color: var(--deep-brown);
+            margin-bottom: 0.8rem;
+        }
+
+        .experience-time {
+            font-size: 0.6rem;
+            letter-spacing: 0.25em;
+            text-transform: uppercase;
+            color: var(--terracotta);
+            margin-bottom: 1rem;
+        }
+
+        .experience-desc {
+            font-size: 0.85rem;
+            line-height: 1.8;
+            color: #6A6A6A;
+        }
+
+        /* ============================================
+           YOGA IMAGE BREAK
+           ============================================ */
+        .image-break {
+            position: relative;
+            height: 70vh;
+            min-height: 400px;
+            overflow: hidden;
+        }
+
+        .image-break img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .image-break-overlay {
+            position: absolute;
+            inset: 0;
+            background: rgba(26, 26, 46, 0.3);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .image-break-text {
+            text-align: center;
+            color: white;
+        }
+
+        .image-break-text h3 {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: clamp(1.8rem, 4vw, 3rem);
+            font-weight: 300;
+            font-style: italic;
+            letter-spacing: 0.04em;
+        }
+
+        /* ============================================
+           HIKES SECTION
+           ============================================ */
+        .hikes {
+            background: var(--cream);
+        }
+
+        .hikes-header {
+            text-align: center;
+            margin-bottom: 4rem;
+        }
+
+        .hikes-header .section-body {
+            margin: 0 auto;
+        }
+
+        .hike-cards {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 3rem;
+        }
+
+        .hike-card {
+            background: var(--cream);
+            overflow: hidden;
+            transition: transform 0.5s;
+        }
+
+        .hike-card:hover {
+            transform: translateY(-4px);
+        }
+
+        .hike-card-img {
+            width: 100%;
+            height: 300px;
+            object-fit: cover;
+        }
+
+        .hike-card-body {
+            padding: 2rem;
+        }
+
+        .hike-card-name {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 1.6rem;
+            font-weight: 400;
+            color: var(--deep-brown);
+            margin-bottom: 0.5rem;
+        }
+
+        .hike-stats {
+            display: flex;
+            gap: 2rem;
+            margin: 1rem 0;
+        }
+
+        .hike-stat {
+            text-align: center;
+        }
+
+        .hike-stat-label {
+            font-size: 0.55rem;
+            font-weight: 500;
+            letter-spacing: 0.25em;
+            text-transform: uppercase;
+            color: var(--terracotta);
+            margin-bottom: 0.25rem;
+        }
+
+        .hike-stat-value {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 1.1rem;
+            color: var(--deep-brown);
+        }
+
+        .hike-desc {
+            font-size: 0.85rem;
+            line-height: 1.8;
+            color: #6A6A6A;
+            margin-top: 0.5rem;
+        }
+
+        .hike-link {
+            display: inline-block;
+            margin-top: 1rem;
+            font-size: 0.65rem;
+            font-weight: 500;
+            letter-spacing: 0.2em;
+            text-transform: uppercase;
+            color: var(--terracotta);
+            text-decoration: none;
+            border-bottom: 1px solid var(--terracotta);
+            padding-bottom: 2px;
+            transition: color 0.3s;
+        }
+
+        .hike-link:hover {
+            color: var(--deep-brown);
+            border-color: var(--deep-brown);
+        }
+
+        @media (max-width: 968px) {
+            .hike-cards { grid-template-columns: 1fr; max-width: 500px; margin: 0 auto; }
+        }
+
+        /* ============================================
+           SCHEDULE SECTION
+           ============================================ */
+        .schedule {
+            background: var(--night);
+            color: white;
+        }
+
+        .schedule .section-overline {
+            color: var(--gold);
+        }
+
+        .schedule .section-title {
+            color: white;
+        }
+
+        .schedule-header {
+            text-align: center;
+            margin-bottom: 4rem;
+        }
+
+        .schedule .section-body {
+            color: rgba(255,255,255,0.6);
+            margin: 0 auto;
+        }
+
+        .schedule-days {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 2rem;
+        }
+
+        .schedule-day {
+            padding: 2.5rem 1.5rem;
+            border: 1px solid rgba(255,255,255,0.1);
+            transition: border-color 0.3s;
+        }
+
+        .schedule-day:hover {
+            border-color: rgba(201, 169, 110, 0.3);
+        }
+
+        .schedule-day-label {
+            font-size: 0.6rem;
+            letter-spacing: 0.3em;
+            text-transform: uppercase;
+            color: var(--gold);
+            margin-bottom: 0.5rem;
+        }
+
+        .schedule-day-date {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 1.4rem;
+            font-weight: 400;
+            margin-bottom: 1.5rem;
+            color: white;
+        }
+
+        .schedule-items {
+            display: flex;
+            flex-direction: column;
+            gap: 0.8rem;
+        }
+
+        .schedule-item {
+            font-size: 0.8rem;
+            line-height: 1.6;
+            color: rgba(255,255,255,0.55);
+        }
+
+        .schedule-item-time {
+            font-size: 0.65rem;
+            letter-spacing: 0.15em;
+            color: var(--gold);
+            opacity: 0.7;
+        }
+
+        .stars-decoration {
+            text-align: center;
+            margin-top: 3rem;
+            font-size: 0.7rem;
+            letter-spacing: 1em;
+            color: rgba(255,255,255,0.15);
+        }
+
+        /* ============================================
+           DETAILS / TRAVEL
+           ============================================ */
+        .details {
+            background: var(--cream);
+        }
+
+        .details-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+        }
+
+        .details-column h3 {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 1.5rem;
+            font-weight: 400;
+            color: var(--deep-brown);
+            margin-bottom: 1.5rem;
+        }
+
+        .details-column p {
+            font-size: 0.85rem;
+            line-height: 2;
+            color: #5A5A5A;
+            margin-bottom: 1rem;
+        }
+
+        .detail-note {
+            font-size: 0.75rem;
+            font-style: italic;
+            color: var(--dusty-rose);
+            margin-top: 1rem;
+        }
+
+        /* ============================================
+           RSVP SECTION
+           ============================================ */
+        .rsvp {
+            background: var(--warm-white);
+            text-align: center;
+        }
+
+        .rsvp .section-body {
+            margin: 0 auto 3rem;
+        }
+
+        .rsvp-form {
+            max-width: 480px;
+            margin: 0 auto;
+        }
+
+        .form-group {
+            margin-bottom: 1.5rem;
+            text-align: left;
+        }
+
+        .form-label {
+            display: block;
+            font-size: 0.65rem;
+            font-weight: 500;
+            letter-spacing: 0.25em;
+            text-transform: uppercase;
+            color: var(--charcoal);
+            margin-bottom: 0.5rem;
+        }
+
+        .form-input,
+        .form-textarea,
+        .form-select {
+            width: 100%;
+            padding: 0.9rem 1.2rem;
+            font-family: 'Montserrat', sans-serif;
+            font-size: 0.85rem;
+            font-weight: 300;
+            color: var(--charcoal);
+            background: white;
+            border: 1px solid var(--sand);
+            outline: none;
+            transition: border-color 0.3s;
+            -webkit-appearance: none;
+        }
+
+        .form-input:focus,
+        .form-textarea:focus,
+        .form-select:focus {
+            border-color: var(--terracotta);
+        }
+
+        .form-textarea {
+            resize: vertical;
+            min-height: 120px;
+        }
+
+        .form-select {
+            cursor: pointer;
+            background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 12 12'%3E%3Cpath fill='%233D2B1F' d='M6 8L1 3h10z'/%3E%3C/svg%3E");
+            background-repeat: no-repeat;
+            background-position: right 1rem center;
+            padding-right: 2.5rem;
+        }
+
+        .form-button {
+            display: inline-block;
+            padding: 1rem 3.5rem;
+            font-family: 'Montserrat', sans-serif;
+            font-size: 0.7rem;
+            font-weight: 500;
+            letter-spacing: 0.3em;
+            text-transform: uppercase;
+            color: white;
+            background: var(--deep-brown);
+            border: 1px solid var(--deep-brown);
+            cursor: pointer;
+            transition: all 0.4s;
+            margin-top: 1rem;
+        }
+
+        .form-button:hover {
+            background: transparent;
+            color: var(--deep-brown);
+        }
+
+        /* ============================================
+           FOOTER
+           ============================================ */
+        footer {
+            background: var(--deep-brown);
+            color: rgba(255,255,255,0.4);
+            text-align: center;
+            padding: 3rem;
+        }
+
+        .footer-logo {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 1.5rem;
+            font-weight: 300;
+            color: white;
+            margin-bottom: 0.5rem;
+            letter-spacing: 0.15em;
+        }
+
+        footer p {
+            font-size: 0.7rem;
+            letter-spacing: 0.15em;
+        }
+
+        /* ============================================
+           ANIMATIONS
+           ============================================ */
+        .reveal {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: all 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        .reveal.active {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .reveal-delay-1 { transition-delay: 0.1s; }
+        .reveal-delay-2 { transition-delay: 0.2s; }
+        .reveal-delay-3 { transition-delay: 0.3s; }
+
+        /* ============================================
+           RESPONSIVE
+           ============================================ */
+        @media (max-width: 968px) {
+            .nav-links { display: none; }
+            section { padding: 5rem 2rem; }
+            .retreat-grid { grid-template-columns: 1fr; gap: 2rem; }
+            .retreat-image img { height: 350px; }
+            .experience-cards { grid-template-columns: 1fr; max-width: 400px; margin: 0 auto; }
+            .schedule-days { grid-template-columns: 1fr 1fr; }
+            .details-grid { grid-template-columns: 1fr; gap: 2rem; }
+        }
+
+        @media (max-width: 600px) {
+            nav { padding: 1rem 1.5rem; }
+            .hero-title { font-size: 3rem; }
+            section { padding: 4rem 1.5rem; }
+            .about-details { gap: 2rem; }
+            .schedule-days { grid-template-columns: 1fr; }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- ============ NAVIGATION ============ -->
+    <nav id="navbar">
+        <ul class="nav-links">
+            <li><a href="#about">The Weekend</a></li>
+            <li><a href="#retreat">The Retreat</a></li>
+            <li><a href="#experiences">Experiences</a></li>
+            <li><a href="#hikes">Hikes</a></li>
+            <li><a href="#schedule">Schedule</a></li>
+            <li><a href="#details">Details</a></li>
+        </ul>
+    </nav>
+
+    <!-- ============ HERO ============ -->
+    <section class="hero" id="home">
+        <div class="hero-image">
+            <img src="./outside.png" alt="Sedona retreat villa at sunset">
+        </div>
+        <div class="hero-content">
+            <div class="hero-overline">A Sedona Wellness Retreat</div>
+            <h1 class="hero-title">The Big <span class="ohm">ॐ</span></h1>
+            <div class="hero-divider"></div>
+            <p class="hero-subtitle">Rest, reconnect &amp; celebrate under the red rocks</p>
+            <p class="hero-date">September 10 – 13, 2026</p>
+        </div>
+        <a href="#about" class="hero-scroll">
+            <span>Explore</span>
+            <div class="scroll-line"></div>
+        </a>
+    </section>
+
+    <!-- ============ ABOUT ============ -->
+    <section class="about" id="about">
+        <div class="container-narrow">
+            <div class="reveal">
+                <img src="./gimlet.png" alt="Gimlet" class="nav-mascot" style="margin-bottom: 1.5rem;">
+                <p class="section-overline">The Gathering</p>
+                <h2 class="section-title">A Weekend for the Soul</h2>
+                <p class="section-body">
+                    Before the next decade unfolds, let's pause. This is an invitation to 
+                    slow down, breathe deeply, and celebrate the beauty of turning thirty — 
+                    surrounded by Sedona's ancient red rock energy, your closest people, 
+                    and nothing but good vibes.
+                </p>
+            </div>
+            <div class="divider" style="margin: 3rem auto;"></div>
+            <div class="about-details reveal">
+                <div class="about-detail">
+                    <div class="about-detail-label">When</div>
+                    <div class="about-detail-value">September 10–13</div>
+                </div>
+                <div class="about-detail">
+                    <div class="about-detail-label">Where</div>
+                    <div class="about-detail-value">Sedona, Arizona</div>
+                </div>
+                <div class="about-detail">
+                    <div class="about-detail-label">Vibe</div>
+                    <div class="about-detail-value">Rest &amp; Reflect</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============ THE RETREAT ============ -->
+    <section class="retreat" id="retreat">
+        <div class="container">
+            <div class="retreat-grid">
+                <div class="retreat-image reveal">
+                    <img src="./inside.png" alt="Luxury living space with red rock views">
+                </div>
+                <div class="retreat-text reveal reveal-delay-1">
+                    <p class="section-overline">The Space</p>
+                    <h2 class="section-title">Your Sedona Sanctuary</h2>
+                    <a href="https://www.airbnb.com/rooms/1633503573406900319?photo_id=2537834510&source_impression_id=p3_1782511602_P3joT6T9MF90V2_W&previous_page_section_name=1000" target="_blank" class="accommodation-link">View Full Accommodations →</a>
+                    <p class="section-body">
+                        A stunning private estate perched among the red rocks with 
+                        panoramic views, an infinity pool, and spaces designed for both 
+                        gathering and solitude. Every window frames the landscape like 
+                        a living painting.
+                    </p>
+                    <div class="retreat-features">
+                        <div class="retreat-feature">
+                            <div class="retreat-feature-icon">✦</div>
+                            <span>Infinity pool with red rock views</span>
+                        </div>
+                        <div class="retreat-feature">
+                            <div class="retreat-feature-icon">✦</div>
+                            <span>Private yoga deck overlooking the canyon</span>
+                        </div>
+                        <div class="retreat-feature">
+                            <div class="retreat-feature-icon">✦</div>
+                            <span>Open-concept living &amp; chef's kitchen</span>
+                        </div>
+                        <div class="retreat-feature">
+                            <div class="retreat-feature-icon">✦</div>
+                            <span>Fire pit lounge for stargazing</span>
+                        </div>
+                        <div class="retreat-feature">
+                            <div class="retreat-feature-icon">✦</div>
+                            <span>Wraparound deck &amp; sunset terrace</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============ IMAGE BREAK — YOGA ============ -->
+    <div class="image-break">
+        <img src="./yoga.png" alt="Yoga mats by the pool in Sedona">
+        <div class="image-break-overlay">
+            <div class="image-break-text">
+                <p class="section-overline" style="color: rgba(255,255,255,0.7); margin-bottom: 1rem;">Breathe · Move · Be</p>
+                <h3>"The body benefits from movement,<br>and the mind benefits from stillness."</h3>
+            </div>
+        </div>
+    </div>
+
+    <!-- ============ EXPERIENCES ============ -->
+    <section class="experiences" id="experiences">
+        <div class="container">
+            <div class="experiences-header reveal">
+                <p class="section-overline">The Experiences</p>
+                <h2 class="section-title">Nourish Every Sense</h2>
+                <p class="section-body">
+                    Each moment is designed to restore and delight. Join in everything, 
+                    or simply do nothing at all — this weekend moves at your pace.
+                </p>
+            </div>
+            <div class="experience-cards">
+                <div class="experience-card reveal reveal-delay-1">
+                    <img class="experience-card-img" src="./flow_dog.png" alt="Yoga in Sedona">
+                    <div class="experience-card-body">
+                        <h3 class="experience-name">Yoga</h3>
+                        <div class="experience-time">Sunrise Sessions</div>
+                        <p class="experience-desc">
+                            Begin each day with a guided flow on the private deck, 
+                            the red rocks glowing as the sun rises over the canyon.
+                        </p>
+                    </div>
+                </div>
+                <div class="experience-card reveal reveal-delay-2">
+                    <img class="experience-card-img" src="./star_gaze.png" alt="Stargazing in Sedona">
+                    <div class="experience-card-body">
+                        <h3 class="experience-name">Stargazing</h3>
+                        <div class="experience-time">After Dark</div>
+                        <p class="experience-desc">
+                            Sedona's dark skies reveal a universe above. Wrap up in blankets, 
+                            sip something warm, and lose yourself in the Milky Way.
+                        </p>
+                    </div>
+                </div>
+                <div class="experience-card reveal reveal-delay-3">
+                    <img class="experience-card-img" src="./relax.png" alt="Relaxation in Sedona">
+                    <div class="experience-card-body">
+                        <h3 class="experience-name">Deep Relaxation</h3>
+                        <div class="experience-time">All Day, Every Day</div>
+                        <p class="experience-desc">
+                            Pool floats and sunsets. Sound baths and journaling. Long 
+                            conversations and comfortable silences. This is your time.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============ HIKES ============ -->
+    <section class="hikes" id="hikes">
+        <div class="container">
+            <div class="hikes-header reveal">
+                <p class="section-overline">The Adventures</p>
+                <h2 class="section-title">Hikes</h2>
+                <p class="section-body">
+                    Sedona's red rock trails are calling. We'll tackle two iconic hikes 
+                    during the weekend — bring your sense of adventure.
+                </p>
+            </div>
+            <div class="hike-cards">
+                <div class="hike-card reveal reveal-delay-1">
+                    <img class="hike-card-img" src="./cathederal_rocks.jpg" alt="Cathedral Rock, Sedona">
+                    <div class="hike-card-body">
+                        <h3 class="hike-card-name">Cathedral Rock</h3>
+                        <div class="hike-stats">
+                            <div class="hike-stat">
+                                <div class="hike-stat-label">Distance</div>
+                                <div class="hike-stat-value">1.2 mi</div>
+                            </div>
+                            <div class="hike-stat">
+                                <div class="hike-stat-label">Elev. Gain</div>
+                                <div class="hike-stat-value">740 ft</div>
+                            </div>
+                            <div class="hike-stat">
+                                <div class="hike-stat-label">Difficulty</div>
+                                <div class="hike-stat-value">Hard</div>
+                            </div>
+                        </div>
+                        <p class="hike-desc">
+                            One of Sedona's most iconic hikes — a steep scramble up 
+                            red rock slickrock to jaw-dropping 360° views of the valley. 
+                            Short but intense, and absolutely worth it.
+                        </p>
+                        <a href="https://www.alltrails.com/trail/us/arizona/cathedral-rock-trail" target="_blank" class="hike-link">View on AllTrails →</a>
+                    </div>
+                </div>
+                <div class="hike-card reveal reveal-delay-2">
+                    <img class="hike-card-img" src="./devils_bridge.jpg" alt="Devil's Bridge, Sedona">
+                    <div class="hike-card-body">
+                        <h3 class="hike-card-name">Devil's Bridge</h3>
+                        <div class="hike-stats">
+                            <div class="hike-stat">
+                                <div class="hike-stat-label">Distance</div>
+                                <div class="hike-stat-value">4.2 mi</div>
+                            </div>
+                            <div class="hike-stat">
+                                <div class="hike-stat-label">Elev. Gain</div>
+                                <div class="hike-stat-value">560 ft</div>
+                            </div>
+                            <div class="hike-stat">
+                                <div class="hike-stat-label">Difficulty</div>
+                                <div class="hike-stat-value">Moderate</div>
+                            </div>
+                        </div>
+                        <p class="hike-desc">
+                            Sedona's largest natural sandstone arch. The trail winds 
+                            through juniper forest before revealing the dramatic bridge — 
+                            the ultimate photo op.
+                        </p>
+                        <a href="https://www.alltrails.com/trail/us/arizona/devils-bridge-trail" target="_blank" class="hike-link">View on AllTrails →</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============ SCHEDULE ============ -->
+    <section class="schedule" id="schedule">
+        <div class="container">
+            <div class="schedule-header reveal">
+                <p class="section-overline">The Journey</p>
+                <h2 class="section-title">Four Days of Flow</h2>
+                <p class="section-body">
+                    A loose rhythm to guide the weekend — nothing is mandatory, 
+                    everything is an invitation.
+                </p>
+            </div>
+            <div class="schedule-days">
+                <div class="schedule-day reveal reveal-delay-1">
+                    <div class="schedule-day-label">Day One</div>
+                    <div class="schedule-day-date">Thu, Sept 10</div>
+                    <div class="schedule-items">
+                        <div class="schedule-item">Arrival</div>
+                    </div>
+                </div>
+                <div class="schedule-day reveal reveal-delay-2">
+                    <div class="schedule-day-label">Day Two</div>
+                    <div class="schedule-day-date">Fri, Sept 11</div>
+                    <div class="schedule-items">
+                        <div class="schedule-item">TBD</div>
+                    </div>
+                </div>
+                <div class="schedule-day reveal reveal-delay-3">
+                    <div class="schedule-day-label">Day Three</div>
+                    <div class="schedule-day-date">Sat, Sept 12</div>
+                    <div class="schedule-items">
+                        <div class="schedule-item">TBD</div>
+                    </div>
+                </div>
+                <div class="schedule-day reveal">
+                    <div class="schedule-day-label">Day Four</div>
+                    <div class="schedule-day-date">Sun, Sept 13</div>
+                    <div class="schedule-items">
+                        <div class="schedule-item">Departure</div>
+                    </div>
+                </div>
+            </div>
+            <div class="stars-decoration">✦ ✦ ✦ ✦ ✦</div>
+        </div>
+    </section>
+
+    <!-- ============ DETAILS ============ -->
+    <section class="details" id="details">
+        <div class="container">
+            <div class="reveal" style="text-align: center; margin-bottom: 4rem;">
+                <p class="section-overline">Practical Magic</p>
+                <h2 class="section-title">Details &amp; Travel</h2>
+            </div>
+            <div class="details-grid reveal">
+                <div class="details-column">
+                    <h3>Getting There</h3>
+                    <p>
+                        Fly into <strong>Phoenix Sky Harbor (PHX)</strong> — it's the closest major 
+                        airport, about a 2-hour scenic drive north through Arizona's 
+                        red rock country. 
+                    </p>
+                    <p>
+                        Alternatively, fly into <strong>Flagstaff (FLG)</strong> for a shorter 
+                        45-minute drive south through Oak Creek Canyon.
+                    </p>
+                    <p class="detail-note">
+                        We can coordinate carpools from Phoenix — let's plan together!
+                    </p>
+                </div>
+                <div class="details-column">
+                    <h3>What to Know</h3>
+                    <p>
+                        Bring your favorite yoga gear, swimsuit, layers for cool desert 
+                        evenings, and a good book.
+                    </p>
+                    <p>
+                        Meals will be a mix of group cooking and catered experiences. 
+                        We'll sort out the details together.
+                    </p>
+                    <p class="detail-note">
+                        Questions? Reach out anytime — this is meant to be effortless for you.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+
+    <!-- ============ FOOTER ============ -->
+    <footer>
+        <img src="./gimlet.png" alt="Gimlet the mascot" style="width: 140px; height: 140px; border-radius: 50%; object-fit: cover; object-position: center 30%; margin-bottom: 1rem;">
+        <div class="footer-logo">The Big ॐ</div>
+        <p>Sedona, Arizona · September 2026</p>
+    </footer>
+
+    <!-- ============ SCRIPTS ============ -->
+    <script>
+        // Navbar scroll effect
+        const navbar = document.getElementById('navbar');
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 80) {
+                navbar.classList.add('scrolled');
+            } else {
+                navbar.classList.remove('scrolled');
+            }
+        });
+
+        // Scroll reveal
+        const reveals = document.querySelectorAll('.reveal');
+        const revealObserver = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('active');
+                }
+            });
+        }, {
+            threshold: 0.15,
+            rootMargin: '0px 0px -50px 0px'
+        });
+
+        reveals.forEach(el => revealObserver.observe(el));
+
+
+
+        // Smooth scroll for nav links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                }
+            });
+        });
+    </script>
+
+</body>
+</html>
