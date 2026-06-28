@@ -744,6 +744,116 @@
             background: var(--cream);
         }
 
+        /* ============================================
+           BUDGET SECTION
+           ============================================ */
+        .budget {
+            background: var(--warm-white);
+        }
+
+        .budget-header {
+            text-align: center;
+            margin-bottom: 3rem;
+        }
+
+        .budget-header .section-body {
+            margin: 0 auto;
+        }
+
+        .budget-total {
+            text-align: center;
+            margin-bottom: 3rem;
+        }
+
+        .budget-amount {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: clamp(2.5rem, 5vw, 3.5rem);
+            font-weight: 300;
+            color: var(--deep-brown);
+            margin-bottom: 0.5rem;
+        }
+
+        .budget-amount-label {
+            font-size: 0.65rem;
+            font-weight: 500;
+            letter-spacing: 0.3em;
+            text-transform: uppercase;
+            color: var(--terracotta);
+        }
+
+        .budget-breakdown {
+            max-width: 600px;
+            margin: 0 auto 2rem;
+        }
+
+        .budget-item {
+            display: flex;
+            justify-content: space-between;
+            padding: 0.8rem 0;
+            border-bottom: 1px solid var(--sand);
+            font-size: 0.85rem;
+            color: #5A5A5A;
+        }
+
+        .budget-item-label {
+            font-weight: 400;
+        }
+
+        .budget-item-value {
+            font-weight: 500;
+            color: var(--deep-brown);
+        }
+
+        .budget-includes {
+            max-width: 600px;
+            margin: 2rem auto 0;
+        }
+
+        .budget-list-header {
+            font-size: 0.6rem;
+            font-weight: 500;
+            letter-spacing: 0.25em;
+            text-transform: uppercase;
+            color: var(--terracotta);
+            margin-bottom: 0.8rem;
+            margin-top: 1.5rem;
+        }
+
+        .budget-list {
+            list-style: none;
+            font-size: 0.85rem;
+            color: #5A5A5A;
+            line-height: 2;
+        }
+
+        .budget-list li::before {
+            content: '✦ ';
+            color: var(--sand);
+        }
+
+        .budget-note {
+            max-width: 600px;
+            margin: 2.5rem auto 0;
+            text-align: center;
+            font-size: 0.85rem;
+            font-style: italic;
+            color: var(--dusty-rose);
+            line-height: 1.8;
+        }
+
+        /* ============================================
+           SHARE YOUR GIFTS SECTION
+           ============================================ */
+        .gifts {
+            background: var(--cream);
+            text-align: center;
+        }
+
+        .gifts .section-body {
+            margin: 0 auto;
+            max-width: 620px;
+        }
+
         .details-grid {
             display: grid;
             grid-template-columns: 1fr 1fr;
@@ -1220,12 +1330,9 @@
                         airport, about a 2-hour scenic drive north through Arizona's 
                         red rock country. 
                     </p>
-                    <p>
-                        Alternatively, fly into <strong>Flagstaff (FLG)</strong> for a shorter 
-                        45-minute drive south through Oak Creek Canyon.
-                    </p>
                     <p class="detail-note">
-                        We can coordinate carpools from Phoenix — let's plan together!
+                        Once you book your flight, let Lara know! She'll coordinate 
+                        carpools and rental cars so you don't have to worry about a thing.
                     </p>
                 </div>
                 <div class="details-column">
@@ -1242,6 +1349,85 @@
                         Questions? Reach out anytime — this is meant to be effortless for you.
                     </p>
                 </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============ BUDGET ============ -->
+    <section class="budget" id="budget">
+        <div class="container">
+            <div class="budget-header reveal">
+                <p class="section-overline">The Investment</p>
+                <h2 class="section-title">Estimated Budget</h2>
+                <p class="section-body">
+                    Transparency is important — here's a breakdown of shared costs 
+                    so everyone can plan ahead. This trip should be accessible to all, 
+                    so please reach out to Lara if cost is a concern.
+                </p>
+            </div>
+            <div class="budget-total reveal">
+                <div class="budget-amount">~$600/person</div>
+                <div class="budget-amount-label">Estimated Total (excluding flights)</div>
+            </div>
+            <div class="budget-breakdown reveal">
+                <div class="budget-item">
+                    <span class="budget-item-label">3 nights lodging</span>
+                    <span class="budget-item-value">~$428</span>
+                </div>
+                <div class="budget-item">
+                    <span class="budget-item-label">Groceries &amp; shared meals</span>
+                    <span class="budget-item-value">~$100</span>
+                </div>
+                <div class="budget-item">
+                    <span class="budget-item-label">Rental cars</span>
+                    <span class="budget-item-value">~$51</span>
+                </div>
+                <div class="budget-item">
+                    <span class="budget-item-label">Gas, parking &amp; misc.</span>
+                    <span class="budget-item-value">~$15–30</span>
+                </div>
+            </div>
+            <div class="budget-includes reveal">
+                <div class="budget-list-header">This includes</div>
+                <ul class="budget-list">
+                    <li>3 nights at a stunning private estate</li>
+                    <li>Shared groceries &amp; group meals</li>
+                    <li>Rental cars &amp; transportation</li>
+                    <li>Gas &amp; parking</li>
+                </ul>
+                <div class="budget-list-header">Not included</div>
+                <ul class="budget-list">
+                    <li>Flights</li>
+                    <li>Airport meals</li>
+                    <li>Alcohol</li>
+                </ul>
+            </div>
+            <p class="budget-note reveal">
+                Everyone has different budgets, and I never want cost to be a 
+                barrier. If you need flexibility, please reach out — I'm happy to 
+                make it work. This weekend is about being together. 🤍
+            </p>
+        </div>
+    </section>
+
+    <!-- ============ SHARE YOUR GIFTS ============ -->
+    <section class="gifts" id="gifts">
+        <div class="container-narrow">
+            <div class="reveal">
+                <p class="section-overline">Community</p>
+                <h2 class="section-title">Share Your Gifts</h2>
+                <p class="section-body">
+                    I am so lucky to have incredibly talented, brilliant friends 
+                    who constantly impress me with their many gifts. Some of you are 
+                    yoga-teacher trained, trained in reiki and meditation, or have 
+                    niche knowledge of really cool subjects.
+                </p>
+                <br>
+                <p class="section-body">
+                    I'd love for us to share these talents with each other. If you're 
+                    interested in leading a wellness session, mini lecture, or anything 
+                    that lights you up — please let Lara know! This is your space to shine. ✨
+                </p>
             </div>
         </div>
     </section>
