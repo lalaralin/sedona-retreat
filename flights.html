@@ -486,6 +486,377 @@
             opacity: 1;
             transform: translateY(0);
         }
+
+        /* ============================================
+           FLIGHT TABS NAVIGATION
+           ============================================ */
+        .flight-tabs-container {
+            display: flex;
+            justify-content: center;
+            margin-top: -2.5rem;
+            position: relative;
+            z-index: 10;
+            padding: 0 1.5rem;
+        }
+
+        .flight-tabs {
+            background: rgba(255, 255, 255, 0.92);
+            backdrop-filter: blur(16px);
+            -webkit-backdrop-filter: blur(16px);
+            padding: 0.5rem;
+            border-radius: 50px;
+            box-shadow: 0 12px 40px rgba(0,0,0,0.08);
+            border: 1px solid rgba(196, 112, 63, 0.2);
+            display: flex;
+            gap: 0.5rem;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+
+        .flight-tab {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 0.85rem;
+            font-weight: 500;
+            letter-spacing: 0.04em;
+            color: #666;
+            background: transparent;
+            border: none;
+            padding: 0.8rem 1.8rem;
+            border-radius: 40px;
+            cursor: pointer;
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            display: flex;
+            align-items: center;
+            gap: 0.6rem;
+        }
+
+        .flight-tab.active {
+            background: var(--terracotta);
+            color: white;
+            box-shadow: 0 4px 18px rgba(196, 112, 63, 0.35);
+        }
+
+        .flight-tab:hover:not(.active) {
+            color: var(--deep-brown);
+            background: rgba(245, 240, 235, 0.8);
+        }
+
+        .tab-badge {
+            font-size: 0.65rem;
+            font-weight: 600;
+            letter-spacing: 0.1em;
+            text-transform: uppercase;
+            padding: 0.22rem 0.6rem;
+            border-radius: 20px;
+            background: rgba(0,0,0,0.06);
+            color: inherit;
+        }
+
+        .flight-tab.active .tab-badge {
+            background: rgba(255,255,255,0.25);
+            color: white;
+        }
+
+        .tab-content {
+            display: none;
+            animation: tabFadeIn 0.45s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+        }
+
+        .tab-content.active {
+            display: block;
+        }
+
+        @keyframes tabFadeIn {
+            from { opacity: 0; transform: translateY(16px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        /* ============================================
+           GUEST TIMETABLE / FLIGHT BOARDS
+           ============================================ */
+        .schedules-section {
+            padding: 4rem 2rem;
+            max-width: 1150px;
+            margin: 0 auto;
+        }
+
+        .timetable-group-title {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 2.2rem;
+            font-weight: 400;
+            color: var(--deep-brown);
+            margin: 3rem 0 1.2rem;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            gap: 1rem;
+        }
+
+        .timetable-group-title:first-of-type {
+            margin-top: 0.5rem;
+        }
+
+        .timetable-title-left {
+            display: flex;
+            align-items: center;
+            gap: 0.8rem;
+        }
+
+        .timetable-date-badge {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 0.65rem;
+            font-weight: 600;
+            letter-spacing: 0.18em;
+            text-transform: uppercase;
+            color: white;
+            background: var(--terracotta);
+            padding: 0.4rem 1rem;
+            border-radius: 20px;
+            box-shadow: 0 2px 10px rgba(196, 112, 63, 0.25);
+        }
+
+        .timetable-group-title.return .timetable-date-badge {
+            background: var(--muted-sage);
+            box-shadow: 0 2px 10px rgba(139, 154, 126, 0.25);
+        }
+
+        .timetable-board {
+            background: white;
+            border-radius: 20px;
+            box-shadow: 0 10px 40px rgba(0,0,0,0.05);
+            border: 1px solid rgba(0,0,0,0.06);
+            overflow: hidden;
+            margin-bottom: 3.5rem;
+        }
+
+        .timetable-header {
+            display: grid;
+            grid-template-columns: minmax(290px, max-content) 1.5fr 1.2fr;
+            gap: 3rem;
+            padding: 1rem 2.5rem;
+            background: var(--cream);
+            border-bottom: 1px solid var(--sand);
+            font-family: 'Montserrat', sans-serif;
+            font-size: 0.65rem;
+            font-weight: 600;
+            letter-spacing: 0.2em;
+            text-transform: uppercase;
+            color: #777;
+        }
+
+        .timetable-header > div:nth-child(2) {
+            padding-left: 2.5rem;
+        }
+
+        .timetable-row {
+            display: grid;
+            grid-template-columns: minmax(290px, max-content) 1.5fr 1.2fr;
+            gap: 3rem;
+            align-items: center;
+            padding: 1.8rem 2.5rem;
+            border-bottom: 1px solid rgba(0,0,0,0.04);
+            transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+            position: relative;
+        }
+
+        .timetable-row:last-child {
+            border-bottom: none;
+        }
+
+        .timetable-row::before {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 0;
+            bottom: 0;
+            width: 4px;
+            background: transparent;
+            transition: background 0.25s;
+        }
+
+        .timetable-row:hover {
+            background: rgba(245, 240, 235, 0.45);
+        }
+
+        .timetable-row:hover::before {
+            background: var(--terracotta);
+        }
+
+        .timetable-board.return-board .timetable-row:hover::before {
+            background: var(--muted-sage);
+        }
+
+        .tt-time-main {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 1.75rem;
+            font-weight: 400;
+            color: var(--deep-brown);
+            line-height: 1.1;
+            font-variant-numeric: tabular-nums;
+            display: flex;
+            align-items: center;
+            flex-wrap: nowrap;
+            white-space: nowrap;
+            gap: 0.4rem;
+        }
+
+        .tt-time-arrow {
+            font-size: 1rem;
+            color: var(--terracotta);
+        }
+
+        .timetable-board.return-board .tt-time-arrow {
+            color: var(--muted-sage);
+        }
+
+        .tt-duration-badge {
+            display: inline-block;
+            font-family: 'Montserrat', sans-serif;
+            font-size: 0.65rem;
+            font-weight: 500;
+            color: #888;
+            margin-top: 0.35rem;
+            background: var(--warm-white);
+            padding: 0.15rem 0.6rem;
+            border-radius: 12px;
+            border: 1px solid rgba(0,0,0,0.04);
+        }
+
+        .tt-flight-info {
+            display: flex;
+            flex-direction: column;
+            gap: 0.25rem;
+            padding-left: 2.5rem;
+        }
+
+        .tt-flight-route {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 0.68rem;
+            font-weight: 600;
+            letter-spacing: 0.15em;
+            text-transform: uppercase;
+            color: var(--terracotta);
+        }
+
+        .timetable-board.return-board .tt-flight-route {
+            color: var(--muted-sage);
+        }
+
+        .airline-emoji {
+            font-size: 1.2rem;
+            line-height: 1;
+            display: inline-block;
+        }
+
+        .tt-airline {
+            display: flex;
+            align-items: center;
+            gap: 0.6rem;
+            font-weight: 500;
+            font-size: 1rem;
+            color: var(--deep-brown);
+        }
+
+        .tt-aircraft {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 0.72rem;
+            color: #777;
+        }
+
+        .tt-passengers {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+            align-items: center;
+        }
+
+        .tt-status {
+            text-align: right;
+        }
+
+        .tt-status-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.4rem;
+            font-family: 'Montserrat', sans-serif;
+            font-size: 0.7rem;
+            font-weight: 600;
+            letter-spacing: 0.08em;
+            text-transform: uppercase;
+            padding: 0.4rem 0.85rem;
+            border-radius: 20px;
+            background: rgba(139, 154, 126, 0.15);
+            color: #4C5D3E;
+            border: 1px solid rgba(139, 154, 126, 0.3);
+        }
+
+        .tt-status-badge.arrives {
+            background: rgba(196, 112, 63, 0.12);
+            color: var(--terracotta);
+            border-color: rgba(196, 112, 63, 0.25);
+        }
+
+        .passenger-pill {
+            display: flex;
+            align-items: center;
+            gap: 0.55rem;
+            background: white;
+            padding: 0.35rem 0.85rem 0.35rem 0.35rem;
+            border-radius: 30px;
+            font-size: 0.82rem;
+            font-weight: 500;
+            color: var(--deep-brown);
+            box-shadow: 0 2px 8px rgba(0,0,0,0.04);
+            border: 1px solid rgba(0,0,0,0.06);
+            transition: all 0.2s;
+        }
+
+        .passenger-pill:hover {
+            transform: scale(1.04);
+            border-color: var(--terracotta-light);
+        }
+
+        .passenger-avatar {
+            width: 24px;
+            height: 24px;
+            border-radius: 50%;
+            background: linear-gradient(135deg, var(--terracotta), var(--terracotta-light));
+            color: white;
+            font-size: 0.68rem;
+            font-weight: 600;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .timetable-board.return-board .passenger-avatar {
+            background: linear-gradient(135deg, var(--muted-sage), #6E7D62);
+        }
+
+        @media (max-width: 900px) {
+            .timetable-header {
+                display: none;
+            }
+
+            .timetable-row {
+                grid-template-columns: 1fr;
+                gap: 1.2rem;
+                padding: 1.5rem;
+            }
+
+            .tt-status {
+                text-align: left;
+                padding-top: 0.5rem;
+                border-top: 1px dashed rgba(0,0,0,0.06);
+            }
+
+            .timetable-group-title {
+                flex-direction: column;
+                align-items: flex-start;
+                gap: 0.5rem;
+            }
+        }
     </style>
 </head>
 <body>
@@ -508,8 +879,161 @@
         <p class="flights-subtitle">September 10 – 13, 2026</p>
     </section>
 
-    <!-- ============ ROUTES ============ -->
-    <section class="routes-section">
+    <!-- ============ TABS NAVIGATION ============ -->
+    <div class="flight-tabs-container">
+        <div class="flight-tabs">
+            <button class="flight-tab active" onclick="switchTab('schedules', this)">
+                <span class="tab-icon">👥</span> Guest Schedules
+                <span class="tab-badge">Confirmed</span>
+            </button>
+            <button class="flight-tab" onclick="switchTab('routes', this)">
+                <span class="tab-icon">✈️</span> Route Options & Pricing
+                <span class="tab-badge">Search</span>
+            </button>
+        </div>
+    </div>
+
+    <!-- ============ TAB 1: GUEST SCHEDULES ============ -->
+    <div id="tab-schedules" class="tab-content active">
+        <section class="schedules-section">
+            
+            <!-- INBOUND TO PHOENIX (TIMETABLE BOARD 1) -->
+            <div class="timetable-group-title reveal">
+                <div class="timetable-title-left">
+                    <span>✈ Inbound to Phoenix (PHX)</span>
+                </div>
+                <span class="timetable-date-badge">Thursday, Sept 10, 2026</span>
+            </div>
+
+            <div class="timetable-board reveal">
+                <div class="timetable-header">
+                    <div>Departure & Arrival</div>
+                    <div>Route & Flight</div>
+                    <div>Passengers</div>
+                </div>
+
+                <!-- ROW 1: 08:00 AM (Kar, Theo, Sasha) -->
+                <div class="timetable-row">
+                    <div>
+                        <div class="tt-time-main">08:00 AM <span class="tt-time-arrow">→</span> 10:07 AM</div>
+                        <span class="tt-duration-badge">2h 07m · Nonstop</span>
+                    </div>
+                    <div class="tt-flight-info">
+                        <div class="tt-flight-route">SFO → PHX</div>
+                        <div class="tt-airline">
+                            <span class="airline-emoji">✈️</span>
+                            <span>American AA 2414</span>
+                        </div>
+                    </div>
+                    <div class="tt-passengers">
+                        <span class="passenger-pill"><span class="passenger-avatar">K</span> Kar</span>
+                        <span class="passenger-pill"><span class="passenger-avatar">T</span> Theo</span>
+                        <span class="passenger-pill"><span class="passenger-avatar">S</span> Sasha</span>
+                    </div>
+                </div>
+
+                <!-- ROW 2: 10:05 AM (Lara, Malik, Lenny) -->
+                <div class="timetable-row">
+                    <div>
+                        <div class="tt-time-main">10:05 AM <span class="tt-time-arrow">→</span> 12:25 PM</div>
+                        <span class="tt-duration-badge">2h 20m · Nonstop</span>
+                    </div>
+                    <div class="tt-flight-info">
+                        <div class="tt-flight-route">SFO → PHX</div>
+                        <div class="tt-airline">
+                            <span class="airline-emoji">✈️</span>
+                            <span>United UA 6013</span>
+                        </div>
+                    </div>
+                    <div class="tt-passengers">
+                        <span class="passenger-pill"><span class="passenger-avatar">L</span> Lara</span>
+                        <span class="passenger-pill"><span class="passenger-avatar">M</span> Malik</span>
+                        <span class="passenger-pill"><span class="passenger-avatar">L</span> Lenny</span>
+                    </div>
+                </div>
+
+                <!-- ROW 3: 07:25 PM (Stef, Niki) -->
+                <div class="timetable-row">
+                    <div>
+                        <div class="tt-time-main">07:25 PM <span class="tt-time-arrow">→</span> 09:30 PM</div>
+                        <span class="tt-duration-badge">2h 05m · Nonstop</span>
+                    </div>
+                    <div class="tt-flight-info">
+                        <div class="tt-flight-route">SFO → PHX</div>
+                        <div class="tt-airline">
+                            <span class="airline-emoji">✈️</span>
+                            <span>Southwest WN 3975</span>
+                        </div>
+                    </div>
+                    <div class="tt-passengers">
+                        <span class="passenger-pill"><span class="passenger-avatar">S</span> Stef</span>
+                        <span class="passenger-pill"><span class="passenger-avatar">N</span> Niki</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- OUTBOUND FROM PHOENIX (TIMETABLE BOARD 2) -->
+            <div class="timetable-group-title return reveal">
+                <div class="timetable-title-left">
+                    <span>✈ Outbound from Phoenix (PHX)</span>
+                </div>
+                <span class="timetable-date-badge">Sunday, Sept 13, 2026</span>
+            </div>
+
+            <div class="timetable-board return-board reveal">
+                <div class="timetable-header">
+                    <div>Departure & Arrival</div>
+                    <div>Route & Flight</div>
+                    <div>Passengers</div>
+                </div>
+
+                <!-- ROW 1: 04:00 PM (Lara, Niki, Sash, Stef) -->
+                <div class="timetable-row">
+                    <div>
+                        <div class="tt-time-main">04:00 PM <span class="tt-time-arrow">→</span> 06:00 PM</div>
+                        <span class="tt-duration-badge">2h 00m · Nonstop</span>
+                    </div>
+                    <div class="tt-flight-info">
+                        <div class="tt-flight-route">PHX → SFO</div>
+                        <div class="tt-airline">
+                            <span class="airline-emoji">✈️</span>
+                            <span>Southwest WN 925</span>
+                        </div>
+                    </div>
+                    <div class="tt-passengers">
+                        <span class="passenger-pill"><span class="passenger-avatar">L</span> Lara</span>
+                        <span class="passenger-pill"><span class="passenger-avatar">N</span> Niki</span>
+                        <span class="passenger-pill"><span class="passenger-avatar">S</span> Sash</span>
+                        <span class="passenger-pill"><span class="passenger-avatar">S</span> Stef</span>
+                    </div>
+                </div>
+
+                <!-- ROW 2: 05:06 PM (Theo, Kar) -->
+                <div class="timetable-row">
+                    <div>
+                        <div class="tt-time-main">05:06 PM <span class="tt-time-arrow">→</span> 07:11 PM</div>
+                        <span class="tt-duration-badge">2h 05m · Nonstop</span>
+                    </div>
+                    <div class="tt-flight-info">
+                        <div class="tt-flight-route">PHX → SFO</div>
+                        <div class="tt-airline">
+                            <span class="airline-emoji">✈️</span>
+                            <span>American AA 2421</span>
+                        </div>
+                    </div>
+                    <div class="tt-passengers">
+                        <span class="passenger-pill"><span class="passenger-avatar">T</span> Theo</span>
+                        <span class="passenger-pill"><span class="passenger-avatar">K</span> Kar</span>
+                    </div>
+                </div>
+            </div>
+
+        </section>
+    </div>
+
+    <!-- ============ TAB 2: ROUTE OPTIONS ============ -->
+    <div id="tab-routes" class="tab-content">
+        <section class="routes-section">
 
         <!-- NEW YORK -->
         <div class="route-card reveal">
@@ -521,8 +1045,8 @@
                 </div>
                 <div class="route-meta">
                     <div>
-                        <div class="route-price">~$330</div>
-                        <div class="route-price-label">Avg. Round Trip</div>
+                        <div class="route-price">~$357</div>
+                        <div class="route-price-label">Avg. Round Trip (Live)</div>
                     </div>
                 </div>
             </div>
@@ -537,7 +1061,7 @@
                         <th>Arrives</th>
                         <th>Duration</th>
                         <th>Type</th>
-                        <th>Price</th>
+                        <th>Est. One-Way</th>
                     </tr>
                 </thead>
                 <tbody>
@@ -548,7 +1072,7 @@
                         <td class="time-cell">8:55 AM</td>
                         <td class="duration-cell">5h 55m</td>
                         <td><span class="nonstop-badge">Nonstop</span></td>
-                        <td class="price-cell">$164</td>
+                        <td class="price-cell">$178</td>
                     </tr>
                     <tr>
                         <td><div class="airline-cell"><span class="airline-dot american"></span><span class="airline-name">American</span></div></td>
@@ -557,7 +1081,7 @@
                         <td class="time-cell">9:29 AM</td>
                         <td class="duration-cell">5h 14m</td>
                         <td><span class="nonstop-badge">Nonstop</span></td>
-                        <td class="price-cell">$164</td>
+                        <td class="price-cell">$178</td>
                     </tr>
                     <tr>
                         <td><div class="airline-cell"><span class="airline-dot delta"></span><span class="airline-name">Delta</span></div></td>
@@ -566,7 +1090,7 @@
                         <td class="time-cell">10:21 AM</td>
                         <td class="duration-cell">5h 21m</td>
                         <td><span class="nonstop-badge">Nonstop</span></td>
-                        <td class="price-cell">$164</td>
+                        <td class="price-cell">$189</td>
                     </tr>
                     <tr>
                         <td><div class="airline-cell"><span class="airline-dot jetblue"></span><span class="airline-name">JetBlue</span></div></td>
@@ -575,7 +1099,7 @@
                         <td class="time-cell">11:15 AM</td>
                         <td class="duration-cell">5h 18m</td>
                         <td><span class="nonstop-badge">Nonstop</span></td>
-                        <td class="price-cell">$164</td>
+                        <td class="price-cell">$188</td>
                     </tr>
                     <tr>
                         <td><div class="airline-cell"><span class="airline-dot american"></span><span class="airline-name">American</span></div></td>
@@ -584,7 +1108,7 @@
                         <td class="time-cell">12:48 PM</td>
                         <td class="duration-cell">5h 33m</td>
                         <td><span class="nonstop-badge">Nonstop</span></td>
-                        <td class="price-cell">$164</td>
+                        <td class="price-cell">$178</td>
                     </tr>
                     <tr>
                         <td><div class="airline-cell"><span class="airline-dot delta"></span><span class="airline-name">Delta</span></div></td>
@@ -593,7 +1117,7 @@
                         <td class="time-cell">3:34 PM</td>
                         <td class="duration-cell">5h 29m</td>
                         <td><span class="nonstop-badge">Nonstop</span></td>
-                        <td class="price-cell">$174</td>
+                        <td class="price-cell">$189</td>
                     </tr>
                 </tbody>
             </table>
@@ -608,7 +1132,7 @@
                         <th>Arrives</th>
                         <th>Duration</th>
                         <th>Type</th>
-                        <th>Price</th>
+                        <th>Est. One-Way</th>
                     </tr>
                 </thead>
                 <tbody>
@@ -619,7 +1143,7 @@
                         <td class="time-cell">6:33 PM</td>
                         <td class="duration-cell">5h 03m</td>
                         <td><span class="nonstop-badge">Nonstop</span></td>
-                        <td class="price-cell">$164</td>
+                        <td class="price-cell">$178</td>
                     </tr>
                     <tr>
                         <td><div class="airline-cell"><span class="airline-dot american"></span><span class="airline-name">American</span></div></td>
@@ -628,7 +1152,7 @@
                         <td class="time-cell">9:00 PM</td>
                         <td class="duration-cell">5h 02m</td>
                         <td><span class="nonstop-badge">Nonstop</span></td>
-                        <td class="price-cell">$164</td>
+                        <td class="price-cell">$178</td>
                     </tr>
                     <tr>
                         <td><div class="airline-cell"><span class="airline-dot delta"></span><span class="airline-name">Delta</span></div></td>
@@ -637,7 +1161,7 @@
                         <td class="time-cell">11:00 PM</td>
                         <td class="duration-cell">4h 45m</td>
                         <td><span class="nonstop-badge">Nonstop</span></td>
-                        <td class="price-cell">$164</td>
+                        <td class="price-cell">$189</td>
                     </tr>
                     <tr>
                         <td><div class="airline-cell"><span class="airline-dot jetblue"></span><span class="airline-name">JetBlue</span></div></td>
@@ -646,7 +1170,7 @@
                         <td class="time-cell">11:59 PM</td>
                         <td class="duration-cell">5h 14m</td>
                         <td><span class="nonstop-badge">Nonstop</span></td>
-                        <td class="price-cell">$164</td>
+                        <td class="price-cell">$188</td>
                     </tr>
                 </tbody>
             </table>
@@ -664,8 +1188,8 @@
                 </div>
                 <div class="route-meta">
                     <div>
-                        <div class="route-price">~$246</div>
-                        <div class="route-price-label">Avg. Round Trip</div>
+                        <div class="route-price">~$237</div>
+                        <div class="route-price-label">Avg. Round Trip (Live)</div>
                     </div>
                 </div>
             </div>
@@ -680,7 +1204,7 @@
                         <th>Arrives</th>
                         <th>Duration</th>
                         <th>Type</th>
-                        <th>Price</th>
+                        <th>Est. One-Way</th>
                     </tr>
                 </thead>
                 <tbody>
@@ -691,7 +1215,7 @@
                         <td class="time-cell">9:18 AM</td>
                         <td class="duration-cell">2h 19m</td>
                         <td><span class="nonstop-badge">Nonstop</span></td>
-                        <td class="price-cell">$94</td>
+                        <td class="price-cell">$92</td>
                     </tr>
                     <tr>
                         <td><div class="airline-cell"><span class="airline-dot southwest"></span><span class="airline-name">Southwest</span></div></td>
@@ -700,7 +1224,7 @@
                         <td class="time-cell">9:00 AM</td>
                         <td class="duration-cell">2h 00m</td>
                         <td><span class="nonstop-badge">Nonstop</span></td>
-                        <td class="price-cell">$132</td>
+                        <td class="price-cell">$118</td>
                     </tr>
                     <tr>
                         <td><div class="airline-cell"><span class="airline-dot southwest"></span><span class="airline-name">Southwest</span></div></td>
@@ -709,7 +1233,7 @@
                         <td class="time-cell">10:07 AM</td>
                         <td class="duration-cell">2h 07m</td>
                         <td><span class="nonstop-badge">Nonstop</span></td>
-                        <td class="price-cell">$132</td>
+                        <td class="price-cell">$118</td>
                     </tr>
                     <tr>
                         <td><div class="airline-cell"><span class="airline-dot american"></span><span class="airline-name">American</span></div></td>
@@ -727,7 +1251,7 @@
                         <td class="time-cell">1:38 PM</td>
                         <td class="duration-cell">2h 08m</td>
                         <td><span class="nonstop-badge">Nonstop</span></td>
-                        <td class="price-cell">$145</td>
+                        <td class="price-cell">$137</td>
                     </tr>
                     <tr>
                         <td><div class="airline-cell"><span class="airline-dot frontier"></span><span class="airline-name">Frontier</span></div></td>
@@ -736,7 +1260,7 @@
                         <td class="time-cell">5:57 PM</td>
                         <td class="duration-cell">2h 22m</td>
                         <td><span class="nonstop-badge">Nonstop</span></td>
-                        <td class="price-cell">$94</td>
+                        <td class="price-cell">$92</td>
                     </tr>
                 </tbody>
             </table>
@@ -751,7 +1275,7 @@
                         <th>Arrives</th>
                         <th>Duration</th>
                         <th>Type</th>
-                        <th>Price</th>
+                        <th>Est. One-Way</th>
                     </tr>
                 </thead>
                 <tbody>
@@ -772,7 +1296,7 @@
                         <td class="time-cell">7:10 PM</td>
                         <td class="duration-cell">1h 55m</td>
                         <td><span class="nonstop-badge">Nonstop</span></td>
-                        <td class="price-cell">$132</td>
+                        <td class="price-cell">$118</td>
                     </tr>
                     <tr>
                         <td><div class="airline-cell"><span class="airline-dot southwest"></span><span class="airline-name">Southwest</span></div></td>
@@ -781,7 +1305,7 @@
                         <td class="time-cell">11:50 PM</td>
                         <td class="duration-cell">1h 55m</td>
                         <td><span class="nonstop-badge">Nonstop</span></td>
-                        <td class="price-cell">$132</td>
+                        <td class="price-cell">$118</td>
                     </tr>
                 </tbody>
             </table>
@@ -799,8 +1323,8 @@
                 </div>
                 <div class="route-meta">
                     <div>
-                        <div class="route-price">~$193</div>
-                        <div class="route-price-label">Avg. Round Trip</div>
+                        <div class="route-price">~$208</div>
+                        <div class="route-price-label">Avg. Round Trip (Live)</div>
                     </div>
                 </div>
             </div>
@@ -815,7 +1339,7 @@
                         <th>Arrives</th>
                         <th>Duration</th>
                         <th>Type</th>
-                        <th>Price</th>
+                        <th>Est. One-Way</th>
                     </tr>
                 </thead>
                 <tbody>
@@ -826,7 +1350,7 @@
                         <td class="time-cell">7:27 AM</td>
                         <td class="duration-cell">1h 27m</td>
                         <td><span class="nonstop-badge">Nonstop</span></td>
-                        <td class="price-cell">$106</td>
+                        <td class="price-cell">$104</td>
                     </tr>
                     <tr>
                         <td><div class="airline-cell"><span class="airline-dot southwest"></span><span class="airline-name">Southwest</span></div></td>
@@ -835,7 +1359,7 @@
                         <td class="time-cell">11:05 AM</td>
                         <td class="duration-cell">1h 25m</td>
                         <td><span class="nonstop-badge">Nonstop</span></td>
-                        <td class="price-cell">$106</td>
+                        <td class="price-cell">$104</td>
                     </tr>
                     <tr>
                         <td><div class="airline-cell"><span class="airline-dot american"></span><span class="airline-name">American</span></div></td>
@@ -844,7 +1368,7 @@
                         <td class="time-cell">11:14 AM</td>
                         <td class="duration-cell">1h 24m</td>
                         <td><span class="nonstop-badge">Nonstop</span></td>
-                        <td class="price-cell">$106</td>
+                        <td class="price-cell">$104</td>
                     </tr>
                     <tr>
                         <td><div class="airline-cell"><span class="airline-dot delta"></span><span class="airline-name">Delta</span></div></td>
@@ -853,7 +1377,7 @@
                         <td class="time-cell">11:29 AM</td>
                         <td class="duration-cell">1h 28m</td>
                         <td><span class="nonstop-badge">Nonstop</span></td>
-                        <td class="price-cell">$106</td>
+                        <td class="price-cell">$104</td>
                     </tr>
                     <tr>
                         <td><div class="airline-cell"><span class="airline-dot frontier"></span><span class="airline-name">Frontier</span></div></td>
@@ -862,7 +1386,7 @@
                         <td class="time-cell">2:51 PM</td>
                         <td class="duration-cell">1h 34m</td>
                         <td><span class="nonstop-badge">Nonstop</span></td>
-                        <td class="price-cell">$70</td>
+                        <td class="price-cell">$58</td>
                     </tr>
                     <tr>
                         <td><div class="airline-cell"><span class="airline-dot frontier"></span><span class="airline-name">Frontier</span></div></td>
@@ -871,7 +1395,7 @@
                         <td class="time-cell">9:19 PM</td>
                         <td class="duration-cell">1h 34m</td>
                         <td><span class="nonstop-badge">Nonstop</span></td>
-                        <td class="price-cell">$61</td>
+                        <td class="price-cell">$58</td>
                     </tr>
                 </tbody>
             </table>
@@ -886,7 +1410,7 @@
                         <th>Arrives</th>
                         <th>Duration</th>
                         <th>Type</th>
-                        <th>Price</th>
+                        <th>Est. One-Way</th>
                     </tr>
                 </thead>
                 <tbody>
@@ -898,7 +1422,7 @@
                         <td class="time-cell">12:18 PM</td>
                         <td class="duration-cell">1h 30m</td>
                         <td><span class="nonstop-badge">Nonstop</span></td>
-                        <td class="price-cell">$106</td>
+                        <td class="price-cell">$104</td>
                     </tr>
                     <tr>
                         <td><div class="airline-cell"><span class="airline-dot frontier"></span><span class="airline-name">Frontier</span></div></td>
@@ -907,7 +1431,7 @@
                         <td class="time-cell">3:15 PM</td>
                         <td class="duration-cell">1h 30m</td>
                         <td><span class="nonstop-badge">Nonstop</span></td>
-                        <td class="price-cell">$70</td>
+                        <td class="price-cell">$58</td>
                     </tr>
                     <tr>
                         <td><div class="airline-cell"><span class="airline-dot southwest"></span><span class="airline-name">Southwest</span></div></td>
@@ -916,7 +1440,7 @@
                         <td class="time-cell">3:50 PM</td>
                         <td class="duration-cell">1h 25m</td>
                         <td><span class="nonstop-badge">Nonstop</span></td>
-                        <td class="price-cell">$106</td>
+                        <td class="price-cell">$104</td>
                     </tr>
                     <tr>
                         <td><div class="airline-cell"><span class="airline-dot american"></span><span class="airline-name">American</span></div></td>
@@ -925,7 +1449,7 @@
                         <td class="time-cell">6:25 PM</td>
                         <td class="duration-cell">1h 26m</td>
                         <td><span class="nonstop-badge">Nonstop</span></td>
-                        <td class="price-cell">$106</td>
+                        <td class="price-cell">$104</td>
                     </tr>
                     <tr>
                         <td><div class="airline-cell"><span class="airline-dot southwest"></span><span class="airline-name">Southwest</span></div></td>
@@ -934,7 +1458,7 @@
                         <td class="time-cell">7:35 PM</td>
                         <td class="duration-cell">1h 25m</td>
                         <td><span class="nonstop-badge">Nonstop</span></td>
-                        <td class="price-cell">$106</td>
+                        <td class="price-cell">$104</td>
                     </tr>
                 </tbody>
             </table>
@@ -943,6 +1467,7 @@
         </div>
 
     </section>
+    </div> <!-- END TAB 2: ROUTE OPTIONS -->
 
     <!-- ============ TRAVEL INFO ============ -->
     <section class="travel-info">
@@ -970,7 +1495,7 @@
                 <div class="travel-info-icon">💡</div>
                 <h3 class="travel-info-title">Book Early</h3>
                 <p class="travel-info-desc">
-                    Prices shown are approximate as of late June 2026. September is still 
+                    Prices shown are approximate as of early July 2026. September is still 
                     warm season in AZ — flights tend to go up closer to the date!
                 </p>
             </div>
@@ -984,6 +1509,35 @@
 
     <!-- ============ SCRIPTS ============ -->
     <script>
+        // Tab Switcher
+        function switchTab(tabId, btnElement) {
+            // Remove active from all tabs and buttons
+            document.querySelectorAll('.tab-content').forEach(tab => {
+                tab.classList.remove('active');
+            });
+            document.querySelectorAll('.flight-tab').forEach(btn => {
+                btn.classList.remove('active');
+            });
+
+            // Activate chosen tab and button
+            document.getElementById('tab-' + tabId).classList.add('active');
+            if (btnElement) {
+                btnElement.classList.add('active');
+            }
+
+            // Re-trigger reveal animation for newly visible elements
+            setTimeout(() => {
+                document.querySelectorAll('#tab-' + tabId + ' .reveal').forEach(el => {
+                    revealObserver.observe(el);
+                    // If already in viewport, activate immediately
+                    const rect = el.getBoundingClientRect();
+                    if (rect.top <= window.innerHeight) {
+                        el.classList.add('active');
+                    }
+                });
+            }, 50);
+        }
+
         // Scroll reveal
         const reveals = document.querySelectorAll('.reveal');
         const revealObserver = new IntersectionObserver((entries) => {
