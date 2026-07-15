@@ -834,6 +834,85 @@
             background: linear-gradient(135deg, var(--muted-sage), #6E7D62);
         }
 
+        /* ============================================
+           PENDING FLIGHT DETAILS
+           ============================================ */
+        .pending-section {
+            background: rgba(245, 240, 235, 0.65);
+            border-radius: 18px;
+            padding: 1.8rem 2.2rem;
+            margin-top: -1.8rem;
+            margin-bottom: 4.5rem;
+            border: 1px dashed rgba(196, 112, 63, 0.4);
+        }
+
+        .pending-header {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            margin-bottom: 1.4rem;
+        }
+
+        .pending-icon {
+            font-size: 1.5rem;
+        }
+
+        .pending-title {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 1.5rem;
+            font-weight: 400;
+            color: var(--deep-brown);
+            line-height: 1.2;
+        }
+
+        .pending-subtitle {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 0.75rem;
+            color: #777;
+        }
+
+        .pending-list {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.65rem;
+        }
+
+        .pending-pill {
+            display: flex;
+            align-items: center;
+            gap: 0.55rem;
+            background: white;
+            padding: 0.35rem 0.95rem 0.35rem 0.4rem;
+            border-radius: 30px;
+            font-size: 0.82rem;
+            font-weight: 500;
+            color: #555;
+            box-shadow: 0 2px 6px rgba(0,0,0,0.03);
+            border: 1px solid rgba(0,0,0,0.06);
+            transition: all 0.2s;
+        }
+
+        .pending-pill:hover {
+            transform: translateY(-2px);
+            border-color: var(--terracotta-light);
+            color: var(--deep-brown);
+        }
+
+        .pending-avatar {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 0.64rem;
+            font-weight: 600;
+            letter-spacing: 0.05em;
+            background: var(--sand);
+            color: var(--deep-brown);
+            padding: 0.2rem 0.55rem;
+            border-radius: 12px;
+        }
+
+        .return-board + .pending-section {
+            border-color: rgba(139, 154, 126, 0.45);
+        }
+
         @media (max-width: 900px) {
             .timetable-header {
                 display: none;
@@ -972,6 +1051,31 @@
                 </div>
             </div>
 
+            <!-- PENDING INBOUND DETAILS -->
+            <div class="pending-section reveal">
+                <div class="pending-header">
+                    <span class="pending-icon">⏳</span>
+                    <div>
+                        <h4 class="pending-title">Coordinating Flights & Arrivals</h4>
+                        <p class="pending-subtitle">Guests currently coordinating flights or road trips inbound to Sedona</p>
+                    </div>
+                </div>
+                <div class="pending-list">
+                    <span class="pending-pill">Elmer <span class="pending-avatar">LA</span></span>
+                    <span class="pending-pill">Gaby <span class="pending-avatar">LA</span></span>
+                    <span class="pending-pill">Jeanne <span class="pending-avatar">LA</span></span>
+                    <span class="pending-pill">Maureen <span class="pending-avatar">LA</span></span>
+                    <span class="pending-pill">Ryan <span class="pending-avatar">LA</span></span>
+                    <span class="pending-pill">Desmond <span class="pending-avatar">NY</span></span>
+                    <span class="pending-pill">Jayda <span class="pending-avatar">NY</span></span>
+                    <span class="pending-pill">Kevin <span class="pending-avatar">NY</span></span>
+                    <span class="pending-pill">Mattaniah <span class="pending-avatar">NY</span></span>
+                    <span class="pending-pill">Rikki <span class="pending-avatar">NY</span></span>
+                    <span class="pending-pill">Meri <span class="pending-avatar">NC</span></span>
+                    <span class="pending-pill">Erika <span class="pending-avatar">CDMX</span></span>
+                </div>
+            </div>
+
             <!-- OUTBOUND FROM PHOENIX (TIMETABLE BOARD 2) -->
             <div class="timetable-group-title return reveal">
                 <div class="timetable-title-left">
@@ -1025,6 +1129,33 @@
                         <span class="passenger-pill"><span class="passenger-avatar">T</span> Theo</span>
                         <span class="passenger-pill"><span class="passenger-avatar">K</span> Kar</span>
                     </div>
+                </div>
+            </div>
+
+            <!-- PENDING OUTBOUND DETAILS -->
+            <div class="pending-section reveal">
+                <div class="pending-header">
+                    <span class="pending-icon">⏳</span>
+                    <div>
+                        <h4 class="pending-title">Coordinating Return Departures</h4>
+                        <p class="pending-subtitle">Guests currently coordinating return flights from Phoenix</p>
+                    </div>
+                </div>
+                <div class="pending-list">
+                    <span class="pending-pill">Elmer <span class="pending-avatar">LA</span></span>
+                    <span class="pending-pill">Gaby <span class="pending-avatar">LA</span></span>
+                    <span class="pending-pill">Jeanne <span class="pending-avatar">LA</span></span>
+                    <span class="pending-pill">Maureen <span class="pending-avatar">LA</span></span>
+                    <span class="pending-pill">Ryan <span class="pending-avatar">LA</span></span>
+                    <span class="pending-pill">Desmond <span class="pending-avatar">NY</span></span>
+                    <span class="pending-pill">Jayda <span class="pending-avatar">NY</span></span>
+                    <span class="pending-pill">Kevin <span class="pending-avatar">NY</span></span>
+                    <span class="pending-pill">Lenny <span class="pending-avatar">NY</span></span>
+                    <span class="pending-pill">Malik <span class="pending-avatar">NY</span></span>
+                    <span class="pending-pill">Mattaniah <span class="pending-avatar">NY</span></span>
+                    <span class="pending-pill">Rikki <span class="pending-avatar">NY</span></span>
+                    <span class="pending-pill">Meri <span class="pending-avatar">NC</span></span>
+                    <span class="pending-pill">Erika <span class="pending-avatar">CDMX</span></span>
                 </div>
             </div>
 
