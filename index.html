@@ -1073,10 +1073,125 @@
         .reveal-delay-3 { transition-delay: 0.3s; }
 
         /* ============================================
+           MOBILE MENU & HAMBURGER
+           ============================================ */
+        .nav-logo-mobile {
+            display: none;
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 1.4rem;
+            color: white;
+            text-decoration: none;
+            letter-spacing: 0.1em;
+        }
+
+        nav.scrolled .nav-logo-mobile {
+            color: var(--deep-brown);
+        }
+
+        .hamburger {
+            display: none;
+            flex-direction: column;
+            gap: 6px;
+            background: transparent;
+            border: none;
+            cursor: pointer;
+            z-index: 1001;
+            padding: 0.5rem;
+        }
+
+        .hamburger span {
+            width: 26px;
+            height: 2px;
+            background: white;
+            transition: all 0.3s;
+        }
+
+        nav.scrolled .hamburger span {
+            background: var(--deep-brown);
+        }
+
+        .mobile-menu {
+            position: fixed;
+            top: 0;
+            right: -100%;
+            width: 85%;
+            max-width: 360px;
+            height: 100vh;
+            background: var(--warm-white);
+            z-index: 2000;
+            padding: 5rem 2.5rem 3rem;
+            box-shadow: -10px 0 40px rgba(0,0,0,0.15);
+            transition: right 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+
+        .mobile-menu.active {
+            right: 0;
+        }
+
+        .mobile-close {
+            position: absolute;
+            top: 1.8rem;
+            right: 1.8rem;
+            background: transparent;
+            border: none;
+            font-size: 1.8rem;
+            color: var(--deep-brown);
+            cursor: pointer;
+        }
+
+        .mobile-nav-links {
+            list-style: none;
+            display: flex;
+            flex-direction: column;
+            gap: 1.6rem;
+        }
+
+        .mobile-nav-links a {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 1.7rem;
+            color: var(--deep-brown);
+            text-decoration: none;
+            transition: color 0.2s;
+            display: block;
+        }
+
+        .mobile-nav-links a:hover {
+            color: var(--terracotta);
+        }
+
+        .mobile-flights-item {
+            margin-top: 1.2rem;
+            padding-top: 1.5rem;
+            border-top: 1px solid var(--sand);
+        }
+
+        .mobile-flights-btn {
+            font-family: 'Montserrat', sans-serif !important;
+            font-size: 0.85rem !important;
+            font-weight: 600;
+            letter-spacing: 0.15em;
+            text-transform: uppercase;
+            background: var(--terracotta);
+            color: white !important;
+            padding: 1rem 1.6rem;
+            border-radius: 30px;
+            text-align: center;
+            box-shadow: 0 4px 15px rgba(196, 112, 63, 0.3);
+            display: inline-block !important;
+            width: 100%;
+        }
+
+        /* ============================================
            RESPONSIVE
            ============================================ */
         @media (max-width: 968px) {
             .nav-links { display: none; }
+            .hamburger { display: flex; }
+            .nav-logo-mobile { display: block; }
+            nav#navbar { justify-content: space-between; }
             section { padding: 5rem 2rem; }
             .retreat-grid { grid-template-columns: 1fr; gap: 2rem; }
             .retreat-image img { height: 350px; }
@@ -1098,6 +1213,7 @@
 
     <!-- ============ NAVIGATION ============ -->
     <nav id="navbar">
+        <a href="#home" class="nav-logo-mobile">The Big ॐ</a>
         <ul class="nav-links">
             <li><a href="#about">The Weekend</a></li>
             <li><a href="#retreat">The Retreat</a></li>
@@ -1107,7 +1223,26 @@
             <li><a href="#details">Details</a></li>
             <li><a href="./flights.html">Flights ✈</a></li>
         </ul>
+        <button class="hamburger" onclick="toggleMobileMenu()" aria-label="Toggle navigation menu">
+            <span></span>
+            <span></span>
+            <span></span>
+        </button>
     </nav>
+
+    <!-- MOBILE MENU OVERLAY -->
+    <div id="mobile-menu" class="mobile-menu">
+        <button class="mobile-close" onclick="toggleMobileMenu()">✕</button>
+        <ul class="mobile-nav-links">
+            <li><a href="#about" onclick="toggleMobileMenu()">The Weekend</a></li>
+            <li><a href="#retreat" onclick="toggleMobileMenu()">The Retreat</a></li>
+            <li><a href="#experiences" onclick="toggleMobileMenu()">Experiences</a></li>
+            <li><a href="#hikes" onclick="toggleMobileMenu()">Hikes</a></li>
+            <li><a href="#schedule" onclick="toggleMobileMenu()">Schedule</a></li>
+            <li><a href="#details" onclick="toggleMobileMenu()">Details</a></li>
+            <li class="mobile-flights-item"><a href="./flights.html" class="mobile-flights-btn">Flights & Timetable ✈</a></li>
+        </ul>
+    </div>
 
     <!-- ============ HERO ============ -->
     <section class="hero" id="home">
@@ -1612,6 +1747,11 @@
         reveals.forEach(el => revealObserver.observe(el));
 
 
+
+        // Mobile Menu Toggle
+        function toggleMobileMenu() {
+            document.getElementById('mobile-menu').classList.toggle('active');
+        }
 
         // Smooth scroll for nav links
         document.querySelectorAll('a[href^="#"]').forEach(anchor => {
