@@ -692,6 +692,13 @@
             background: var(--muted-sage);
         }
 
+        .timetable-row > div:first-child {
+            display: flex;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 0.6rem;
+        }
+
         .tt-time-main {
             font-family: 'Cormorant Garamond', serif;
             font-size: 1.75rem;
@@ -721,7 +728,7 @@
             font-size: 0.65rem;
             font-weight: 500;
             color: #888;
-            margin-top: 0.35rem;
+            margin-top: 0;
             background: var(--warm-white);
             padding: 0.15rem 0.6rem;
             border-radius: 12px;
@@ -749,7 +756,7 @@
         }
 
         .airline-emoji {
-            font-size: 1.2rem;
+            font-size: 0.95rem;
             line-height: 1;
             display: inline-block;
         }
@@ -757,10 +764,10 @@
         .tt-airline {
             display: flex;
             align-items: center;
-            gap: 0.6rem;
-            font-weight: 500;
-            font-size: 1rem;
-            color: var(--deep-brown);
+            gap: 0.4rem;
+            font-weight: 400;
+            font-size: 0.82rem;
+            color: #555;
         }
 
         .tt-aircraft {
@@ -943,13 +950,17 @@
             }
 
             .tt-airline {
-                font-size: 0.88rem;
+                font-size: 0.72rem;
+            }
+
+            .airline-emoji {
+                font-size: 0.8rem;
             }
 
             .tt-duration-badge {
-                margin-top: 0.1rem;
+                margin-top: 0;
                 padding: 0.1rem 0.5rem;
-                font-size: 0.6rem;
+                font-size: 0.58rem;
             }
 
             .passenger-pill {
