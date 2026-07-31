@@ -657,6 +657,10 @@
             justify-content: center;
         }
 
+        .timetable-header > div:first-child {
+            justify-content: flex-start;
+        }
+
         .timetable-row {
             display: grid;
             grid-template-columns: 1.2fr 1.5fr 1.3fr;
@@ -698,7 +702,7 @@
         .timetable-row > div:first-child {
             display: flex;
             align-items: center;
-            justify-content: center;
+            justify-content: flex-start;
             flex-wrap: wrap;
             gap: 0.6rem;
         }
@@ -712,7 +716,7 @@
             font-variant-numeric: tabular-nums;
             display: flex;
             align-items: center;
-            justify-content: center;
+            justify-content: flex-start;
             flex-wrap: nowrap;
             white-space: nowrap;
             gap: 0.4rem;
