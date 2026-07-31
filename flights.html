@@ -725,14 +725,16 @@
         .tt-duration-badge {
             display: inline-block;
             font-family: 'Montserrat', sans-serif;
-            font-size: 0.65rem;
+            font-size: 0.62rem;
             font-weight: 500;
-            color: #888;
+            letter-spacing: 0.04em;
+            text-transform: none;
+            color: #777;
             margin-top: 0;
             background: var(--warm-white);
-            padding: 0.15rem 0.6rem;
+            padding: 0.12rem 0.55rem;
             border-radius: 12px;
-            border: 1px solid rgba(0,0,0,0.04);
+            border: 1px solid rgba(0,0,0,0.06);
         }
 
         .tt-flight-info {
@@ -749,6 +751,10 @@
             letter-spacing: 0.15em;
             text-transform: uppercase;
             color: var(--terracotta);
+            display: flex;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 0.4rem;
         }
 
         .timetable-board.return-board .tt-flight-route {
@@ -756,7 +762,7 @@
         }
 
         .airline-emoji {
-            font-size: 0.95rem;
+            font-size: 0.85rem;
             line-height: 1;
             display: inline-block;
         }
@@ -764,10 +770,10 @@
         .tt-airline {
             display: flex;
             align-items: center;
-            gap: 0.4rem;
+            gap: 0.35rem;
             font-weight: 400;
-            font-size: 0.82rem;
-            color: #555;
+            font-size: 0.7rem;
+            color: #888;
         }
 
         .tt-aircraft {
@@ -950,11 +956,11 @@
             }
 
             .tt-airline {
-                font-size: 0.72rem;
+                font-size: 0.62rem;
             }
 
             .airline-emoji {
-                font-size: 0.8rem;
+                font-size: 0.75rem;
             }
 
             .tt-duration-badge {
@@ -1056,20 +1062,18 @@
                 <div class="timetable-row">
                     <div>
                         <div class="tt-time-main">08:00 AM <span class="tt-time-arrow">→</span> 10:07 AM</div>
-                        <span class="tt-duration-badge">2h 07m · Nonstop</span>
                     </div>
                     <div class="tt-flight-info">
-                        <div class="tt-flight-route">SFO → PHX</div>
+                        <div class="tt-flight-route"><span class="airline-emoji">✈️</span> SFO → PHX <span class="tt-duration-badge">2h 07m · Nonstop</span></div>
                         <div class="tt-airline">
-                            <span class="airline-emoji">✈️</span>
                             <span>American AA 2414</span>
                         </div>
                     </div>
                     <div class="tt-passengers">
-                        <span class="passenger-pill"><span class="passenger-avatar">K</span> Kar</span>
-                        <span class="passenger-pill"><span class="passenger-avatar">T</span> Theo</span>
-                        <span class="passenger-pill"><span class="passenger-avatar">S</span> Sasha</span>
-                        <span class="passenger-pill"><span class="passenger-avatar">M</span> Matt</span>
+                        <span class="passenger-pill">Kar</span>
+                        <span class="passenger-pill">Theo</span>
+                        <span class="passenger-pill">Sasha</span>
+                        <span class="passenger-pill">Matt</span>
                     </div>
                 </div>
 
@@ -1077,18 +1081,16 @@
                 <div class="timetable-row">
                     <div>
                         <div class="tt-time-main">09:50 AM <span class="tt-time-arrow">→</span> 11:14 AM</div>
-                        <span class="tt-duration-badge">1h 24m · Nonstop</span>
                     </div>
                     <div class="tt-flight-info">
-                        <div class="tt-flight-route">LAX → PHX</div>
+                        <div class="tt-flight-route"><span class="airline-emoji">✈️</span> LAX → PHX <span class="tt-duration-badge">1h 24m · Nonstop</span></div>
                         <div class="tt-airline">
-                            <span class="airline-emoji">✈️</span>
                             <span>American AA 2388</span>
                         </div>
                     </div>
                     <div class="tt-passengers">
-                        <span class="passenger-pill"><span class="passenger-avatar">R</span> Ryan</span>
-                        <span class="passenger-pill"><span class="passenger-avatar">J</span> Jeanne</span>
+                        <span class="passenger-pill">Ryan</span>
+                        <span class="passenger-pill">Jeanne</span>
                     </div>
                 </div>
 
@@ -1096,18 +1098,16 @@
                 <div class="timetable-row">
                     <div>
                         <div class="tt-time-main">08:57 AM <span class="tt-time-arrow">→</span> 11:15 AM</div>
-                        <span class="tt-duration-badge">5h 18m · Nonstop</span>
                     </div>
                     <div class="tt-flight-info">
-                        <div class="tt-flight-route">JFK → PHX</div>
+                        <div class="tt-flight-route"><span class="airline-emoji">✈️</span> JFK → PHX <span class="tt-duration-badge">5h 18m · Nonstop</span></div>
                         <div class="tt-airline">
-                            <span class="airline-emoji">✈️</span>
                             <span>American AA 1186</span>
                         </div>
                     </div>
                     <div class="tt-passengers">
-                        <span class="passenger-pill"><span class="passenger-avatar">D</span> Desmond</span>
-                        <span class="passenger-pill"><span class="passenger-avatar">K</span> Kevin</span>
+                        <span class="passenger-pill">Desmond</span>
+                        <span class="passenger-pill">Kevin</span>
                     </div>
                 </div>
 
@@ -1115,18 +1115,16 @@
                 <div class="timetable-row">
                     <div>
                         <div class="tt-time-main">10:00 AM <span class="tt-time-arrow">→</span> 12:25 PM</div>
-                        <span class="tt-duration-badge">5h 25m · Nonstop</span>
                     </div>
                     <div class="tt-flight-info">
-                        <div class="tt-flight-route">JFK → PHX</div>
+                        <div class="tt-flight-route"><span class="airline-emoji">✈️</span> JFK → PHX <span class="tt-duration-badge">5h 25m · Nonstop</span></div>
                         <div class="tt-airline">
-                            <span class="airline-emoji">✈️</span>
                             <span>JetBlue B6 135</span>
                         </div>
                     </div>
                     <div class="tt-passengers">
-                        <span class="passenger-pill"><span class="passenger-avatar">M</span> Mattaniah</span>
-                        <span class="passenger-pill"><span class="passenger-avatar">J</span> Jayda</span>
+                        <span class="passenger-pill">Mattaniah</span>
+                        <span class="passenger-pill">Jayda</span>
                     </div>
                 </div>
 
@@ -1134,19 +1132,17 @@
                 <div class="timetable-row">
                     <div>
                         <div class="tt-time-main">10:05 AM <span class="tt-time-arrow">→</span> 12:25 PM</div>
-                        <span class="tt-duration-badge">2h 20m · Nonstop</span>
                     </div>
                     <div class="tt-flight-info">
-                        <div class="tt-flight-route">SFO → PHX</div>
+                        <div class="tt-flight-route"><span class="airline-emoji">✈️</span> SFO → PHX <span class="tt-duration-badge">2h 20m · Nonstop</span></div>
                         <div class="tt-airline">
-                            <span class="airline-emoji">✈️</span>
                             <span>United UA 6013</span>
                         </div>
                     </div>
                     <div class="tt-passengers">
-                        <span class="passenger-pill"><span class="passenger-avatar">L</span> Lara</span>
-                        <span class="passenger-pill"><span class="passenger-avatar">M</span> Malik</span>
-                        <span class="passenger-pill"><span class="passenger-avatar">L</span> Lenny</span>
+                        <span class="passenger-pill">Lara</span>
+                        <span class="passenger-pill">Malik</span>
+                        <span class="passenger-pill">Lenny</span>
                     </div>
                 </div>
 
@@ -1154,18 +1150,16 @@
                 <div class="timetable-row">
                     <div>
                         <div class="tt-time-main">07:25 PM <span class="tt-time-arrow">→</span> 09:30 PM</div>
-                        <span class="tt-duration-badge">2h 05m · Nonstop</span>
                     </div>
                     <div class="tt-flight-info">
-                        <div class="tt-flight-route">SFO → PHX</div>
+                        <div class="tt-flight-route"><span class="airline-emoji">✈️</span> SFO → PHX <span class="tt-duration-badge">2h 05m · Nonstop</span></div>
                         <div class="tt-airline">
-                            <span class="airline-emoji">✈️</span>
                             <span>Southwest WN 3975</span>
                         </div>
                     </div>
                     <div class="tt-passengers">
-                        <span class="passenger-pill"><span class="passenger-avatar">S</span> Stef</span>
-                        <span class="passenger-pill"><span class="passenger-avatar">N</span> Niki</span>
+                        <span class="passenger-pill">Stef</span>
+                        <span class="passenger-pill">Niki</span>
                     </div>
                 </div>
             </div>
@@ -1208,18 +1202,16 @@
                 <div class="timetable-row">
                     <div>
                         <div class="tt-time-main">12:48 PM <span class="tt-time-arrow">→</span> 09:00 PM</div>
-                        <span class="tt-duration-badge">5h 12m · Nonstop</span>
                     </div>
                     <div class="tt-flight-info">
-                        <div class="tt-flight-route">PHX → JFK</div>
+                        <div class="tt-flight-route"><span class="airline-emoji">✈️</span> PHX → JFK <span class="tt-duration-badge">5h 12m · Nonstop</span></div>
                         <div class="tt-airline">
-                            <span class="airline-emoji">✈️</span>
                             <span>American AA 475</span>
                         </div>
                     </div>
                     <div class="tt-passengers">
-                        <span class="passenger-pill"><span class="passenger-avatar">D</span> Desmond</span>
-                        <span class="passenger-pill"><span class="passenger-avatar">K</span> Kevin</span>
+                        <span class="passenger-pill">Desmond</span>
+                        <span class="passenger-pill">Kevin</span>
                     </div>
                 </div>
 
@@ -1227,18 +1219,16 @@
                 <div class="timetable-row">
                     <div>
                         <div class="tt-time-main">01:20 PM <span class="tt-time-arrow">→</span> 09:11 PM</div>
-                        <span class="tt-duration-badge">4h 51m · Nonstop</span>
                     </div>
                     <div class="tt-flight-info">
-                        <div class="tt-flight-route">PHX → JFK</div>
+                        <div class="tt-flight-route"><span class="airline-emoji">✈️</span> PHX → JFK <span class="tt-duration-badge">4h 51m · Nonstop</span></div>
                         <div class="tt-airline">
-                            <span class="airline-emoji">✈️</span>
                             <span>JetBlue B6 136</span>
                         </div>
                     </div>
                     <div class="tt-passengers">
-                        <span class="passenger-pill"><span class="passenger-avatar">M</span> Mattaniah</span>
-                        <span class="passenger-pill"><span class="passenger-avatar">J</span> Jayda</span>
+                        <span class="passenger-pill">Mattaniah</span>
+                        <span class="passenger-pill">Jayda</span>
                     </div>
                 </div>
 
@@ -1246,20 +1236,18 @@
                 <div class="timetable-row">
                     <div>
                         <div class="tt-time-main">04:00 PM <span class="tt-time-arrow">→</span> 06:00 PM</div>
-                        <span class="tt-duration-badge">2h 00m · Nonstop</span>
                     </div>
                     <div class="tt-flight-info">
-                        <div class="tt-flight-route">PHX → SFO</div>
+                        <div class="tt-flight-route"><span class="airline-emoji">✈️</span> PHX → SFO <span class="tt-duration-badge">2h 00m · Nonstop</span></div>
                         <div class="tt-airline">
-                            <span class="airline-emoji">✈️</span>
                             <span>Southwest WN 925</span>
                         </div>
                     </div>
                     <div class="tt-passengers">
-                        <span class="passenger-pill"><span class="passenger-avatar">L</span> Lara</span>
-                        <span class="passenger-pill"><span class="passenger-avatar">N</span> Niki</span>
-                        <span class="passenger-pill"><span class="passenger-avatar">S</span> Sash</span>
-                        <span class="passenger-pill"><span class="passenger-avatar">S</span> Stef</span>
+                        <span class="passenger-pill">Lara</span>
+                        <span class="passenger-pill">Niki</span>
+                        <span class="passenger-pill">Sash</span>
+                        <span class="passenger-pill">Stef</span>
                     </div>
                 </div>
 
@@ -1267,18 +1255,16 @@
                 <div class="timetable-row">
                     <div>
                         <div class="tt-time-main">04:59 PM <span class="tt-time-arrow">→</span> 06:25 PM</div>
-                        <span class="tt-duration-badge">1h 26m · Nonstop</span>
                     </div>
                     <div class="tt-flight-info">
-                        <div class="tt-flight-route">PHX → LAX</div>
+                        <div class="tt-flight-route"><span class="airline-emoji">✈️</span> PHX → LAX <span class="tt-duration-badge">1h 26m · Nonstop</span></div>
                         <div class="tt-airline">
-                            <span class="airline-emoji">✈️</span>
                             <span>American AA 2388</span>
                         </div>
                     </div>
                     <div class="tt-passengers">
-                        <span class="passenger-pill"><span class="passenger-avatar">R</span> Ryan</span>
-                        <span class="passenger-pill"><span class="passenger-avatar">J</span> Jeanne</span>
+                        <span class="passenger-pill">Ryan</span>
+                        <span class="passenger-pill">Jeanne</span>
                     </div>
                 </div>
 
@@ -1286,19 +1272,17 @@
                 <div class="timetable-row">
                     <div>
                         <div class="tt-time-main">05:06 PM <span class="tt-time-arrow">→</span> 07:11 PM</div>
-                        <span class="tt-duration-badge">2h 05m · Nonstop</span>
                     </div>
                     <div class="tt-flight-info">
-                        <div class="tt-flight-route">PHX → SFO</div>
+                        <div class="tt-flight-route"><span class="airline-emoji">✈️</span> PHX → SFO <span class="tt-duration-badge">2h 05m · Nonstop</span></div>
                         <div class="tt-airline">
-                            <span class="airline-emoji">✈️</span>
                             <span>American AA 2421</span>
                         </div>
                     </div>
                     <div class="tt-passengers">
-                        <span class="passenger-pill"><span class="passenger-avatar">T</span> Theo</span>
-                        <span class="passenger-pill"><span class="passenger-avatar">K</span> Kar</span>
-                        <span class="passenger-pill"><span class="passenger-avatar">M</span> Matt</span>
+                        <span class="passenger-pill">Theo</span>
+                        <span class="passenger-pill">Kar</span>
+                        <span class="passenger-pill">Matt</span>
                     </div>
                 </div>
             </div>
