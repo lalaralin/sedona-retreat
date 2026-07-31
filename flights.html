@@ -437,21 +437,21 @@
            ============================================ */
         @media (max-width: 768px) {
             .flights-hero {
-                padding: 8rem 1.5rem 3rem;
+                padding: 6rem 1rem 2rem;
             }
 
             .routes-section {
-                padding: 3rem 1.5rem;
+                padding: 2rem 1rem;
             }
 
             .route-card {
-                padding: 1.5rem;
+                padding: 1.2rem;
             }
 
             .route-header {
                 flex-direction: column;
                 align-items: flex-start;
-                gap: 1rem;
+                gap: 0.8rem;
             }
 
             .route-meta {
@@ -469,7 +469,12 @@
             }
 
             nav {
-                padding: 1rem 1.5rem;
+                padding: 0.8rem 1rem;
+            }
+
+            .flight-tab {
+                padding: 0.6rem 1.1rem;
+                font-size: 0.75rem;
             }
         }
 
@@ -914,26 +919,71 @@
         }
 
         @media (max-width: 900px) {
+            .schedules-section {
+                padding: 1.5rem 1rem;
+            }
+
             .timetable-header {
                 display: none;
             }
 
             .timetable-row {
                 grid-template-columns: 1fr;
-                gap: 1.2rem;
-                padding: 1.5rem;
+                gap: 0.4rem;
+                padding: 0.75rem 1rem;
             }
 
-            .tt-status {
-                text-align: left;
-                padding-top: 0.5rem;
-                border-top: 1px dashed rgba(0,0,0,0.06);
+            .tt-time-main {
+                font-size: 1.25rem;
+            }
+
+            .tt-flight-info {
+                padding-left: 0;
+                gap: 0.1rem;
+            }
+
+            .tt-airline {
+                font-size: 0.88rem;
+            }
+
+            .tt-duration-badge {
+                margin-top: 0.1rem;
+                padding: 0.1rem 0.5rem;
+                font-size: 0.6rem;
+            }
+
+            .passenger-pill {
+                padding: 0.2rem 0.65rem 0.2rem 0.25rem;
+                font-size: 0.75rem;
+                gap: 0.35rem;
+            }
+
+            .passenger-avatar {
+                width: 20px;
+                height: 20px;
+                font-size: 0.6rem;
             }
 
             .timetable-group-title {
                 flex-direction: column;
                 align-items: flex-start;
-                gap: 0.5rem;
+                gap: 0.3rem;
+                font-size: 1.6rem;
+                margin: 1.5rem 0 0.8rem;
+            }
+
+            .timetable-board {
+                margin-bottom: 2rem;
+                border-radius: 14px;
+            }
+
+            .pending-section {
+                padding: 1.2rem 1.5rem;
+                margin-bottom: 2.5rem;
+            }
+
+            .pending-title {
+                font-size: 1.25rem;
             }
         }
     </style>
