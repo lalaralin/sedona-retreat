@@ -160,9 +160,15 @@
         }
 
         .crew-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
             gap: 2rem;
+        }
+
+        .grid-break {
+            flex-basis: 100%;
+            height: 0;
         }
 
         /* ============================================
@@ -176,6 +182,8 @@
             border: 1px solid rgba(196, 112, 63, 0.1);
             box-shadow: 0 4px 20px rgba(61, 43, 31, 0.04), 0 1px 6px rgba(61, 43, 31, 0.02);
             transition: transform 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94), box-shadow 0.4s ease;
+            flex: 0 0 calc(25% - 1.5rem);
+            max-width: calc(25% - 1.5rem);
             cursor: default;
             opacity: 0;
             transform: translateY(30px);
@@ -390,8 +398,16 @@
             }
 
             .crew-grid {
-                grid-template-columns: repeat(2, 1fr);
                 gap: 1rem;
+            }
+
+            .person-card {
+                flex: 0 0 calc(50% - 0.5rem);
+                max-width: calc(50% - 0.5rem);
+            }
+
+            .grid-break {
+                display: none;
             }
 
             .person-name {
@@ -412,7 +428,6 @@
 
         @media (max-width: 480px) {
             .crew-grid {
-                grid-template-columns: repeat(2, 1fr);
                 gap: 0.75rem;
             }
 
@@ -439,10 +454,6 @@
     <section class="crew-hero">
         <p class="section-overline">Sedona 2026</p>
         <h1 class="section-title">Meet the retreaters...</h1>
-        <p class="section-body">
-            The beautiful humans joining us in red rock country for Lara's 30th birthday wellness retreat.
-        </p>
-        <span class="crew-count">17 confirmed & counting ✨</span>
     </section>
 
     <!-- ============ PHOTO GRID ============ -->
@@ -533,6 +544,8 @@
                 <div class="person-name">Mattaniah</div>
             </div>
 
+            <div class="grid-break"></div>
+
             <div class="person-card">
                 <div class="person-photo-wrapper">
                     <img src="./photos/Jayda.jpg" alt="Jayda" class="person-photo">
@@ -553,6 +566,8 @@
                 </div>
                 <div class="person-name">Malik</div>
             </div>
+
+            <div class="grid-break"></div>
 
             <div class="person-card">
                 <div class="person-photo-wrapper">
