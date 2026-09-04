@@ -997,6 +997,200 @@
                 font-size: 1.25rem;
             }
         }
+
+        /* ============================================
+           CAR GROUP CARDS
+           ============================================ */
+        .car-group-row {
+            padding: 1.8rem 2rem;
+        }
+
+        .car-group-header {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            gap: 1rem;
+        }
+
+        .car-group-left {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+        }
+
+        .car-icon-circle {
+            width: 48px;
+            height: 48px;
+            border-radius: 50%;
+            background: linear-gradient(135deg, var(--cream), var(--sand));
+            border: 1px solid rgba(196, 112, 63, 0.2);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.3rem;
+            flex-shrink: 0;
+        }
+
+        .car-group-name {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 1.4rem;
+            font-weight: 400;
+            color: var(--deep-brown);
+            line-height: 1.1;
+        }
+
+        .car-renter {
+            font-size: 0.72rem;
+            font-weight: 500;
+            letter-spacing: 0.08em;
+            color: #888;
+            margin-top: 0.2rem;
+        }
+
+        .car-renter strong {
+            color: var(--terracotta);
+        }
+
+        .car-passengers-wrap {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+            align-items: center;
+        }
+
+        .car-driver-pill {
+            background: rgba(196, 112, 63, 0.1);
+            border-color: rgba(196, 112, 63, 0.4) !important;
+            color: var(--terracotta) !important;
+            font-weight: 600 !important;
+        }
+
+        .car-group-divider {
+            height: 1px;
+            background: var(--sand);
+            margin: 0 2rem;
+        }
+
+        /* ============================================
+           DEPARTURE WAVE TIMELINE
+           ============================================ */
+        .depart-wave {
+            background: white;
+            border-radius: 16px;
+            box-shadow: 0 6px 30px rgba(0,0,0,0.05);
+            border: 1px solid rgba(0,0,0,0.06);
+            overflow: hidden;
+            margin-bottom: 1.8rem;
+        }
+
+        .depart-wave-header {
+            display: flex;
+            align-items: center;
+            gap: 1.2rem;
+            padding: 1.2rem 1.8rem;
+            background: var(--cream);
+            border-bottom: 1px solid var(--sand);
+        }
+
+        .depart-time-badge {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 1.5rem;
+            font-weight: 400;
+            color: var(--terracotta);
+            white-space: nowrap;
+        }
+
+        .depart-time-green {
+            color: var(--muted-sage);
+        }
+
+        .depart-time-sage {
+            color: #7A9B6E;
+        }
+
+        .depart-wave-label {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 0.78rem;
+            font-weight: 600;
+            letter-spacing: 0.08em;
+            color: var(--deep-brown);
+        }
+
+        .depart-wave-body {
+            padding: 1.5rem 1.8rem;
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+        }
+
+        .depart-note {
+            font-size: 0.85rem;
+            color: #666;
+            line-height: 1.7;
+        }
+
+        .depart-note strong {
+            color: var(--deep-brown);
+        }
+
+        .depart-cars {
+            display: flex;
+            gap: 2rem;
+            flex-wrap: wrap;
+        }
+
+        .depart-car-block {
+            display: flex;
+            flex-direction: column;
+            gap: 0.5rem;
+        }
+
+        .depart-car-label {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 0.65rem;
+            font-weight: 600;
+            letter-spacing: 0.2em;
+            text-transform: uppercase;
+            color: #999;
+        }
+
+        .depart-car-passengers {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.4rem;
+        }
+
+        .depart-airport-note {
+            margin-top: 0.3rem;
+        }
+
+        .airport-badge {
+            display: inline-block;
+            font-family: 'Montserrat', sans-serif;
+            font-size: 0.68rem;
+            font-weight: 600;
+            letter-spacing: 0.08em;
+            padding: 0.35rem 0.9rem;
+            border-radius: 20px;
+        }
+
+        .airport-badge-orange {
+            background: rgba(196, 112, 63, 0.12);
+            color: var(--terracotta);
+            border: 1px solid rgba(196, 112, 63, 0.3);
+        }
+
+        .airport-badge-sage {
+            background: rgba(139, 154, 126, 0.12);
+            color: #4C5D3E;
+            border: 1px solid rgba(139, 154, 126, 0.3);
+        }
+
+        @media (max-width: 768px) {
+            .car-group-header { flex-direction: column; align-items: flex-start; }
+            .depart-cars { flex-direction: column; gap: 1rem; }
+        }
     </style>
 </head>
 <body>
@@ -1027,8 +1221,8 @@
                 <span class="tab-badge">Confirmed</span>
             </button>
             <button class="flight-tab" onclick="switchTab('routes', this)">
-                <span class="tab-icon">✈️</span> Route Options & Pricing
-                <span class="tab-badge">Search</span>
+                <span class="tab-icon">🚗</span> Cars & Transport
+                <span class="tab-badge">Logistics</span>
             </button>
         </div>
     </div>
@@ -1064,6 +1258,7 @@
                         <span class="passenger-pill">Kar</span>
                         <span class="passenger-pill">Theo</span>
                         <span class="passenger-pill">Sasha</span>
+                        <span class="passenger-pill">Matt</span>
                     </div>
                 </div>
 
@@ -1150,7 +1345,6 @@
                         <span class="passenger-pill">Niki</span>
                     </div>
                 </div>
-            </div>
 
             <!-- OUTBOUND FROM PHOENIX (TIMETABLE BOARD 2) -->
             <div class="timetable-group-title return reveal">
@@ -1192,8 +1386,6 @@
                     <div class="tt-passengers">
                         <span class="passenger-pill">Mattaniah</span>
                         <span class="passenger-pill">Jayda</span>
-                        <span class="passenger-pill">Malik</span>
-                        <span class="passenger-pill">Lenny</span>
                     </div>
                 </div>
 
@@ -1239,479 +1431,213 @@
                     <div class="tt-passengers">
                         <span class="passenger-pill">Theo</span>
                         <span class="passenger-pill">Kar</span>
+                        <span class="passenger-pill">Matt</span>
+                    </div>
+                </div>
+            </div>
+
+
+        </section>
+    </div>
+
+    <!-- ============ TAB 2: CARS & TRANSPORT ============ -->
+    <div id="tab-routes" class="tab-content">
+        <section class="schedules-section">
+
+            <!-- INBOUND: RENTAL CAR GROUPS -->
+            <div class="timetable-group-title reveal">
+                <div class="timetable-title-left">
+                    <span>🚗 Inbound Rental Car Groups</span>
+                </div>
+                <span class="timetable-date-badge">Thursday, Sept 10, 2026</span>
+            </div>
+
+            <div class="timetable-board reveal">
+                <!-- Car Group 1 -->
+                <div class="car-group-row">
+                    <div class="car-group-header">
+                        <div class="car-group-left">
+                            <div class="car-icon-circle">🚙</div>
+                            <div>
+                                <div class="car-group-name">Car A</div>
+                                <div class="car-renter">Rental under <strong>Sasha</strong></div>
+                            </div>
+                        </div>
+                        <div class="car-passengers-wrap">
+                            <span class="passenger-pill car-driver-pill">Sasha 🔑</span>
+                            <span class="passenger-pill">Kar</span>
+                            <span class="passenger-pill">Theo</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="car-group-divider"></div>
+
+                <!-- Car Group 2 -->
+                <div class="car-group-row">
+                    <div class="car-group-header">
+                        <div class="car-group-left">
+                            <div class="car-icon-circle">🚙</div>
+                            <div>
+                                <div class="car-group-name">Car B</div>
+                                <div class="car-renter">Rental under <strong>Ryan</strong></div>
+                            </div>
+                        </div>
+                        <div class="car-passengers-wrap">
+                            <span class="passenger-pill car-driver-pill">Ryan 🔑</span>
+                            <span class="passenger-pill">Jeanne</span>
+                            <span class="passenger-pill">Erika</span>
+                            <span class="passenger-pill">Kevin</span>
+                            <span class="passenger-pill">Desmond</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="car-group-divider"></div>
+
+                <!-- Car Group 3 -->
+                <div class="car-group-row">
+                    <div class="car-group-header">
+                        <div class="car-group-left">
+                            <div class="car-icon-circle">🚙</div>
+                            <div>
+                                <div class="car-group-name">Car C</div>
+                                <div class="car-renter">Rental under <strong>Lara</strong></div>
+                            </div>
+                        </div>
+                        <div class="car-passengers-wrap">
+                            <span class="passenger-pill car-driver-pill">Lara 🔑</span>
+                            <span class="passenger-pill">Malik</span>
+                            <span class="passenger-pill">Lenny</span>
+                            <span class="passenger-pill">Mattaniah</span>
+                            <span class="passenger-pill">Jayda</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="car-group-divider"></div>
+
+                <!-- Car Group 4 -->
+                <div class="car-group-row">
+                    <div class="car-group-header">
+                        <div class="car-group-left">
+                            <div class="car-icon-circle">🚙</div>
+                            <div>
+                                <div class="car-group-name">Car D</div>
+                            </div>
+                        </div>
+                        <div class="car-passengers-wrap">
+                            <span class="passenger-pill">Stef</span>
+                            <span class="passenger-pill">Niki</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- OUTBOUND: DEPARTURE LOGISTICS -->
+            <div class="timetable-group-title return reveal">
+                <div class="timetable-title-left">
+                    <span>🏁 Outbound Departure Logistics</span>
+                </div>
+                <span class="timetable-date-badge">Sunday, Sept 13, 2026</span>
+            </div>
+
+            <div class="timetable-board reveal">
+                <!-- Car A -->
+                <div class="car-group-row">
+                    <div class="car-group-header">
+                        <div class="car-group-left">
+                            <div class="car-icon-circle">🚙</div>
+                            <div>
+                                <div class="car-group-name">Car A</div>
+                                <div class="car-renter">Leave ~9:00 AM · <strong style="color:var(--terracotta)">at airport by 11:00 AM</strong></div>
+                            </div>
+                        </div>
+                        <div class="car-passengers-wrap">
+                            <span class="passenger-pill">Desmond</span>
+                            <span class="passenger-pill">Kevin</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="car-group-divider"></div>
+
+                <!-- Car B -->
+                <div class="car-group-row">
+                    <div class="car-group-header">
+                        <div class="car-group-left">
+                            <div class="car-icon-circle">🚙</div>
+                            <div>
+                                <div class="car-group-name">Car B</div>
+                                <div class="car-renter">Leave ~9:00 AM · <strong style="color:var(--terracotta)">at airport by 11:00 AM</strong></div>
+                            </div>
+                        </div>
+                        <div class="car-passengers-wrap">
+                            <span class="passenger-pill">Malik</span>
+                            <span class="passenger-pill">Lenny</span>
+                            <span class="passenger-pill">Mattaniah</span>
+                            <span class="passenger-pill">Jayda</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="car-group-divider"></div>
+
+                <!-- Car C -->
+                <div class="car-group-row">
+                    <div class="car-group-header">
+                        <div class="car-group-left">
+                            <div class="car-icon-circle">🚙</div>
+                            <div>
+                                <div class="car-group-name">Car C</div>
+                                <div class="car-renter">Leave ~10:00 AM · <strong style="color:var(--terracotta)">at airport by 2:30 PM</strong></div>
+                            </div>
+                        </div>
+                        <div class="car-passengers-wrap">
+                            <span class="passenger-pill">Lara</span>
+                            <span class="passenger-pill">Niki</span>
+                            <span class="passenger-pill">Sash</span>
+                            <span class="passenger-pill">Stef</span>
+                            <span class="passenger-pill">Erika</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="car-group-divider"></div>
+
+                <!-- Car D -->
+                <div class="car-group-row">
+                    <div class="car-group-header">
+                        <div class="car-group-left">
+                            <div class="car-icon-circle">🚙</div>
+                            <div>
+                                <div class="car-group-name">Car D</div>
+                                <div class="car-renter">Leave ~10:00 AM · <strong style="color:var(--terracotta)">at airport by 3:30 PM</strong></div>
+                            </div>
+                        </div>
+                        <div class="car-passengers-wrap">
+                            <span class="passenger-pill">Ryan</span>
+                            <span class="passenger-pill">Jeanne</span>
+                            <span class="passenger-pill">Kar</span>
+                            <span class="passenger-pill">Theo</span>
+                        </div>
                     </div>
                 </div>
             </div>
 
         </section>
-    </div>
+    </div> <!-- END TAB 2: CARS & TRANSPORT -->
 
-    <!-- ============ TAB 2: ROUTE OPTIONS ============ -->
-    <div id="tab-routes" class="tab-content">
-        <section class="routes-section">
-
-        <!-- NEW YORK -->
-        <div class="route-card reveal">
-            <div class="route-header">
-                <div class="route-icon">🗽</div>
-                <div>
-                    <div class="route-city">New York</div>
-                    <div class="route-airports">JFK → PHX</div>
-                </div>
-                <div class="route-meta">
-                    <div>
-                        <div class="route-price">~$357</div>
-                        <div class="route-price-label">Avg. Round Trip (Live)</div>
-                    </div>
-                </div>
-            </div>
-
-            <p class="flight-direction">✈ Outbound — Thursday, Sept 10</p>
-            <table class="flights-table">
-                <thead>
-                    <tr>
-                        <th>Airline</th>
-                        <th>Departs</th>
-                        <th></th>
-                        <th>Arrives</th>
-                        <th>Duration</th>
-                        <th>Type</th>
-                        <th>Est. One-Way</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr>
-                        <td><div class="airline-cell"><span class="airline-dot american"></span><span class="airline-name">American</span></div></td>
-                        <td class="time-cell">6:00 AM</td>
-                        <td><span class="flight-arrow">→</span></td>
-                        <td class="time-cell">8:55 AM</td>
-                        <td class="duration-cell">5h 55m</td>
-                        <td><span class="nonstop-badge">Nonstop</span></td>
-                        <td class="price-cell">$178</td>
-                    </tr>
-                    <tr>
-                        <td><div class="airline-cell"><span class="airline-dot american"></span><span class="airline-name">American</span></div></td>
-                        <td class="time-cell">7:15 AM</td>
-                        <td><span class="flight-arrow">→</span></td>
-                        <td class="time-cell">9:29 AM</td>
-                        <td class="duration-cell">5h 14m</td>
-                        <td><span class="nonstop-badge">Nonstop</span></td>
-                        <td class="price-cell">$178</td>
-                    </tr>
-                    <tr>
-                        <td><div class="airline-cell"><span class="airline-dot delta"></span><span class="airline-name">Delta</span></div></td>
-                        <td class="time-cell">8:00 AM</td>
-                        <td><span class="flight-arrow">→</span></td>
-                        <td class="time-cell">10:21 AM</td>
-                        <td class="duration-cell">5h 21m</td>
-                        <td><span class="nonstop-badge">Nonstop</span></td>
-                        <td class="price-cell">$189</td>
-                    </tr>
-                    <tr>
-                        <td><div class="airline-cell"><span class="airline-dot jetblue"></span><span class="airline-name">JetBlue</span></div></td>
-                        <td class="time-cell">8:57 AM</td>
-                        <td><span class="flight-arrow">→</span></td>
-                        <td class="time-cell">11:15 AM</td>
-                        <td class="duration-cell">5h 18m</td>
-                        <td><span class="nonstop-badge">Nonstop</span></td>
-                        <td class="price-cell">$188</td>
-                    </tr>
-                    <tr>
-                        <td><div class="airline-cell"><span class="airline-dot american"></span><span class="airline-name">American</span></div></td>
-                        <td class="time-cell">10:15 AM</td>
-                        <td><span class="flight-arrow">→</span></td>
-                        <td class="time-cell">12:48 PM</td>
-                        <td class="duration-cell">5h 33m</td>
-                        <td><span class="nonstop-badge">Nonstop</span></td>
-                        <td class="price-cell">$178</td>
-                    </tr>
-                    <tr>
-                        <td><div class="airline-cell"><span class="airline-dot delta"></span><span class="airline-name">Delta</span></div></td>
-                        <td class="time-cell">1:05 PM</td>
-                        <td><span class="flight-arrow">→</span></td>
-                        <td class="time-cell">3:34 PM</td>
-                        <td class="duration-cell">5h 29m</td>
-                        <td><span class="nonstop-badge">Nonstop</span></td>
-                        <td class="price-cell">$189</td>
-                    </tr>
-                </tbody>
-            </table>
-
-            <p class="flight-direction">✈ Return — Sunday, Sept 13</p>
-            <table class="flights-table">
-                <thead>
-                    <tr>
-                        <th>Airline</th>
-                        <th>Departs</th>
-                        <th></th>
-                        <th>Arrives</th>
-                        <th>Duration</th>
-                        <th>Type</th>
-                        <th>Est. One-Way</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr>
-                        <td><div class="airline-cell"><span class="airline-dot american"></span><span class="airline-name">American</span></div></td>
-                        <td class="time-cell">10:30 AM</td>
-                        <td><span class="flight-arrow">→</span></td>
-                        <td class="time-cell">6:33 PM</td>
-                        <td class="duration-cell">5h 03m</td>
-                        <td><span class="nonstop-badge">Nonstop</span></td>
-                        <td class="price-cell">$178</td>
-                    </tr>
-                    <tr>
-                        <td><div class="airline-cell"><span class="airline-dot american"></span><span class="airline-name">American</span></div></td>
-                        <td class="time-cell">12:58 PM</td>
-                        <td><span class="flight-arrow">→</span></td>
-                        <td class="time-cell">9:00 PM</td>
-                        <td class="duration-cell">5h 02m</td>
-                        <td><span class="nonstop-badge">Nonstop</span></td>
-                        <td class="price-cell">$178</td>
-                    </tr>
-                    <tr>
-                        <td><div class="airline-cell"><span class="airline-dot delta"></span><span class="airline-name">Delta</span></div></td>
-                        <td class="time-cell">3:15 PM</td>
-                        <td><span class="flight-arrow">→</span></td>
-                        <td class="time-cell">11:00 PM</td>
-                        <td class="duration-cell">4h 45m</td>
-                        <td><span class="nonstop-badge">Nonstop</span></td>
-                        <td class="price-cell">$189</td>
-                    </tr>
-                    <tr>
-                        <td><div class="airline-cell"><span class="airline-dot jetblue"></span><span class="airline-name">JetBlue</span></div></td>
-                        <td class="time-cell">5:45 PM</td>
-                        <td><span class="flight-arrow">→</span></td>
-                        <td class="time-cell">11:59 PM</td>
-                        <td class="duration-cell">5h 14m</td>
-                        <td><span class="nonstop-badge">Nonstop</span></td>
-                        <td class="price-cell">$188</td>
-                    </tr>
-                </tbody>
-            </table>
-
-            <a href="https://www.google.com/travel/flights?q=Flights+to+PHX+from+JFK+on+2026-09-10+through+2026-09-13" target="_blank" class="book-link">Search on Google Flights →</a>
-        </div>
-
-        <!-- SAN FRANCISCO -->
-        <div class="route-card reveal">
-            <div class="route-header">
-                <div class="route-icon">🌁</div>
-                <div>
-                    <div class="route-city">San Francisco</div>
-                    <div class="route-airports">SFO → PHX</div>
-                </div>
-                <div class="route-meta">
-                    <div>
-                        <div class="route-price">~$237</div>
-                        <div class="route-price-label">Avg. Round Trip (Live)</div>
-                    </div>
-                </div>
-            </div>
-
-            <p class="flight-direction">✈ Outbound — Thursday, Sept 10</p>
-            <table class="flights-table">
-                <thead>
-                    <tr>
-                        <th>Airline</th>
-                        <th>Departs</th>
-                        <th></th>
-                        <th>Arrives</th>
-                        <th>Duration</th>
-                        <th>Type</th>
-                        <th>Est. One-Way</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr>
-                        <td><div class="airline-cell"><span class="airline-dot frontier"></span><span class="airline-name">Frontier</span></div></td>
-                        <td class="time-cell">6:59 AM</td>
-                        <td><span class="flight-arrow">→</span></td>
-                        <td class="time-cell">9:18 AM</td>
-                        <td class="duration-cell">2h 19m</td>
-                        <td><span class="nonstop-badge">Nonstop</span></td>
-                        <td class="price-cell">$92</td>
-                    </tr>
-                    <tr>
-                        <td><div class="airline-cell"><span class="airline-dot southwest"></span><span class="airline-name">Southwest</span></div></td>
-                        <td class="time-cell">7:00 AM</td>
-                        <td><span class="flight-arrow">→</span></td>
-                        <td class="time-cell">9:00 AM</td>
-                        <td class="duration-cell">2h 00m</td>
-                        <td><span class="nonstop-badge">Nonstop</span></td>
-                        <td class="price-cell">$118</td>
-                    </tr>
-                    <tr>
-                        <td><div class="airline-cell"><span class="airline-dot southwest"></span><span class="airline-name">Southwest</span></div></td>
-                        <td class="time-cell">8:00 AM</td>
-                        <td><span class="flight-arrow">→</span></td>
-                        <td class="time-cell">10:07 AM</td>
-                        <td class="duration-cell">2h 07m</td>
-                        <td><span class="nonstop-badge">Nonstop</span></td>
-                        <td class="price-cell">$118</td>
-                    </tr>
-                    <tr>
-                        <td><div class="airline-cell"><span class="airline-dot american"></span><span class="airline-name">American</span></div></td>
-                        <td class="time-cell">9:33 AM</td>
-                        <td><span class="flight-arrow">→</span></td>
-                        <td class="time-cell">11:42 AM</td>
-                        <td class="duration-cell">2h 09m</td>
-                        <td><span class="nonstop-badge">Nonstop</span></td>
-                        <td class="price-cell">$137</td>
-                    </tr>
-                    <tr>
-                        <td><div class="airline-cell"><span class="airline-dot united"></span><span class="airline-name">United</span></div></td>
-                        <td class="time-cell">11:30 AM</td>
-                        <td><span class="flight-arrow">→</span></td>
-                        <td class="time-cell">1:38 PM</td>
-                        <td class="duration-cell">2h 08m</td>
-                        <td><span class="nonstop-badge">Nonstop</span></td>
-                        <td class="price-cell">$137</td>
-                    </tr>
-                    <tr>
-                        <td><div class="airline-cell"><span class="airline-dot frontier"></span><span class="airline-name">Frontier</span></div></td>
-                        <td class="time-cell">3:35 PM</td>
-                        <td><span class="flight-arrow">→</span></td>
-                        <td class="time-cell">5:57 PM</td>
-                        <td class="duration-cell">2h 22m</td>
-                        <td><span class="nonstop-badge">Nonstop</span></td>
-                        <td class="price-cell">$92</td>
-                    </tr>
-                </tbody>
-            </table>
-
-            <p class="flight-direction">✈ Return — Sunday, Sept 13</p>
-            <table class="flights-table">
-                <thead>
-                    <tr>
-                        <th>Airline</th>
-                        <th>Departs</th>
-                        <th></th>
-                        <th>Arrives</th>
-                        <th>Duration</th>
-                        <th>Type</th>
-                        <th>Est. One-Way</th>
-                    </tr>
-                </thead>
-                <tbody>
-
-                    <tr>
-                        <td><div class="airline-cell"><span class="airline-dot american"></span><span class="airline-name">American</span></div></td>
-                        <td class="time-cell">12:45 PM</td>
-                        <td><span class="flight-arrow">→</span></td>
-                        <td class="time-cell">2:50 PM</td>
-                        <td class="duration-cell">2h 05m</td>
-                        <td><span class="nonstop-badge">Nonstop</span></td>
-                        <td class="price-cell">$137</td>
-                    </tr>
-                    <tr>
-                        <td><div class="airline-cell"><span class="airline-dot southwest"></span><span class="airline-name">Southwest</span></div></td>
-                        <td class="time-cell">5:15 PM</td>
-                        <td><span class="flight-arrow">→</span></td>
-                        <td class="time-cell">7:10 PM</td>
-                        <td class="duration-cell">1h 55m</td>
-                        <td><span class="nonstop-badge">Nonstop</span></td>
-                        <td class="price-cell">$118</td>
-                    </tr>
-                    <tr>
-                        <td><div class="airline-cell"><span class="airline-dot southwest"></span><span class="airline-name">Southwest</span></div></td>
-                        <td class="time-cell">9:55 PM</td>
-                        <td><span class="flight-arrow">→</span></td>
-                        <td class="time-cell">11:50 PM</td>
-                        <td class="duration-cell">1h 55m</td>
-                        <td><span class="nonstop-badge">Nonstop</span></td>
-                        <td class="price-cell">$118</td>
-                    </tr>
-                </tbody>
-            </table>
-
-            <a href="https://www.google.com/travel/flights?q=Flights+to+PHX+from+SFO+on+2026-09-10+through+2026-09-13" target="_blank" class="book-link">Search on Google Flights →</a>
-        </div>
-
-        <!-- LOS ANGELES -->
-        <div class="route-card reveal">
-            <div class="route-header">
-                <div class="route-icon">🌴</div>
-                <div>
-                    <div class="route-city">Los Angeles</div>
-                    <div class="route-airports">LAX → PHX</div>
-                </div>
-                <div class="route-meta">
-                    <div>
-                        <div class="route-price">~$208</div>
-                        <div class="route-price-label">Avg. Round Trip (Live)</div>
-                    </div>
-                </div>
-            </div>
-
-            <p class="flight-direction">✈ Outbound — Thursday, Sept 10</p>
-            <table class="flights-table">
-                <thead>
-                    <tr>
-                        <th>Airline</th>
-                        <th>Departs</th>
-                        <th></th>
-                        <th>Arrives</th>
-                        <th>Duration</th>
-                        <th>Type</th>
-                        <th>Est. One-Way</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr>
-                        <td><div class="airline-cell"><span class="airline-dot american"></span><span class="airline-name">American</span></div></td>
-                        <td class="time-cell">6:00 AM</td>
-                        <td><span class="flight-arrow">→</span></td>
-                        <td class="time-cell">7:27 AM</td>
-                        <td class="duration-cell">1h 27m</td>
-                        <td><span class="nonstop-badge">Nonstop</span></td>
-                        <td class="price-cell">$104</td>
-                    </tr>
-                    <tr>
-                        <td><div class="airline-cell"><span class="airline-dot southwest"></span><span class="airline-name">Southwest</span></div></td>
-                        <td class="time-cell">9:40 AM</td>
-                        <td><span class="flight-arrow">→</span></td>
-                        <td class="time-cell">11:05 AM</td>
-                        <td class="duration-cell">1h 25m</td>
-                        <td><span class="nonstop-badge">Nonstop</span></td>
-                        <td class="price-cell">$104</td>
-                    </tr>
-                    <tr>
-                        <td><div class="airline-cell"><span class="airline-dot american"></span><span class="airline-name">American</span></div></td>
-                        <td class="time-cell">9:50 AM</td>
-                        <td><span class="flight-arrow">→</span></td>
-                        <td class="time-cell">11:14 AM</td>
-                        <td class="duration-cell">1h 24m</td>
-                        <td><span class="nonstop-badge">Nonstop</span></td>
-                        <td class="price-cell">$104</td>
-                    </tr>
-                    <tr>
-                        <td><div class="airline-cell"><span class="airline-dot delta"></span><span class="airline-name">Delta</span></div></td>
-                        <td class="time-cell">10:01 AM</td>
-                        <td><span class="flight-arrow">→</span></td>
-                        <td class="time-cell">11:29 AM</td>
-                        <td class="duration-cell">1h 28m</td>
-                        <td><span class="nonstop-badge">Nonstop</span></td>
-                        <td class="price-cell">$104</td>
-                    </tr>
-                    <tr>
-                        <td><div class="airline-cell"><span class="airline-dot frontier"></span><span class="airline-name">Frontier</span></div></td>
-                        <td class="time-cell">1:17 PM</td>
-                        <td><span class="flight-arrow">→</span></td>
-                        <td class="time-cell">2:51 PM</td>
-                        <td class="duration-cell">1h 34m</td>
-                        <td><span class="nonstop-badge">Nonstop</span></td>
-                        <td class="price-cell">$58</td>
-                    </tr>
-                    <tr>
-                        <td><div class="airline-cell"><span class="airline-dot frontier"></span><span class="airline-name">Frontier</span></div></td>
-                        <td class="time-cell">7:45 PM</td>
-                        <td><span class="flight-arrow">→</span></td>
-                        <td class="time-cell">9:19 PM</td>
-                        <td class="duration-cell">1h 34m</td>
-                        <td><span class="nonstop-badge">Nonstop</span></td>
-                        <td class="price-cell">$58</td>
-                    </tr>
-                </tbody>
-            </table>
-
-            <p class="flight-direction">✈ Return — Sunday, Sept 13</p>
-            <table class="flights-table">
-                <thead>
-                    <tr>
-                        <th>Airline</th>
-                        <th>Departs</th>
-                        <th></th>
-                        <th>Arrives</th>
-                        <th>Duration</th>
-                        <th>Type</th>
-                        <th>Est. One-Way</th>
-                    </tr>
-                </thead>
-                <tbody>
-
-                    <tr>
-                        <td><div class="airline-cell"><span class="airline-dot american"></span><span class="airline-name">American</span></div></td>
-                        <td class="time-cell">10:48 AM</td>
-                        <td><span class="flight-arrow">→</span></td>
-                        <td class="time-cell">12:18 PM</td>
-                        <td class="duration-cell">1h 30m</td>
-                        <td><span class="nonstop-badge">Nonstop</span></td>
-                        <td class="price-cell">$104</td>
-                    </tr>
-                    <tr>
-                        <td><div class="airline-cell"><span class="airline-dot frontier"></span><span class="airline-name">Frontier</span></div></td>
-                        <td class="time-cell">1:45 PM</td>
-                        <td><span class="flight-arrow">→</span></td>
-                        <td class="time-cell">3:15 PM</td>
-                        <td class="duration-cell">1h 30m</td>
-                        <td><span class="nonstop-badge">Nonstop</span></td>
-                        <td class="price-cell">$58</td>
-                    </tr>
-                    <tr>
-                        <td><div class="airline-cell"><span class="airline-dot southwest"></span><span class="airline-name">Southwest</span></div></td>
-                        <td class="time-cell">2:25 PM</td>
-                        <td><span class="flight-arrow">→</span></td>
-                        <td class="time-cell">3:50 PM</td>
-                        <td class="duration-cell">1h 25m</td>
-                        <td><span class="nonstop-badge">Nonstop</span></td>
-                        <td class="price-cell">$104</td>
-                    </tr>
-                    <tr>
-                        <td><div class="airline-cell"><span class="airline-dot american"></span><span class="airline-name">American</span></div></td>
-                        <td class="time-cell">4:59 PM</td>
-                        <td><span class="flight-arrow">→</span></td>
-                        <td class="time-cell">6:25 PM</td>
-                        <td class="duration-cell">1h 26m</td>
-                        <td><span class="nonstop-badge">Nonstop</span></td>
-                        <td class="price-cell">$104</td>
-                    </tr>
-                    <tr>
-                        <td><div class="airline-cell"><span class="airline-dot southwest"></span><span class="airline-name">Southwest</span></div></td>
-                        <td class="time-cell">6:10 PM</td>
-                        <td><span class="flight-arrow">→</span></td>
-                        <td class="time-cell">7:35 PM</td>
-                        <td class="duration-cell">1h 25m</td>
-                        <td><span class="nonstop-badge">Nonstop</span></td>
-                        <td class="price-cell">$104</td>
-                    </tr>
-                </tbody>
-            </table>
-
-            <a href="https://www.google.com/travel/flights?q=Flights+to+PHX+from+LAX+on+2026-09-10+through+2026-09-13" target="_blank" class="book-link">Search on Google Flights →</a>
-        </div>
-
-    </section>
-    </div> <!-- END TAB 2: ROUTE OPTIONS -->
+    
 
     <!-- ============ TRAVEL INFO ============ -->
     <section class="travel-info">
-        <p class="section-overline">Good to Know</p>
-        <h2 class="section-title">Getting to Sedona</h2>
-
-        <div class="travel-info-grid">
+        <div class="travel-info-grid" style="grid-template-columns: 1fr; max-width: 400px;">
             <div class="travel-info-card reveal">
                 <div class="travel-info-icon">🚗</div>
                 <h3 class="travel-info-title">PHX → Sedona</h3>
                 <p class="travel-info-desc">
-                    The drive from Phoenix Sky Harbor to Sedona is about 2 hours via I-17 N. 
-                    We'll coordinate carpooling or rental cars closer to the date.
-                </p>
-            </div>
-            <div class="travel-info-card reveal">
-                <div class="travel-info-icon">⏰</div>
-                <h3 class="travel-info-title">Arrive by Noon</h3>
-                <p class="travel-info-desc">
-                    Try to land by late morning so we can all arrive at the retreat house by 
-                    early afternoon for intention setting and our first sunset together.
-                </p>
-            </div>
-            <div class="travel-info-card reveal">
-                <div class="travel-info-icon">💡</div>
-                <h3 class="travel-info-title">Book Early</h3>
-                <p class="travel-info-desc">
-                    Prices shown are approximate as of early July 2026. September is still 
-                    warm season in AZ — flights tend to go up closer to the date!
+                    The drive from Phoenix Sky Harbor to Sedona is about 2 hours via I-17 N.
                 </p>
             </div>
         </div>
