@@ -789,6 +789,38 @@
             opacity: 0.7;
         }
 
+        .schedule-day {
+            display: block;
+            text-decoration: none;
+            color: inherit;
+        }
+
+        .schedule-cta-wrap {
+            text-align: center;
+            margin-top: 3rem;
+        }
+
+        .schedule-cta {
+            display: inline-block;
+            font-family: 'Montserrat', sans-serif;
+            font-size: 0.75rem;
+            font-weight: 500;
+            letter-spacing: 0.15em;
+            text-transform: uppercase;
+            color: var(--night);
+            background: linear-gradient(135deg, var(--gold), #DCC08F);
+            text-decoration: none;
+            padding: 0.9rem 2rem;
+            border-radius: 30px;
+            transition: all 0.3s;
+            box-shadow: 0 4px 15px rgba(201, 169, 110, 0.3);
+        }
+
+        .schedule-cta:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 25px rgba(201, 169, 110, 0.45);
+        }
+
         .stars-decoration {
             text-align: center;
             margin-top: 3rem;
@@ -1219,8 +1251,8 @@
             <li><a href="#retreat">The Retreat</a></li>
             <li><a href="#experiences">Experiences</a></li>
             <li><a href="#hikes">Hikes</a></li>
-            <li><a href="#schedule">Schedule</a></li>
             <li><a href="#details">Details</a></li>
+            <li><a href="./schedule.html">Schedule 🗓</a></li>
             <li><a href="./flights.html">Flights ✈</a></li>
             <li><a href="./crew.html">The Crew 👋</a></li>
         </ul>
@@ -1239,10 +1271,10 @@
             <li><a href="#retreat" onclick="toggleMobileMenu()">The Retreat</a></li>
             <li><a href="#experiences" onclick="toggleMobileMenu()">Experiences</a></li>
             <li><a href="#hikes" onclick="toggleMobileMenu()">Hikes</a></li>
-            <li><a href="#schedule" onclick="toggleMobileMenu()">Schedule</a></li>
             <li><a href="#details" onclick="toggleMobileMenu()">Details</a></li>
-            <li class="mobile-flights-item"><a href="./flights.html" class="mobile-flights-btn">Flights & Timetable ✈</a></li>
-            <li class="mobile-flights-item"><a href="./crew.html" class="mobile-flights-btn">Meet the Retreaters 👋</a></li>
+            <li class="mobile-flights-item"><a href="./schedule.html" class="mobile-flights-btn">Schedule & Packing 🗓</a></li>
+            <li class="mobile-flights-item" style="margin-top: 0; padding-top: 0.8rem; border-top: none;"><a href="./flights.html" class="mobile-flights-btn">Flights & Transport ✈</a></li>
+            <li class="mobile-flights-item" style="margin-top: 0; padding-top: 0.8rem; border-top: none;"><a href="./crew.html" class="mobile-flights-btn">Meet the Retreaters 👋</a></li>
         </ul>
     </div>
 
@@ -1538,43 +1570,37 @@
                 </p>
             </div>
             <div class="schedule-days">
-                <div class="schedule-day reveal reveal-delay-1">
+                <a href="./schedule.html#days" class="schedule-day reveal reveal-delay-1">
                     <div class="schedule-day-label">Day One</div>
                     <div class="schedule-day-date">Thu, Sept 10</div>
                     <div class="schedule-items">
-                        <div class="schedule-item">Arrival</div>
-                        <div class="schedule-item">Intention Setting</div>
-                        <div class="schedule-item">Prompted Conversation Circles</div>
+                        <div class="schedule-item">Arrive &amp; settle in</div>
                     </div>
-                </div>
-                <div class="schedule-day reveal reveal-delay-2">
+                </a>
+                <a href="./schedule.html#days" class="schedule-day reveal reveal-delay-2">
                     <div class="schedule-day-label">Day Two</div>
                     <div class="schedule-day-date">Fri, Sept 11</div>
                     <div class="schedule-items">
-                        <div class="schedule-item">Yoga</div>
-                        <div class="schedule-item">Hike</div>
-                        <div class="schedule-item">Sunset DJ Set</div>
-                        <div class="schedule-item">Stargazing</div>
-                        <div class="schedule-item">Mini Lectures</div>
+                        <div class="schedule-item">Move &amp; celebrate</div>
                     </div>
-                </div>
-                <div class="schedule-day reveal reveal-delay-3">
+                </a>
+                <a href="./schedule.html#days" class="schedule-day reveal reveal-delay-3">
                     <div class="schedule-day-label">Day Three</div>
                     <div class="schedule-day-date">Sat, Sept 12</div>
                     <div class="schedule-items">
-                        <div class="schedule-item">Yoga &amp; Meditation</div>
-                        <div class="schedule-item">Hike</div>
-                        <div class="schedule-item">Tlaquepaque Arts &amp; Shopping Village</div>
-                        <div class="schedule-item">Surprise Guest</div>
+                        <div class="schedule-item">Explore &amp; wander</div>
                     </div>
-                </div>
-                <div class="schedule-day reveal">
+                </a>
+                <a href="./schedule.html#days" class="schedule-day reveal">
                     <div class="schedule-day-label">Day Four</div>
                     <div class="schedule-day-date">Sun, Sept 13</div>
                     <div class="schedule-items">
-                        <div class="schedule-item">Departure</div>
+                        <div class="schedule-item">Slow morning &amp; goodbyes</div>
                     </div>
-                </div>
+                </a>
+            </div>
+            <div class="schedule-cta-wrap reveal">
+                <a href="./schedule.html" class="schedule-cta">🗓 &nbsp;Full Schedule, Meals, Weather &amp; Packing List</a>
             </div>
             <div class="stars-decoration">✦ ✦ ✦ ✦ ✦</div>
         </div>
@@ -1619,12 +1645,14 @@
                 <div class="details-column">
                     <h3>What to Know</h3>
                     <p>
-                        Bring your favorite yoga gear, swimsuit, layers for cool desert 
-                        evenings, and a good book.
+                        Bring your favorite yoga gear, swimsuit, layers for cool desert
+                        evenings, and a good book. The full
+                        <a href="./schedule.html#packing" style="color: var(--terracotta); text-decoration: none; border-bottom: 1px solid var(--terracotta);">packing list</a>
+                        is on the schedule page.
                     </p>
                     <p>
-                        Meals will be a mix of group cooking and catered experiences. 
-                        We'll sort out the details together.
+                        Meals will be a mix of group cooking and a few treats out —
+                        see the <a href="./schedule.html#days" style="color: var(--terracotta); text-decoration: none; border-bottom: 1px solid var(--terracotta);">day-by-day plan</a>.
                     </p>
                     <p class="detail-note">
                         Questions? Reach out anytime — this is meant to be effortless for you.

@@ -1,0 +1,1352 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Schedule & Packing | The Big ॐ</title>
+    <meta name="description" content="Day-by-day schedule, meals, weather, and packing list for the Sedona wellness retreat — September 10–13, 2026.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&family=Montserrat:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <style>
+        /* ============================================
+           RESET & BASE
+           ============================================ */
+        *, *::before, *::after {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --cream: #F5F0EB;
+            --warm-white: #FAF8F5;
+            --sand: #E8DFD4;
+            --terracotta: #C4703F;
+            --terracotta-light: #D4884F;
+            --deep-brown: #3D2B1F;
+            --charcoal: #2C2C2C;
+            --muted-sage: #8B9A7E;
+            --dusty-rose: #B8908A;
+            --gold: #C9A96E;
+            --night: #1A1A2E;
+            --rustic-orange: #BE5103;
+        }
+
+        html {
+            scroll-behavior: smooth;
+            font-size: 16px;
+        }
+
+        body {
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 300;
+            color: var(--charcoal);
+            background-color: var(--warm-white);
+            line-height: 1.8;
+            letter-spacing: 0.02em;
+            overflow-x: hidden;
+        }
+
+        /* ============================================
+           TYPOGRAPHY
+           ============================================ */
+        h1, h2, h3, h4 {
+            font-family: 'Cormorant Garamond', serif;
+            font-weight: 300;
+            letter-spacing: 0.04em;
+        }
+
+        .section-overline {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 0.65rem;
+            font-weight: 500;
+            letter-spacing: 0.35em;
+            text-transform: uppercase;
+            color: var(--terracotta);
+            margin-bottom: 1.5rem;
+        }
+
+        .section-title {
+            font-size: clamp(2rem, 4vw, 3.5rem);
+            color: var(--deep-brown);
+            line-height: 1.2;
+            margin-bottom: 1.5rem;
+        }
+
+        .section-body {
+            font-size: 0.95rem;
+            max-width: 560px;
+            line-height: 2;
+            color: #5A5A5A;
+        }
+
+        /* ============================================
+           NAVIGATION
+           ============================================ */
+        nav {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            z-index: 1000;
+            padding: 1.5rem 3rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background: rgba(245, 240, 235, 0.95);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+            border-bottom: 1px solid rgba(0,0,0,0.06);
+        }
+
+        .nav-back {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 0.75rem;
+            font-weight: 500;
+            letter-spacing: 0.15em;
+            text-transform: uppercase;
+            color: var(--terracotta);
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+
+        .nav-back:hover {
+            color: var(--deep-brown);
+        }
+
+        .nav-logo {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 1.3rem;
+            font-weight: 400;
+            color: var(--deep-brown);
+            letter-spacing: 0.08em;
+        }
+
+        /* ============================================
+           HERO
+           ============================================ */
+        .page-hero {
+            padding: 10rem 3rem 5rem;
+            text-align: center;
+            background: linear-gradient(135deg, var(--cream) 0%, var(--warm-white) 50%, var(--sand) 100%);
+            position: relative;
+        }
+
+        .page-hero::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            height: 1px;
+            background: linear-gradient(to right, transparent, var(--sand), transparent);
+        }
+
+        .page-hero .section-overline {
+            margin-bottom: 1rem;
+        }
+
+        .page-hero .section-title {
+            margin-bottom: 1rem;
+        }
+
+        .hero-subtitle {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 1.3rem;
+            font-style: italic;
+            color: var(--dusty-rose);
+            margin-top: 1.5rem;
+        }
+
+        /* ============================================
+           SECTION TABS (jump links)
+           ============================================ */
+        .jump-tabs-container {
+            display: flex;
+            justify-content: center;
+            margin-top: -2.5rem;
+            position: relative;
+            z-index: 10;
+            padding: 0 1.5rem;
+        }
+
+        .jump-tabs {
+            background: rgba(255, 255, 255, 0.92);
+            backdrop-filter: blur(16px);
+            -webkit-backdrop-filter: blur(16px);
+            padding: 0.5rem;
+            border-radius: 50px;
+            box-shadow: 0 12px 40px rgba(0,0,0,0.08);
+            border: 1px solid rgba(196, 112, 63, 0.2);
+            display: flex;
+            gap: 0.5rem;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+
+        .jump-tab {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 0.85rem;
+            font-weight: 500;
+            letter-spacing: 0.04em;
+            color: #666;
+            background: transparent;
+            text-decoration: none;
+            padding: 0.8rem 1.6rem;
+            border-radius: 40px;
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .jump-tab:hover {
+            color: var(--deep-brown);
+            background: rgba(245, 240, 235, 0.8);
+        }
+
+        .jump-tab.active {
+            background: var(--terracotta);
+            color: white;
+            box-shadow: 0 4px 18px rgba(196, 112, 63, 0.35);
+        }
+
+        /* ============================================
+           WEATHER STRIP
+           ============================================ */
+        .weather-section {
+            padding: 5rem 2rem 4rem;
+            max-width: 1150px;
+            margin: 0 auto;
+        }
+
+        .section-header {
+            text-align: center;
+            margin-bottom: 2.5rem;
+        }
+
+        .section-header .section-body {
+            margin: 0 auto;
+        }
+
+        .weather-note {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 0.68rem;
+            letter-spacing: 0.08em;
+            text-transform: uppercase;
+            color: #999;
+            margin-top: 1rem;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .weather-note .dot {
+            width: 6px;
+            height: 6px;
+            border-radius: 50%;
+            background: var(--muted-sage);
+            display: inline-block;
+        }
+
+        .weather-note.live .dot {
+            background: var(--terracotta);
+            box-shadow: 0 0 0 3px rgba(196, 112, 63, 0.18);
+        }
+
+        .weather-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 1.5rem;
+        }
+
+        .weather-card {
+            background: white;
+            border-radius: 20px;
+            padding: 1.8rem 1.5rem 1.6rem;
+            border: 1px solid rgba(0,0,0,0.05);
+            box-shadow: 0 10px 40px rgba(0,0,0,0.05);
+            text-align: center;
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+
+        .weather-card:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 16px 50px rgba(0,0,0,0.08);
+        }
+
+        .weather-day {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 0.62rem;
+            font-weight: 600;
+            letter-spacing: 0.25em;
+            text-transform: uppercase;
+            color: var(--terracotta);
+        }
+
+        .weather-date {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 1.35rem;
+            color: var(--deep-brown);
+            margin-bottom: 0.6rem;
+        }
+
+        .weather-icon {
+            font-size: 2.6rem;
+            line-height: 1;
+            margin: 0.4rem 0 0.6rem;
+        }
+
+        .weather-desc {
+            font-size: 0.78rem;
+            color: #777;
+            margin-bottom: 1rem;
+            min-height: 1.4rem;
+        }
+
+        /* temperature range bar — one measure, direct-labeled */
+        .temp-range {
+            position: relative;
+            height: 6px;
+            border-radius: 4px;
+            background: var(--cream);
+            margin: 0.4rem 0.6rem 0.9rem;
+        }
+
+        .temp-range-fill {
+            position: absolute;
+            top: 0;
+            height: 100%;
+            border-radius: 4px;
+            background: linear-gradient(90deg, var(--muted-sage), var(--terracotta));
+            transition: left 0.6s cubic-bezier(0.4, 0, 0.2, 1), width 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        .temp-labels {
+            display: flex;
+            justify-content: space-between;
+            align-items: baseline;
+            padding: 0 0.4rem;
+        }
+
+        .temp-hi, .temp-lo {
+            font-family: 'Cormorant Garamond', serif;
+            font-variant-numeric: tabular-nums;
+            line-height: 1;
+        }
+
+        .temp-hi {
+            font-size: 2rem;
+            color: var(--deep-brown);
+        }
+
+        .temp-lo {
+            font-size: 1.4rem;
+            color: #999;
+        }
+
+        .temp-lbl {
+            display: block;
+            font-family: 'Montserrat', sans-serif;
+            font-size: 0.55rem;
+            letter-spacing: 0.2em;
+            text-transform: uppercase;
+            color: #AAA;
+            margin-top: 0.35rem;
+        }
+
+        .weather-meta {
+            display: flex;
+            justify-content: center;
+            gap: 1rem;
+            margin-top: 1.1rem;
+            padding-top: 0.9rem;
+            border-top: 1px solid rgba(0,0,0,0.05);
+            font-size: 0.68rem;
+            color: #888;
+            flex-wrap: wrap;
+        }
+
+        .weather-meta span {
+            white-space: nowrap;
+        }
+
+        /* ============================================
+           DAY-BY-DAY SCHEDULE
+           ============================================ */
+        .days-section {
+            background: var(--night);
+            color: white;
+            padding: 6rem 2rem;
+        }
+
+        .days-section .section-overline {
+            color: var(--gold);
+        }
+
+        .days-section .section-title {
+            color: white;
+        }
+
+        .days-section .section-body {
+            color: rgba(255,255,255,0.6);
+        }
+
+        .days-inner {
+            max-width: 1150px;
+            margin: 0 auto;
+        }
+
+        .days-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 2rem;
+        }
+
+        .day-card {
+            border: 1px solid rgba(255,255,255,0.1);
+            border-radius: 20px;
+            padding: 2.4rem 2.2rem 2rem;
+            transition: border-color 0.3s, background 0.3s;
+            background: rgba(255,255,255,0.015);
+        }
+
+        .day-card:hover {
+            border-color: rgba(201, 169, 110, 0.35);
+            background: rgba(255,255,255,0.03);
+        }
+
+        .day-card-head {
+            display: flex;
+            align-items: flex-end;
+            justify-content: space-between;
+            gap: 1rem;
+            margin-bottom: 1.6rem;
+            padding-bottom: 1.2rem;
+            border-bottom: 1px solid rgba(255,255,255,0.08);
+        }
+
+        .day-label {
+            font-size: 0.6rem;
+            letter-spacing: 0.3em;
+            text-transform: uppercase;
+            color: var(--gold);
+            margin-bottom: 0.4rem;
+        }
+
+        .day-date {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 1.7rem;
+            font-weight: 400;
+            color: white;
+            line-height: 1.1;
+        }
+
+        .day-theme {
+            font-family: 'Cormorant Garamond', serif;
+            font-style: italic;
+            font-size: 1.05rem;
+            color: rgba(255,255,255,0.5);
+            text-align: right;
+        }
+
+        .day-block-title {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 0.6rem;
+            font-weight: 600;
+            letter-spacing: 0.25em;
+            text-transform: uppercase;
+            color: rgba(201, 169, 110, 0.85);
+            margin: 1.4rem 0 0.7rem;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .day-block-title:first-of-type {
+            margin-top: 0;
+        }
+
+        .timeline {
+            display: flex;
+            flex-direction: column;
+            gap: 0.55rem;
+        }
+
+        .timeline-item {
+            display: grid;
+            grid-template-columns: 82px 1fr;
+            gap: 0.8rem;
+            align-items: baseline;
+            font-size: 0.85rem;
+            color: rgba(255,255,255,0.75);
+            line-height: 1.5;
+        }
+
+        .timeline-time {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 0.62rem;
+            font-weight: 500;
+            letter-spacing: 0.12em;
+            text-transform: uppercase;
+            color: var(--gold);
+            opacity: 0.8;
+            white-space: nowrap;
+        }
+
+        .timeline-item small {
+            display: block;
+            font-size: 0.72rem;
+            color: rgba(255,255,255,0.4);
+        }
+
+        .meal-row {
+            display: flex;
+            gap: 0.8rem;
+            align-items: baseline;
+            font-size: 0.85rem;
+            color: rgba(255,255,255,0.75);
+            line-height: 1.5;
+            padding: 0.45rem 0;
+            border-bottom: 1px dashed rgba(255,255,255,0.06);
+        }
+
+        .meal-row:last-child {
+            border-bottom: none;
+        }
+
+        .meal-type {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 0.62rem;
+            font-weight: 500;
+            letter-spacing: 0.12em;
+            text-transform: uppercase;
+            color: var(--dusty-rose);
+            min-width: 82px;
+        }
+
+        .meal-row small {
+            display: block;
+            font-size: 0.72rem;
+            color: rgba(255,255,255,0.4);
+        }
+
+        .pack-today {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.45rem;
+        }
+
+        .pack-chip {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 0.68rem;
+            font-weight: 400;
+            color: rgba(255,255,255,0.8);
+            background: rgba(255,255,255,0.06);
+            border: 1px solid rgba(255,255,255,0.1);
+            padding: 0.25rem 0.7rem;
+            border-radius: 30px;
+        }
+
+        .stars-decoration {
+            text-align: center;
+            margin-top: 3.5rem;
+            font-size: 0.7rem;
+            letter-spacing: 1em;
+            color: rgba(255,255,255,0.15);
+        }
+
+        /* ============================================
+           PACKING LIST
+           ============================================ */
+        .packing-section {
+            padding: 6rem 2rem;
+            max-width: 1150px;
+            margin: 0 auto;
+        }
+
+        .packing-intro {
+            background: linear-gradient(135deg, rgba(196, 112, 63, 0.05), rgba(232, 223, 212, 0.45));
+            border: 1px dashed rgba(196, 112, 63, 0.25);
+            border-radius: 18px;
+            padding: 1.6rem 2rem;
+            max-width: 720px;
+            margin: 0 auto 3rem;
+            text-align: center;
+            font-size: 0.9rem;
+            color: #5A5A5A;
+            line-height: 1.9;
+        }
+
+        .packing-progress {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 1rem;
+            margin: -1.5rem auto 2.5rem;
+            font-family: 'Montserrat', sans-serif;
+            font-size: 0.65rem;
+            letter-spacing: 0.15em;
+            text-transform: uppercase;
+            color: #999;
+        }
+
+        .packing-bar {
+            width: 160px;
+            height: 4px;
+            background: var(--cream);
+            border-radius: 4px;
+            overflow: hidden;
+        }
+
+        .packing-bar-fill {
+            height: 100%;
+            width: 0;
+            background: var(--terracotta);
+            border-radius: 4px;
+            transition: width 0.4s ease;
+        }
+
+        .packing-reset {
+            background: none;
+            border: none;
+            font-family: inherit;
+            font-size: inherit;
+            letter-spacing: inherit;
+            text-transform: inherit;
+            color: var(--terracotta);
+            cursor: pointer;
+            padding: 0;
+        }
+
+        .packing-reset:hover {
+            text-decoration: underline;
+        }
+
+        .packing-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 1.5rem;
+        }
+
+        .pack-card {
+            background: white;
+            border-radius: 20px;
+            padding: 1.8rem 1.8rem 1.4rem;
+            border: 1px solid rgba(0,0,0,0.05);
+            box-shadow: 0 10px 40px rgba(0,0,0,0.05);
+        }
+
+        .pack-card.optional {
+            background: var(--cream);
+            box-shadow: none;
+            border: 1px dashed rgba(196, 112, 63, 0.3);
+        }
+
+        .pack-card-head {
+            display: flex;
+            align-items: center;
+            gap: 0.8rem;
+            margin-bottom: 1.1rem;
+            padding-bottom: 0.9rem;
+            border-bottom: 1px solid var(--sand);
+        }
+
+        .pack-card-icon {
+            width: 42px;
+            height: 42px;
+            border-radius: 50%;
+            background: linear-gradient(135deg, var(--terracotta), var(--terracotta-light));
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.15rem;
+            flex-shrink: 0;
+        }
+
+        .pack-card.optional .pack-card-icon {
+            background: linear-gradient(135deg, var(--muted-sage), #A3B096);
+        }
+
+        .pack-card-title {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 1.5rem;
+            font-weight: 400;
+            color: var(--deep-brown);
+            line-height: 1.1;
+        }
+
+        .pack-card-count {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 0.6rem;
+            letter-spacing: 0.15em;
+            text-transform: uppercase;
+            color: #AAA;
+            margin-left: auto;
+            white-space: nowrap;
+        }
+
+        .pack-list {
+            list-style: none;
+        }
+
+        .pack-item {
+            display: flex;
+            align-items: flex-start;
+            gap: 0.75rem;
+            padding: 0.5rem 0;
+            font-size: 0.86rem;
+            color: #444;
+            line-height: 1.55;
+            cursor: pointer;
+            transition: color 0.2s;
+        }
+
+        .pack-item input {
+            appearance: none;
+            -webkit-appearance: none;
+            width: 18px;
+            height: 18px;
+            flex-shrink: 0;
+            margin-top: 0.2rem;
+            border: 1.5px solid rgba(196, 112, 63, 0.45);
+            border-radius: 6px;
+            background: white;
+            cursor: pointer;
+            position: relative;
+            transition: all 0.2s;
+        }
+
+        .pack-item input:checked {
+            background: var(--terracotta);
+            border-color: var(--terracotta);
+        }
+
+        .pack-item input:checked::after {
+            content: '';
+            position: absolute;
+            left: 5px;
+            top: 1.5px;
+            width: 5px;
+            height: 9px;
+            border: solid white;
+            border-width: 0 2px 2px 0;
+            transform: rotate(45deg);
+        }
+
+        .pack-item input:focus-visible {
+            outline: 2px solid var(--terracotta);
+            outline-offset: 2px;
+        }
+
+        .pack-item:has(input:checked) {
+            color: #AAA;
+            text-decoration: line-through;
+            text-decoration-color: rgba(196, 112, 63, 0.4);
+        }
+
+        .pack-item small {
+            display: block;
+            font-size: 0.72rem;
+            color: #999;
+            text-decoration: none;
+        }
+
+        /* ============================================
+           FOOTER
+           ============================================ */
+        footer {
+            padding: 3rem;
+            text-align: center;
+            color: #999;
+            font-size: 0.8rem;
+            letter-spacing: 0.1em;
+            background: linear-gradient(180deg, var(--warm-white) 0%, var(--cream) 100%);
+            border-top: 1px solid rgba(196, 112, 63, 0.08);
+        }
+
+        footer a {
+            color: var(--terracotta);
+            text-decoration: none;
+        }
+
+        /* ============================================
+           ANIMATIONS
+           ============================================ */
+        .reveal {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: all 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        .reveal.active {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .reveal-delay-1 { transition-delay: 0.1s; }
+        .reveal-delay-2 { transition-delay: 0.2s; }
+        .reveal-delay-3 { transition-delay: 0.3s; }
+
+        /* ============================================
+           RESPONSIVE
+           ============================================ */
+        @media (max-width: 1000px) {
+            .weather-grid { grid-template-columns: repeat(2, 1fr); }
+            .packing-grid { grid-template-columns: repeat(2, 1fr); }
+        }
+
+        @media (max-width: 768px) {
+            nav { padding: 0.8rem 1rem; }
+            .page-hero { padding: 6rem 1rem 2.5rem; }
+            .jump-tab { padding: 0.6rem 1rem; font-size: 0.75rem; }
+            .weather-section { padding: 3.5rem 1rem 2.5rem; }
+            .days-section { padding: 4rem 1rem; }
+            .days-grid { grid-template-columns: 1fr; gap: 1.2rem; }
+            .day-card { padding: 1.6rem 1.3rem 1.4rem; }
+            .day-card-head { flex-direction: column; align-items: flex-start; gap: 0.3rem; }
+            .day-theme { text-align: left; }
+            .timeline-item { grid-template-columns: 70px 1fr; }
+            .packing-section { padding: 4rem 1rem; }
+            .packing-grid { grid-template-columns: 1fr; }
+            .packing-intro { padding: 1.3rem 1.3rem; }
+        }
+
+        @media (max-width: 480px) {
+            .weather-grid { grid-template-columns: 1fr 1fr; gap: 0.8rem; }
+            .weather-card { padding: 1.2rem 0.8rem 1rem; border-radius: 14px; }
+            .weather-icon { font-size: 2rem; }
+            .temp-hi { font-size: 1.6rem; }
+            .temp-lo { font-size: 1.15rem; }
+            .weather-meta { gap: 0.6rem; font-size: 0.62rem; }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- ============ NAVIGATION ============ -->
+    <nav>
+        <a href="./index.html" class="nav-back">← Back to Retreat</a>
+        <span class="nav-logo">The Big ॐ</span>
+    </nav>
+
+    <!-- ============ HERO ============ -->
+    <section class="page-hero">
+        <p class="section-overline">The Journey</p>
+        <h1 class="section-title">Schedule &amp; Packing</h1>
+        <p class="hero-subtitle">September 10 – 13, 2026</p>
+    </section>
+
+    <!-- ============ JUMP LINKS ============ -->
+    <div class="jump-tabs-container">
+        <div class="jump-tabs">
+            <a href="#weather" class="jump-tab">☀️ Weather</a>
+            <a href="#days" class="jump-tab">🗓 Day by Day</a>
+            <a href="#packing" class="jump-tab">🎒 Packing List</a>
+        </div>
+    </div>
+
+    <!-- ============ WEATHER ============ -->
+    <section class="weather-section" id="weather">
+        <div class="section-header reveal">
+            <p class="section-overline">Look Up</p>
+            <h2 class="section-title">The Forecast</h2>
+            <p class="section-body">
+                Warm and sunny overall — think 80s / low 90s in the afternoon, with
+                cooler mornings and evenings under the red rocks. Sedona sits at
+                ~4,300 ft, so the sun is strong and the air is dry.
+            </p>
+            <p class="weather-note" id="weather-note"><span class="dot"></span> Typical mid-September conditions · live forecast loads when available</p>
+        </div>
+
+        <div class="weather-grid" id="weather-grid">
+            <div class="weather-card reveal" data-date="2026-09-10">
+                <div class="weather-day">Thursday</div>
+                <div class="weather-date">Sept 10</div>
+                <div class="weather-icon" data-field="icon">☀️</div>
+                <div class="weather-desc" data-field="desc">Sunny</div>
+                <div class="temp-labels">
+                    <div><span class="temp-lo" data-field="lo">60°</span><span class="temp-lbl">Low</span></div>
+                    <div><span class="temp-hi" data-field="hi">89°</span><span class="temp-lbl">High</span></div>
+                </div>
+                <div class="temp-range" title="Low to high, on a shared 50–100°F scale"><div class="temp-range-fill" data-field="bar"></div></div>
+                <div class="weather-meta">
+                    <span>🌧 <span data-field="rain">10</span>% rain</span>
+                    <span>🌅 <span data-field="sunrise">6:14 AM</span></span>
+                    <span>🌇 <span data-field="sunset">6:38 PM</span></span>
+                </div>
+            </div>
+
+            <div class="weather-card reveal reveal-delay-1" data-date="2026-09-11">
+                <div class="weather-day">Friday</div>
+                <div class="weather-date">Sept 11</div>
+                <div class="weather-icon" data-field="icon">☀️</div>
+                <div class="weather-desc" data-field="desc">Sunny</div>
+                <div class="temp-labels">
+                    <div><span class="temp-lo" data-field="lo">59°</span><span class="temp-lbl">Low</span></div>
+                    <div><span class="temp-hi" data-field="hi">88°</span><span class="temp-lbl">High</span></div>
+                </div>
+                <div class="temp-range" title="Low to high, on a shared 50–100°F scale"><div class="temp-range-fill" data-field="bar"></div></div>
+                <div class="weather-meta">
+                    <span>🌧 <span data-field="rain">10</span>% rain</span>
+                    <span>🌅 <span data-field="sunrise">6:15 AM</span></span>
+                    <span>🌇 <span data-field="sunset">6:37 PM</span></span>
+                </div>
+            </div>
+
+            <div class="weather-card reveal reveal-delay-2" data-date="2026-09-12">
+                <div class="weather-day">Saturday</div>
+                <div class="weather-date">Sept 12</div>
+                <div class="weather-icon" data-field="icon">🌤️</div>
+                <div class="weather-desc" data-field="desc">Mostly sunny</div>
+                <div class="temp-labels">
+                    <div><span class="temp-lo" data-field="lo">58°</span><span class="temp-lbl">Low</span></div>
+                    <div><span class="temp-hi" data-field="hi">87°</span><span class="temp-lbl">High</span></div>
+                </div>
+                <div class="temp-range" title="Low to high, on a shared 50–100°F scale"><div class="temp-range-fill" data-field="bar"></div></div>
+                <div class="weather-meta">
+                    <span>🌧 <span data-field="rain">15</span>% rain</span>
+                    <span>🌅 <span data-field="sunrise">6:16 AM</span></span>
+                    <span>🌇 <span data-field="sunset">6:35 PM</span></span>
+                </div>
+            </div>
+
+            <div class="weather-card reveal reveal-delay-3" data-date="2026-09-13">
+                <div class="weather-day">Sunday</div>
+                <div class="weather-date">Sept 13</div>
+                <div class="weather-icon" data-field="icon">☀️</div>
+                <div class="weather-desc" data-field="desc">Sunny</div>
+                <div class="temp-labels">
+                    <div><span class="temp-lo" data-field="lo">57°</span><span class="temp-lbl">Low</span></div>
+                    <div><span class="temp-hi" data-field="hi">86°</span><span class="temp-lbl">High</span></div>
+                </div>
+                <div class="temp-range" title="Low to high, on a shared 50–100°F scale"><div class="temp-range-fill" data-field="bar"></div></div>
+                <div class="weather-meta">
+                    <span>🌧 <span data-field="rain">10</span>% rain</span>
+                    <span>🌅 <span data-field="sunrise">6:17 AM</span></span>
+                    <span>🌇 <span data-field="sunset">6:34 PM</span></span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============ DAY BY DAY ============ -->
+    <section class="days-section" id="days">
+        <div class="days-inner">
+            <div class="section-header reveal">
+                <p class="section-overline">Four Days of Flow</p>
+                <h2 class="section-title">Day by Day</h2>
+                <p class="section-body" style="margin: 0 auto;">
+                    A loose rhythm to guide the weekend — nothing is mandatory,
+                    everything is an invitation. Meals are a mix of group cooking
+                    and a few treats out; we'll finalize together.
+                </p>
+            </div>
+
+            <div class="days-grid">
+
+                <!-- DAY ONE -->
+                <div class="day-card reveal">
+                    <div class="day-card-head">
+                        <div>
+                            <div class="day-label">Day One</div>
+                            <div class="day-date">Thursday, Sept 10</div>
+                        </div>
+                        <div class="day-theme">Arrive &amp; settle in</div>
+                    </div>
+
+                    <div class="day-block-title">✦ Activities</div>
+                    <div class="timeline">
+                        <div class="timeline-item"><span class="timeline-time">Midday</span><span>Land in Phoenix, rental car groups head north<small>~2 hr scenic drive through red rock country</small></span></div>
+                        <div class="timeline-item"><span class="timeline-time">Afternoon</span><span>Arrive at the house, pick rooms, pool time</span></div>
+                        <div class="timeline-item"><span class="timeline-time">Sunset</span><span>Intention setting on the terrace</span></div>
+                        <div class="timeline-item"><span class="timeline-time">Evening</span><span>Prompted conversation circles</span></div>
+                    </div>
+
+                    <div class="day-block-title">🍽 Meals</div>
+                    <div>
+                        <div class="meal-row"><span class="meal-type">Lunch</span><span>On your own — grab something at PHX or on the drive up</span></div>
+                        <div class="meal-row"><span class="meal-type">Dinner</span><span>Welcome dinner at the house<small>Group cook — taco night</small></span></div>
+                    </div>
+
+                    <div class="day-block-title">🎒 Have handy</div>
+                    <div class="pack-today">
+                        <span class="pack-chip">Swimsuit</span>
+                        <span class="pack-chip">Sandals</span>
+                        <span class="pack-chip">Light layer</span>
+                        <span class="pack-chip">Water bottle</span>
+                    </div>
+                </div>
+
+                <!-- DAY TWO -->
+                <div class="day-card reveal reveal-delay-1">
+                    <div class="day-card-head">
+                        <div>
+                            <div class="day-label">Day Two</div>
+                            <div class="day-date">Friday, Sept 11</div>
+                        </div>
+                        <div class="day-theme">Move &amp; celebrate</div>
+                    </div>
+
+                    <div class="day-block-title">✦ Activities</div>
+                    <div class="timeline">
+                        <div class="timeline-item"><span class="timeline-time">Morning</span><span>Yoga on the deck</span></div>
+                        <div class="timeline-item"><span class="timeline-time">Late AM</span><span>Cathedral Rock hike<small>1.2 mi · 740 ft gain · short but steep — go before the heat</small></span></div>
+                        <div class="timeline-item"><span class="timeline-time">Afternoon</span><span>Pool, naps, free time</span></div>
+                        <div class="timeline-item"><span class="timeline-time">Sunset</span><span>Sunset DJ set on the terrace</span></div>
+                        <div class="timeline-item"><span class="timeline-time">Night</span><span>Stargazing &amp; mini lectures</span></div>
+                    </div>
+
+                    <div class="day-block-title">🍽 Meals</div>
+                    <div>
+                        <div class="meal-row"><span class="meal-type">Breakfast</span><span>Breakfast at the house<small>Coffee, fruit, eggs, yogurt &amp; granola</small></span></div>
+                        <div class="meal-row"><span class="meal-type">Lunch</span><span>Post-hike lunch at the house<small>Build-your-own sandwiches &amp; salads</small></span></div>
+                        <div class="meal-row"><span class="meal-type">Dinner</span><span>Grill night on the deck<small>Group cook — burgers, veggies, sides</small></span></div>
+                    </div>
+
+                    <div class="day-block-title">🎒 Have handy</div>
+                    <div class="pack-today">
+                        <span class="pack-chip">Yoga clothes</span>
+                        <span class="pack-chip">Hiking shoes</span>
+                        <span class="pack-chip">Hat &amp; sunglasses</span>
+                        <span class="pack-chip">Sunscreen</span>
+                        <span class="pack-chip">Hydration pack</span>
+                        <span class="pack-chip">Sweatshirt for stargazing</span>
+                    </div>
+                </div>
+
+                <!-- DAY THREE -->
+                <div class="day-card reveal reveal-delay-2">
+                    <div class="day-card-head">
+                        <div>
+                            <div class="day-label">Day Three</div>
+                            <div class="day-date">Saturday, Sept 12</div>
+                        </div>
+                        <div class="day-theme">Explore &amp; wander</div>
+                    </div>
+
+                    <div class="day-block-title">✦ Activities</div>
+                    <div class="timeline">
+                        <div class="timeline-item"><span class="timeline-time">Morning</span><span>Yoga &amp; meditation</span></div>
+                        <div class="timeline-item"><span class="timeline-time">Late AM</span><span>Subway Cave hike via Boynton Canyon<small>4.8 mi out &amp; back · 574 ft gain · sandy washes &amp; piñon-juniper</small></span></div>
+                        <div class="timeline-item"><span class="timeline-time">Afternoon</span><span>Tlaquepaque Arts &amp; Shopping Village</span></div>
+                        <div class="timeline-item"><span class="timeline-time">Evening</span><span>Surprise guest ✨</span></div>
+                    </div>
+
+                    <div class="day-block-title">🍽 Meals</div>
+                    <div>
+                        <div class="meal-row"><span class="meal-type">Breakfast</span><span>Breakfast at the house</span></div>
+                        <div class="meal-row"><span class="meal-type">Lunch</span><span>Lunch out in Tlaquepaque<small>On your own — lots of patios to pick from</small></span></div>
+                        <div class="meal-row"><span class="meal-type">Dinner</span><span>Farewell dinner<small>Family-style in the chef's kitchen</small></span></div>
+                    </div>
+
+                    <div class="day-block-title">🎒 Have handy</div>
+                    <div class="pack-today">
+                        <span class="pack-chip">Hiking outfit #2</span>
+                        <span class="pack-chip">Small backpack</span>
+                        <span class="pack-chip">Water bottle</span>
+                        <span class="pack-chip">Casual dinner outfit</span>
+                        <span class="pack-chip">Camera</span>
+                    </div>
+                </div>
+
+                <!-- DAY FOUR -->
+                <div class="day-card reveal reveal-delay-3">
+                    <div class="day-card-head">
+                        <div>
+                            <div class="day-label">Day Four</div>
+                            <div class="day-date">Sunday, Sept 13</div>
+                        </div>
+                        <div class="day-theme">Slow morning &amp; goodbyes</div>
+                    </div>
+
+                    <div class="day-block-title">✦ Activities</div>
+                    <div class="timeline">
+                        <div class="timeline-item"><span class="timeline-time">Morning</span><span>Slow morning — coffee, pool, pack up</span></div>
+                        <div class="timeline-item"><span class="timeline-time">Late AM</span><span>Check out &amp; drive to Phoenix<small>Leave ~3 hrs before your flight · see <a href="./flights.html" style="color: var(--gold); text-decoration: none;">Flights &amp; Transport</a></small></span></div>
+                        <div class="timeline-item"><span class="timeline-time">Afternoon</span><span>Departures from PHX</span></div>
+                    </div>
+
+                    <div class="day-block-title">🍽 Meals</div>
+                    <div>
+                        <div class="meal-row"><span class="meal-type">Breakfast</span><span>Grab-and-go breakfast<small>Finish up the leftovers!</small></span></div>
+                        <div class="meal-row"><span class="meal-type">Lunch</span><span>On the road or at the airport</span></div>
+                    </div>
+
+                    <div class="day-block-title">🎒 Have handy</div>
+                    <div class="pack-today">
+                        <span class="pack-chip">Chargers packed</span>
+                        <span class="pack-chip">Snacks for the drive</span>
+                        <span class="pack-chip">Travel outfit</span>
+                    </div>
+                </div>
+
+            </div>
+            <div class="stars-decoration">✦ ✦ ✦ ✦ ✦</div>
+        </div>
+    </section>
+
+    <!-- ============ PACKING LIST ============ -->
+    <section class="packing-section" id="packing">
+        <div class="section-header reveal">
+            <p class="section-overline">🌵 Sedona Packing List 🌵</p>
+            <h2 class="section-title">What to Bring</h2>
+        </div>
+
+        <div class="packing-intro reveal">
+            We're almost there!! Weather is looking warm and sunny overall, so pack for
+            80s / low 90s during the day and cooler mornings and evenings ☀️
+            No need to overpack — the whole weekend is very casual and comfy! 🌵
+        </div>
+
+        <div class="packing-progress reveal">
+            <span><span id="pack-done">0</span> / <span id="pack-total">0</span> packed</span>
+            <div class="packing-bar"><div class="packing-bar-fill" id="pack-bar"></div></div>
+            <button class="packing-reset" id="pack-reset" type="button">Reset</button>
+        </div>
+
+        <div class="packing-grid">
+
+            <div class="pack-card reveal">
+                <div class="pack-card-head">
+                    <div class="pack-card-icon">🥾</div>
+                    <div class="pack-card-title">Hiking</div>
+                    <div class="pack-card-count" data-count></div>
+                </div>
+                <ul class="pack-list">
+                    <li><label class="pack-item"><input type="checkbox" data-key="hike-outfits"><span>2 hiking / active outfits<small>Shorts + breathable tops are perfect</small></span></label></li>
+                    <li><label class="pack-item"><input type="checkbox" data-key="hike-shoes"><span>Hiking shoes or trail runners</span></label></li>
+                    <li><label class="pack-item"><input type="checkbox" data-key="hike-socks"><span>2–3 pairs of hiking / athletic socks</span></label></li>
+                    <li><label class="pack-item"><input type="checkbox" data-key="hike-water"><span>Reusable water bottle or hydration pack</span></label></li>
+                    <li><label class="pack-item"><input type="checkbox" data-key="hike-sunglasses"><span>Sunglasses</span></label></li>
+                    <li><label class="pack-item"><input type="checkbox" data-key="hike-hat"><span>Hat if you want!<small>A trip hat will also be provided 😊</small></span></label></li>
+                </ul>
+            </div>
+
+            <div class="pack-card reveal reveal-delay-1">
+                <div class="pack-card-head">
+                    <div class="pack-card-icon">👙</div>
+                    <div class="pack-card-title">Pool</div>
+                    <div class="pack-card-count" data-count></div>
+                </div>
+                <ul class="pack-list">
+                    <li><label class="pack-item"><input type="checkbox" data-key="pool-swimsuit"><span>Swimsuit(s)</span></label></li>
+                    <li><label class="pack-item"><input type="checkbox" data-key="pool-sandals"><span>Sandals / flip-flops</span></label></li>
+                    <li><label class="pack-item"><input type="checkbox" data-key="pool-coverup"><span>Pool cover-up if you want one</span></label></li>
+                </ul>
+            </div>
+
+            <div class="pack-card reveal reveal-delay-2">
+                <div class="pack-card-head">
+                    <div class="pack-card-icon">👕</div>
+                    <div class="pack-card-title">Clothes</div>
+                    <div class="pack-card-count" data-count></div>
+                </div>
+                <ul class="pack-list">
+                    <li><label class="pack-item"><input type="checkbox" data-key="clothes-comfy"><span>Comfy / casual clothes for hanging at the house</span></label></li>
+                    <li><label class="pack-item"><input type="checkbox" data-key="clothes-dinner"><span>Casual outfit(s) for dinners</span></label></li>
+                    <li><label class="pack-item"><input type="checkbox" data-key="clothes-pjs"><span>Pajamas</span></label></li>
+                    <li><label class="pack-item"><input type="checkbox" data-key="clothes-underwear"><span>Underwear / socks</span></label></li>
+                    <li><label class="pack-item"><input type="checkbox" data-key="clothes-layer"><span>One light layer / sweatshirt<small>For mornings and evenings</small></span></label></li>
+                </ul>
+            </div>
+
+            <div class="pack-card reveal">
+                <div class="pack-card-head">
+                    <div class="pack-card-icon">🧴</div>
+                    <div class="pack-card-title">Personal</div>
+                    <div class="pack-card-count" data-count></div>
+                </div>
+                <ul class="pack-list">
+                    <li><label class="pack-item"><input type="checkbox" data-key="personal-toiletries"><span>Toiletries</span></label></li>
+                    <li><label class="pack-item"><input type="checkbox" data-key="personal-meds"><span>Any medications you need</span></label></li>
+                    <li><label class="pack-item"><input type="checkbox" data-key="personal-face-spf"><span>Face sunscreen if you have one you like<small>I'll bring body sunscreen for everyone to share!</small></span></label></li>
+                    <li><label class="pack-item"><input type="checkbox" data-key="personal-chargers"><span>Chargers</span></label></li>
+                    <li><label class="pack-item"><input type="checkbox" data-key="personal-lipbalm"><span>SPF lip balm</span></label></li>
+                </ul>
+            </div>
+
+            <div class="pack-card optional reveal reveal-delay-1">
+                <div class="pack-card-head">
+                    <div class="pack-card-icon">✨</div>
+                    <div class="pack-card-title">Optional</div>
+                    <div class="pack-card-count" data-count></div>
+                </div>
+                <ul class="pack-list">
+                    <li><label class="pack-item"><input type="checkbox" data-key="opt-backpack"><span>Small hiking backpack</span></label></li>
+                    <li><label class="pack-item"><input type="checkbox" data-key="opt-charger"><span>Portable charger</span></label></li>
+                    <li><label class="pack-item"><input type="checkbox" data-key="opt-camera"><span>Camera</span></label></li>
+                    <li><label class="pack-item"><input type="checkbox" data-key="opt-book"><span>Book / Kindle</span></label></li>
+                    <li><label class="pack-item"><input type="checkbox" data-key="opt-lounge"><span>Anything you want for lounging by the pool</span></label></li>
+                </ul>
+            </div>
+
+            <div class="pack-card optional reveal reveal-delay-2">
+                <div class="pack-card-head">
+                    <div class="pack-card-icon">🧘</div>
+                    <div class="pack-card-title">Retreat</div>
+                    <div class="pack-card-count" data-count></div>
+                </div>
+                <ul class="pack-list">
+                    <li><label class="pack-item"><input type="checkbox" data-key="retreat-yoga"><span>Your favorite yoga gear<small>Mats will be at the house if you'd rather not carry one</small></span></label></li>
+                    <li><label class="pack-item"><input type="checkbox" data-key="retreat-journal"><span>Journal &amp; pen<small>For intention setting and conversation circles</small></span></label></li>
+                    <li><label class="pack-item"><input type="checkbox" data-key="retreat-blanket"><span>Cozy blanket or wrap for stargazing</span></label></li>
+                </ul>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- ============ FOOTER ============ -->
+    <footer>
+        <p>The Big ॐ &nbsp;·&nbsp; Sedona 2026 &nbsp;·&nbsp; <a href="./index.html">Back to Retreat Details</a> &nbsp;·&nbsp; <a href="./flights.html">Flights &amp; Transport</a> &nbsp;·&nbsp; <a href="./crew.html">The Crew</a></p>
+    </footer>
+
+    <!-- ============ SCRIPTS ============ -->
+    <script>
+        // ---------- Scroll reveal ----------
+        const revealObserver = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) entry.target.classList.add('active');
+            });
+        }, { threshold: 0.12, rootMargin: '0px 0px -40px 0px' });
+        document.querySelectorAll('.reveal').forEach(el => revealObserver.observe(el));
+
+        // ---------- Jump-tab highlight ----------
+        const jumpTabs = document.querySelectorAll('.jump-tab');
+        const sectionObserver = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    jumpTabs.forEach(t => t.classList.toggle('active', t.getAttribute('href') === '#' + entry.target.id));
+                }
+            });
+        }, { rootMargin: '-40% 0px -55% 0px' });
+        ['weather', 'days', 'packing'].forEach(id => {
+            const el = document.getElementById(id);
+            if (el) sectionObserver.observe(el);
+        });
+
+        // ---------- Weather ----------
+        const TEMP_MIN = 50, TEMP_MAX = 100; // shared scale for the range bars
+
+        function setBar(card, lo, hi) {
+            const bar = card.querySelector('[data-field="bar"]');
+            const left = ((lo - TEMP_MIN) / (TEMP_MAX - TEMP_MIN)) * 100;
+            const width = ((hi - lo) / (TEMP_MAX - TEMP_MIN)) * 100;
+            bar.style.left = Math.max(0, left) + '%';
+            bar.style.width = Math.max(2, width) + '%';
+        }
+
+        function fmtTime(iso) {
+            const d = new Date(iso);
+            if (isNaN(d)) return '';
+            let h = d.getHours(), m = d.getMinutes();
+            const ampm = h >= 12 ? 'PM' : 'AM';
+            h = h % 12 || 12;
+            return h + ':' + String(m).padStart(2, '0') + ' ' + ampm;
+        }
+
+        const WMO = {
+            0: ['☀️', 'Sunny'], 1: ['🌤️', 'Mostly sunny'], 2: ['⛅', 'Partly cloudy'], 3: ['☁️', 'Cloudy'],
+            45: ['🌫️', 'Foggy'], 48: ['🌫️', 'Foggy'],
+            51: ['🌦️', 'Light drizzle'], 53: ['🌦️', 'Drizzle'], 55: ['🌧️', 'Drizzle'],
+            61: ['🌧️', 'Light rain'], 63: ['🌧️', 'Rain'], 65: ['🌧️', 'Heavy rain'],
+            80: ['🌦️', 'Scattered showers'], 81: ['🌦️', 'Showers'], 82: ['🌧️', 'Heavy showers'],
+            95: ['⛈️', 'Thunderstorms'], 96: ['⛈️', 'Thunderstorms'], 99: ['⛈️', 'Thunderstorms']
+        };
+
+        // Paint the static "typical" bars first so the page is complete without network.
+        document.querySelectorAll('.weather-card').forEach(card => {
+            const lo = parseInt(card.querySelector('[data-field="lo"]').textContent, 10);
+            const hi = parseInt(card.querySelector('[data-field="hi"]').textContent, 10);
+            setBar(card, lo, hi);
+        });
+
+        // Then try to upgrade to the live forecast (Sedona, AZ). Fails silently.
+        (async function loadForecast() {
+            try {
+                const url = 'https://api.open-meteo.com/v1/forecast'
+                    + '?latitude=34.8697&longitude=-111.7610'
+                    + '&daily=temperature_2m_max,temperature_2m_min,precipitation_probability_max,weathercode,sunrise,sunset'
+                    + '&temperature_unit=fahrenheit&timezone=America%2FPhoenix'
+                    + '&start_date=2026-09-10&end_date=2026-09-13';
+                const res = await fetch(url);
+                if (!res.ok) return;
+                const data = await res.json();
+                const d = data.daily;
+                if (!d || !d.time) return;
+
+                let updated = 0;
+                d.time.forEach((date, i) => {
+                    const card = document.querySelector('.weather-card[data-date="' + date + '"]');
+                    if (!card) return;
+                    const hi = Math.round(d.temperature_2m_max[i]);
+                    const lo = Math.round(d.temperature_2m_min[i]);
+                    if (!isFinite(hi) || !isFinite(lo)) return;
+                    const [icon, desc] = WMO[d.weathercode[i]] || ['🌤️', 'Fair'];
+                    card.querySelector('[data-field="hi"]').textContent = hi + '°';
+                    card.querySelector('[data-field="lo"]').textContent = lo + '°';
+                    card.querySelector('[data-field="icon"]').textContent = icon;
+                    card.querySelector('[data-field="desc"]').textContent = desc;
+                    const rain = d.precipitation_probability_max ? d.precipitation_probability_max[i] : null;
+                    if (rain !== null && rain !== undefined) card.querySelector('[data-field="rain"]').textContent = rain;
+                    if (d.sunrise) card.querySelector('[data-field="sunrise"]').textContent = fmtTime(d.sunrise[i]);
+                    if (d.sunset) card.querySelector('[data-field="sunset"]').textContent = fmtTime(d.sunset[i]);
+                    setBar(card, lo, hi);
+                    updated++;
+                });
+
+                if (updated) {
+                    const note = document.getElementById('weather-note');
+                    const now = new Date();
+                    note.classList.add('live');
+                    note.innerHTML = '<span class="dot"></span> Live forecast · updated '
+                        + now.toLocaleDateString('en-US', { month: 'short', day: 'numeric' })
+                        + ' · via Open-Meteo';
+                }
+            } catch (e) { /* keep typical values */ }
+        })();
+
+        // ---------- Packing list (per-device check-off) ----------
+        const STORAGE_KEY = 'sedona-packing-v1';
+        const boxes = Array.from(document.querySelectorAll('.pack-item input[type="checkbox"]'));
+
+        function loadState() {
+            try { return JSON.parse(localStorage.getItem(STORAGE_KEY) || '{}'); } catch (e) { return {}; }
+        }
+        function saveState(state) {
+            try { localStorage.setItem(STORAGE_KEY, JSON.stringify(state)); } catch (e) { /* ignore */ }
+        }
+
+        function refreshCounts() {
+            const done = boxes.filter(b => b.checked).length;
+            document.getElementById('pack-done').textContent = done;
+            document.getElementById('pack-total').textContent = boxes.length;
+            document.getElementById('pack-bar').style.width = (boxes.length ? (done / boxes.length) * 100 : 0) + '%';
+            document.querySelectorAll('.pack-card').forEach(card => {
+                const inCard = Array.from(card.querySelectorAll('input[type="checkbox"]'));
+                const c = inCard.filter(b => b.checked).length;
+                card.querySelector('[data-count]').textContent = c + ' / ' + inCard.length;
+            });
+        }
+
+        const state = loadState();
+        boxes.forEach(b => {
+            b.checked = !!state[b.dataset.key];
+            b.addEventListener('change', () => {
+                state[b.dataset.key] = b.checked;
+                saveState(state);
+                refreshCounts();
+            });
+        });
+        document.getElementById('pack-reset').addEventListener('click', () => {
+            boxes.forEach(b => { b.checked = false; delete state[b.dataset.key]; });
+            saveState(state);
+            refreshCounts();
+        });
+        refreshCounts();
+    </script>
+
+</body>
+</html>
