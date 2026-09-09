@@ -132,12 +132,12 @@
 
         .nav-links {
             display: flex;
-            gap: 2.5rem;
+            gap: 1.7rem;
             list-style: none;
         }
 
         .nav-links a {
-            font-size: 0.7rem;
+            font-size: 0.66rem;
             font-weight: 400;
             letter-spacing: 0.2em;
             text-transform: uppercase;
@@ -1151,12 +1151,13 @@
             height: 100vh;
             background: var(--warm-white);
             z-index: 2000;
-            padding: 5rem 2.5rem 3rem;
+            padding: 4.5rem 2rem 2rem;
             box-shadow: -10px 0 40px rgba(0,0,0,0.15);
             transition: right 0.4s cubic-bezier(0.16, 1, 0.3, 1);
             display: flex;
             flex-direction: column;
             justify-content: center;
+            overflow-y: auto;
         }
 
         .mobile-menu.active {
@@ -1178,16 +1179,17 @@
             list-style: none;
             display: flex;
             flex-direction: column;
-            gap: 1.6rem;
+            gap: 0.85rem;
         }
 
         .mobile-nav-links a {
             font-family: 'Cormorant Garamond', serif;
-            font-size: 1.7rem;
+            font-size: 1.25rem;
             color: var(--deep-brown);
             text-decoration: none;
             transition: color 0.2s;
             display: block;
+            line-height: 1.3;
         }
 
         .mobile-nav-links a:hover {
@@ -1195,25 +1197,32 @@
         }
 
         .mobile-flights-item {
-            margin-top: 1.2rem;
-            padding-top: 1.5rem;
+            margin-top: 0.9rem;
+            padding-top: 1.1rem;
             border-top: 1px solid var(--sand);
+        }
+
+        .mobile-flights-item-next {
+            margin-top: 0;
+            padding-top: 0;
+            border-top: none;
         }
 
         .mobile-flights-btn {
             font-family: 'Montserrat', sans-serif !important;
-            font-size: 0.85rem !important;
+            font-size: 0.68rem !important;
             font-weight: 600;
-            letter-spacing: 0.15em;
+            letter-spacing: 0.12em;
             text-transform: uppercase;
             background: var(--terracotta);
             color: white !important;
-            padding: 1rem 1.6rem;
+            padding: 0.7rem 1.2rem;
             border-radius: 30px;
             text-align: center;
-            box-shadow: 0 4px 15px rgba(196, 112, 63, 0.3);
+            box-shadow: 0 3px 12px rgba(196, 112, 63, 0.28);
             display: inline-block !important;
             width: 100%;
+            line-height: 1.4 !important;
         }
 
         /* ============================================
@@ -1253,6 +1262,8 @@
             <li><a href="#hikes">Hikes</a></li>
             <li><a href="#details">Details</a></li>
             <li><a href="./schedule.html">Schedule 🗓</a></li>
+            <li><a href="./rooms.html">Rooms 🛏</a></li>
+            <li><a href="./explore.html">Explore 🌵</a></li>
             <li><a href="./flights.html">Flights ✈</a></li>
             <li><a href="./crew.html">The Crew 👋</a></li>
         </ul>
@@ -1273,8 +1284,10 @@
             <li><a href="#hikes" onclick="toggleMobileMenu()">Hikes</a></li>
             <li><a href="#details" onclick="toggleMobileMenu()">Details</a></li>
             <li class="mobile-flights-item"><a href="./schedule.html" class="mobile-flights-btn">Schedule & Packing 🗓</a></li>
-            <li class="mobile-flights-item" style="margin-top: 0; padding-top: 0.8rem; border-top: none;"><a href="./flights.html" class="mobile-flights-btn">Flights & Transport ✈</a></li>
-            <li class="mobile-flights-item" style="margin-top: 0; padding-top: 0.8rem; border-top: none;"><a href="./crew.html" class="mobile-flights-btn">Meet the Retreaters 👋</a></li>
+            <li class="mobile-flights-item mobile-flights-item-next"><a href="./rooms.html" class="mobile-flights-btn">Room Assignments 🛏</a></li>
+            <li class="mobile-flights-item mobile-flights-item-next"><a href="./explore.html" class="mobile-flights-btn">Explore Sedona 🌵</a></li>
+            <li class="mobile-flights-item mobile-flights-item-next"><a href="./flights.html" class="mobile-flights-btn">Flights & Transport ✈</a></li>
+            <li class="mobile-flights-item mobile-flights-item-next"><a href="./crew.html" class="mobile-flights-btn">Meet the Retreaters 👋</a></li>
         </ul>
     </div>
 
@@ -1565,42 +1578,13 @@
                 <p class="section-overline">The Journey</p>
                 <h2 class="section-title">Four Days of Flow</h2>
                 <p class="section-body">
-                    A loose rhythm to guide the weekend — nothing is mandatory, 
-                    everything is an invitation.
+                    A loose rhythm to guide the weekend — nothing is mandatory,
+                    everything is an invitation. The day-by-day plan, meals,
+                    weather, and packing list all live on the schedule page.
                 </p>
             </div>
-            <div class="schedule-days">
-                <a href="./schedule.html#days" class="schedule-day reveal reveal-delay-1">
-                    <div class="schedule-day-label">Day One</div>
-                    <div class="schedule-day-date">Thu, Sept 10</div>
-                    <div class="schedule-items">
-                        <div class="schedule-item">Arrive &amp; settle in</div>
-                    </div>
-                </a>
-                <a href="./schedule.html#days" class="schedule-day reveal reveal-delay-2">
-                    <div class="schedule-day-label">Day Two</div>
-                    <div class="schedule-day-date">Fri, Sept 11</div>
-                    <div class="schedule-items">
-                        <div class="schedule-item">Move &amp; celebrate</div>
-                    </div>
-                </a>
-                <a href="./schedule.html#days" class="schedule-day reveal reveal-delay-3">
-                    <div class="schedule-day-label">Day Three</div>
-                    <div class="schedule-day-date">Sat, Sept 12</div>
-                    <div class="schedule-items">
-                        <div class="schedule-item">Explore &amp; wander</div>
-                    </div>
-                </a>
-                <a href="./schedule.html#days" class="schedule-day reveal">
-                    <div class="schedule-day-label">Day Four</div>
-                    <div class="schedule-day-date">Sun, Sept 13</div>
-                    <div class="schedule-items">
-                        <div class="schedule-item">Slow morning &amp; goodbyes</div>
-                    </div>
-                </a>
-            </div>
-            <div class="schedule-cta-wrap reveal">
-                <a href="./schedule.html" class="schedule-cta">🗓 &nbsp;Full Schedule, Meals, Weather &amp; Packing List</a>
+            <div class="schedule-cta-wrap reveal" style="margin-top: 0;">
+                <a href="./schedule.html" class="schedule-cta">🗓 &nbsp;View the Full Schedule</a>
             </div>
             <div class="stars-decoration">✦ ✦ ✦ ✦ ✦</div>
         </div>
