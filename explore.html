@@ -1,0 +1,694 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Explore Sedona | The Big ॐ</title>
+    <meta name="description" content="Things to do and see around Sedona if you want to skip a hike or get out of the house — scenic spots, easy walks, town, food, wellness, and day trips.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&family=Montserrat:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <style>
+        *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+
+        :root {
+            --cream: #F5F0EB;
+            --warm-white: #FAF8F5;
+            --sand: #E8DFD4;
+            --terracotta: #C4703F;
+            --terracotta-light: #D4884F;
+            --deep-brown: #3D2B1F;
+            --charcoal: #2C2C2C;
+            --muted-sage: #8B9A7E;
+            --dusty-rose: #B8908A;
+            --gold: #C9A96E;
+            --night: #1A1A2E;
+        }
+
+        html { scroll-behavior: smooth; font-size: 16px; }
+
+        body {
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 300;
+            color: var(--charcoal);
+            background-color: var(--warm-white);
+            line-height: 1.8;
+            letter-spacing: 0.02em;
+            overflow-x: hidden;
+        }
+
+        h1, h2, h3, h4 {
+            font-family: 'Cormorant Garamond', serif;
+            font-weight: 300;
+            letter-spacing: 0.04em;
+        }
+
+        .section-overline {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 0.65rem;
+            font-weight: 500;
+            letter-spacing: 0.35em;
+            text-transform: uppercase;
+            color: var(--terracotta);
+            margin-bottom: 1.5rem;
+        }
+
+        .section-title {
+            font-size: clamp(2rem, 4vw, 3.5rem);
+            color: var(--deep-brown);
+            line-height: 1.2;
+            margin-bottom: 1.5rem;
+        }
+
+        .section-body {
+            font-size: 0.95rem;
+            max-width: 560px;
+            line-height: 2;
+            color: #5A5A5A;
+        }
+
+        /* NAV */
+        nav {
+            position: fixed;
+            top: 0; left: 0;
+            width: 100%;
+            z-index: 1000;
+            padding: 1.5rem 3rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background: rgba(245, 240, 235, 0.95);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+            border-bottom: 1px solid rgba(0,0,0,0.06);
+        }
+
+        .nav-back {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 0.75rem;
+            font-weight: 500;
+            letter-spacing: 0.15em;
+            text-transform: uppercase;
+            color: var(--terracotta);
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+
+        .nav-back:hover { color: var(--deep-brown); }
+
+        .nav-logo {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 1.3rem;
+            font-weight: 400;
+            color: var(--deep-brown);
+            letter-spacing: 0.08em;
+        }
+
+        /* HERO */
+        .page-hero {
+            padding: 10rem 3rem 5rem;
+            text-align: center;
+            background: linear-gradient(135deg, var(--cream) 0%, var(--warm-white) 50%, var(--sand) 100%);
+            position: relative;
+        }
+
+        .page-hero::after {
+            content: '';
+            position: absolute;
+            bottom: 0; left: 0;
+            width: 100%; height: 1px;
+            background: linear-gradient(to right, transparent, var(--sand), transparent);
+        }
+
+        .page-hero .section-overline { margin-bottom: 1rem; }
+        .page-hero .section-title { margin-bottom: 1rem; }
+        .page-hero .section-body { margin: 0 auto; }
+
+        .hero-subtitle {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 1.3rem;
+            font-style: italic;
+            color: var(--dusty-rose);
+            margin-top: 1.5rem;
+        }
+
+        /* JUMP LINKS */
+        .jump-tabs-container {
+            display: flex;
+            justify-content: center;
+            margin-top: -2.5rem;
+            position: relative;
+            z-index: 10;
+            padding: 0 1.5rem;
+        }
+
+        .jump-tabs {
+            background: rgba(255, 255, 255, 0.92);
+            backdrop-filter: blur(16px);
+            -webkit-backdrop-filter: blur(16px);
+            padding: 0.5rem;
+            border-radius: 50px;
+            box-shadow: 0 12px 40px rgba(0,0,0,0.08);
+            border: 1px solid rgba(196, 112, 63, 0.2);
+            display: flex;
+            gap: 0.3rem;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+
+        .jump-tab {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 0.8rem;
+            font-weight: 500;
+            letter-spacing: 0.04em;
+            color: #666;
+            text-decoration: none;
+            padding: 0.7rem 1.2rem;
+            border-radius: 40px;
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        .jump-tab:hover { color: var(--deep-brown); background: rgba(245, 240, 235, 0.8); }
+
+        .jump-tab.active {
+            background: var(--terracotta);
+            color: white;
+            box-shadow: 0 4px 18px rgba(196, 112, 63, 0.35);
+        }
+
+        /* CATEGORY SECTIONS */
+        .explore-section {
+            padding: 5rem 2rem 2rem;
+            max-width: 1150px;
+            margin: 0 auto;
+        }
+
+        .explore-section:last-of-type { padding-bottom: 6rem; }
+
+        .cat-header {
+            display: flex;
+            align-items: center;
+            gap: 1.2rem;
+            margin-bottom: 0.6rem;
+        }
+
+        .cat-icon {
+            width: 52px; height: 52px;
+            border-radius: 50%;
+            background: linear-gradient(135deg, var(--terracotta), var(--terracotta-light));
+            display: flex; align-items: center; justify-content: center;
+            font-size: 1.4rem;
+            flex-shrink: 0;
+            box-shadow: 0 4px 15px rgba(196, 112, 63, 0.25);
+        }
+
+        .cat-title {
+            font-size: 2.2rem;
+            font-weight: 400;
+            color: var(--deep-brown);
+            line-height: 1.1;
+        }
+
+        .cat-sub {
+            font-size: 0.88rem;
+            color: #777;
+            margin: 0.4rem 0 2rem 4.4rem;
+            max-width: 620px;
+        }
+
+        .place-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 1.4rem;
+        }
+
+        .place-card {
+            background: white;
+            border-radius: 18px;
+            padding: 1.6rem 1.6rem 1.3rem;
+            border: 1px solid rgba(0,0,0,0.05);
+            box-shadow: 0 8px 30px rgba(0,0,0,0.045);
+            display: flex;
+            flex-direction: column;
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+
+        .place-card:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 14px 40px rgba(0,0,0,0.08);
+        }
+
+        .place-name {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 1.45rem;
+            font-weight: 400;
+            color: var(--deep-brown);
+            line-height: 1.15;
+            margin-bottom: 0.5rem;
+        }
+
+        .place-desc {
+            font-size: 0.85rem;
+            color: #666;
+            line-height: 1.65;
+            flex: 1;
+        }
+
+        .place-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.4rem;
+            margin: 0.9rem 0 1rem;
+        }
+
+        .tag {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 0.6rem;
+            font-weight: 500;
+            letter-spacing: 0.1em;
+            text-transform: uppercase;
+            color: #4C5D3E;
+            background: rgba(139, 154, 126, 0.13);
+            border: 1px solid rgba(139, 154, 126, 0.3);
+            padding: 0.2rem 0.6rem;
+            border-radius: 20px;
+        }
+
+        .tag.warm {
+            color: var(--terracotta);
+            background: rgba(196, 112, 63, 0.1);
+            border-color: rgba(196, 112, 63, 0.3);
+        }
+
+        .place-links {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+            padding-top: 0.9rem;
+            border-top: 1px solid var(--sand);
+        }
+
+        .place-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.35rem;
+            font-family: 'Montserrat', sans-serif;
+            font-size: 0.64rem;
+            font-weight: 600;
+            letter-spacing: 0.12em;
+            text-transform: uppercase;
+            color: var(--terracotta);
+            text-decoration: none;
+            border: 1px solid rgba(196, 112, 63, 0.35);
+            padding: 0.4rem 0.9rem;
+            border-radius: 30px;
+            transition: all 0.25s;
+        }
+
+        .place-link:hover { background: var(--terracotta); color: white; }
+
+        .place-link.secondary {
+            color: #888;
+            border-color: rgba(0,0,0,0.12);
+        }
+
+        .place-link.secondary:hover { background: var(--deep-brown); border-color: var(--deep-brown); color: white; }
+
+        /* TIPS STRIP */
+        .tips-strip {
+            background: var(--night);
+            color: white;
+            padding: 4rem 2rem;
+        }
+
+        .tips-inner {
+            max-width: 1150px;
+            margin: 0 auto;
+            text-align: center;
+        }
+
+        .tips-strip .section-overline { color: var(--gold); }
+        .tips-strip .section-title { color: white; }
+
+        .tips-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 1.5rem;
+            margin-top: 2rem;
+            text-align: left;
+        }
+
+        .tip {
+            border: 1px solid rgba(255,255,255,0.1);
+            border-radius: 16px;
+            padding: 1.4rem 1.4rem 1.2rem;
+            background: rgba(255,255,255,0.02);
+        }
+
+        .tip-icon { font-size: 1.5rem; margin-bottom: 0.5rem; }
+
+        .tip-title {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 1.25rem;
+            color: white;
+            margin-bottom: 0.3rem;
+        }
+
+        .tip-desc {
+            font-size: 0.8rem;
+            color: rgba(255,255,255,0.6);
+            line-height: 1.65;
+        }
+
+        /* FOOTER */
+        footer {
+            padding: 3rem;
+            text-align: center;
+            color: #999;
+            font-size: 0.8rem;
+            letter-spacing: 0.1em;
+            background: linear-gradient(180deg, var(--warm-white) 0%, var(--cream) 100%);
+            border-top: 1px solid rgba(196, 112, 63, 0.08);
+        }
+
+        footer a { color: var(--terracotta); text-decoration: none; }
+
+        /* REVEAL */
+        .reveal {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: all 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        .reveal.active { opacity: 1; transform: translateY(0); }
+
+        /* RESPONSIVE */
+        @media (max-width: 1000px) {
+            .place-grid { grid-template-columns: repeat(2, 1fr); }
+            .tips-grid { grid-template-columns: repeat(2, 1fr); }
+        }
+
+        @media (max-width: 768px) {
+            nav { padding: 0.8rem 1rem; }
+            .page-hero { padding: 6rem 1rem 3.5rem; }
+            .jump-tab { padding: 0.55rem 0.9rem; font-size: 0.72rem; }
+            .explore-section { padding: 3.5rem 1rem 1rem; }
+            .cat-title { font-size: 1.7rem; }
+            .cat-sub { margin-left: 0; }
+            .place-grid { grid-template-columns: 1fr; gap: 1rem; }
+            .tips-strip { padding: 3rem 1rem; }
+            .tips-grid { grid-template-columns: 1fr; }
+        }
+    </style>
+</head>
+<body>
+
+    <nav>
+        <a href="./schedule.html" class="nav-back">← Back to Schedule</a>
+        <span class="nav-logo">The Big ॐ</span>
+    </nav>
+
+    <section class="page-hero">
+        <p class="section-overline">Off the Schedule</p>
+        <h1 class="section-title">Explore Sedona</h1>
+        <p class="section-body">
+            Skipping a hike, or just want to get out of the house for a bit?
+            Here's a menu of easy walks, viewpoints, town wandering, food,
+            and day trips — all a short drive from the Airbnb. Every spot has a
+            map link so you can just tap and go.
+        </p>
+        <p class="hero-subtitle">Pick your own adventure</p>
+    </section>
+
+    <div class="jump-tabs-container">
+        <div class="jump-tabs">
+            <a href="#views" class="jump-tab">🏜 Views &amp; Easy Walks</a>
+            <a href="#town" class="jump-tab">🛍 Town</a>
+            <a href="#eat" class="jump-tab">🍽 Eat &amp; Drink</a>
+            <a href="#wellness" class="jump-tab">🧘 Wellness</a>
+            <a href="#trips" class="jump-tab">🚙 Day Trips</a>
+        </div>
+    </div>
+
+    <!-- VIEWS & EASY WALKS -->
+    <section class="explore-section" id="views">
+        <div class="cat-header reveal">
+            <div class="cat-icon">🏜</div>
+            <h2 class="cat-title">Views &amp; Easy Walks</h2>
+        </div>
+        <p class="cat-sub reveal">Big red-rock payoff, minimal effort. Most of these are under an hour and mostly flat.</p>
+
+        <div class="place-grid">
+            <div class="place-card reveal">
+                <div class="place-name">Airport Mesa Overlook</div>
+                <p class="place-desc">The classic sunset spot — a short walk up from the parking lot to a 360° view over town and the red rocks. Go 30 minutes before sunset.</p>
+                <div class="place-tags"><span class="tag">10 min from house</span><span class="tag warm">Sunset</span><span class="tag">$3 parking</span></div>
+                <div class="place-links"><a class="place-link" href="https://www.google.com/maps/search/?api=1&query=Sedona+Airport+Scenic+Lookout" target="_blank" rel="noopener">📍 Map</a></div>
+            </div>
+            <div class="place-card reveal">
+                <div class="place-name">Bell Rock Pathway</div>
+                <p class="place-desc">Wide, flat, and gorgeous — walk as far as you like along Bell Rock and Courthouse Butte, then turn around. Great for a chill morning stroll.</p>
+                <div class="place-tags"><span class="tag">Flat</span><span class="tag">Choose your length</span><span class="tag warm">Vortex site</span></div>
+                <div class="place-links"><a class="place-link" href="https://www.google.com/maps/search/?api=1&query=Bell+Rock+Pathway+Trailhead+Sedona+AZ" target="_blank" rel="noopener">📍 Map</a><a class="place-link secondary" href="https://www.alltrails.com/trail/us/arizona/bell-rock-pathway" target="_blank" rel="noopener">AllTrails</a></div>
+            </div>
+            <div class="place-card reveal">
+                <div class="place-name">Crescent Moon / Red Rock Crossing</div>
+                <p class="place-desc">Cathedral Rock reflected in Oak Creek — the most photographed view in Sedona. Bring a towel, wade in the creek, and sit under the cottonwoods.</p>
+                <div class="place-tags"><span class="tag">Creek</span><span class="tag">Picnic</span><span class="tag">$12 / car</span></div>
+                <div class="place-links"><a class="place-link" href="https://www.google.com/maps/search/?api=1&query=Crescent+Moon+Picnic+Site+Sedona+AZ" target="_blank" rel="noopener">📍 Map</a></div>
+            </div>
+            <div class="place-card reveal">
+                <div class="place-name">Chapel of the Holy Cross</div>
+                <p class="place-desc">A striking chapel built right into the red rock. Free, quick, and the view from the ramp is worth the stop on its own.</p>
+                <div class="place-tags"><span class="tag">Free</span><span class="tag">30 min</span></div>
+                <div class="place-links"><a class="place-link" href="https://www.google.com/maps/search/?api=1&query=Chapel+of+the+Holy+Cross+Sedona+AZ" target="_blank" rel="noopener">📍 Map</a></div>
+            </div>
+            <div class="place-card reveal">
+                <div class="place-name">Fay Canyon Trail</div>
+                <p class="place-desc">An easy, mostly shaded box-canyon walk near Boynton Canyon. Gentle grade, big walls, and a natural arch if you scramble a little at the end.</p>
+                <div class="place-tags"><span class="tag">Easy</span><span class="tag">2.4 mi</span><span class="tag">Shade</span></div>
+                <div class="place-links"><a class="place-link" href="https://www.google.com/maps/search/?api=1&query=Fay+Canyon+Trailhead+Sedona+AZ" target="_blank" rel="noopener">📍 Map</a><a class="place-link secondary" href="https://www.alltrails.com/trail/us/arizona/fay-canyon-trail" target="_blank" rel="noopener">AllTrails</a></div>
+            </div>
+            <div class="place-card reveal">
+                <div class="place-name">Oak Creek Canyon Scenic Drive</div>
+                <p class="place-desc">Head north on 89A through the canyon — switchbacks, creek views, and a pull-off at the top (Oak Creek Vista) with Native American craft stalls.</p>
+                <div class="place-tags"><span class="tag">Drive</span><span class="tag">1–2 hrs round trip</span></div>
+                <div class="place-links"><a class="place-link" href="https://www.google.com/maps/search/?api=1&query=Oak+Creek+Vista+Sedona+AZ" target="_blank" rel="noopener">📍 Map</a></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- TOWN -->
+    <section class="explore-section" id="town">
+        <div class="cat-header reveal">
+            <div class="cat-icon">🛍</div>
+            <h2 class="cat-title">Town &amp; Wandering</h2>
+        </div>
+        <p class="cat-sub reveal">Galleries, shops, crystals, and people-watching. Good for a lazy afternoon.</p>
+
+        <div class="place-grid">
+            <div class="place-card reveal">
+                <div class="place-name">Tlaquepaque Arts &amp; Shopping Village</div>
+                <p class="place-desc">Sycamore-shaded courtyards, fountains, galleries and patios. Modeled on a Mexican village — the prettiest place in town to wander.</p>
+                <div class="place-tags"><span class="tag">Galleries</span><span class="tag">Patios</span><span class="tag warm">On the schedule Sat</span></div>
+                <div class="place-links"><a class="place-link" href="https://www.google.com/maps/search/?api=1&query=Tlaquepaque+Arts+and+Shopping+Village+Sedona+AZ" target="_blank" rel="noopener">📍 Map</a></div>
+            </div>
+            <div class="place-card reveal">
+                <div class="place-name">Uptown Sedona</div>
+                <p class="place-desc">The main strip — souvenir shops, ice cream, fudge, jeep tour outposts, and easy red-rock views from the sidewalk.</p>
+                <div class="place-tags"><span class="tag">Shops</span><span class="tag">Ice cream</span></div>
+                <div class="place-links"><a class="place-link" href="https://www.google.com/maps/search/?api=1&query=Uptown+Sedona+AZ" target="_blank" rel="noopener">📍 Map</a></div>
+            </div>
+            <div class="place-card reveal">
+                <div class="place-name">Crystal &amp; Vortex Shops</div>
+                <p class="place-desc">Lean into it. Crystal Magic and Center for the New Age are the big ones — aura photos, readings, and every stone you can imagine.</p>
+                <div class="place-tags"><span class="tag warm">Very Sedona</span><span class="tag">Aura photos</span></div>
+                <div class="place-links"><a class="place-link" href="https://www.google.com/maps/search/?api=1&query=Crystal+Magic+Sedona+AZ" target="_blank" rel="noopener">📍 Crystal Magic</a><a class="place-link secondary" href="https://www.google.com/maps/search/?api=1&query=Center+for+the+New+Age+Sedona+AZ" target="_blank" rel="noopener">📍 New Age</a></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- EAT & DRINK -->
+    <section class="explore-section" id="eat">
+        <div class="cat-header reveal">
+            <div class="cat-icon">🍽</div>
+            <h2 class="cat-title">Eat &amp; Drink</h2>
+        </div>
+        <p class="cat-sub reveal">For a coffee run, a lunch out, or a patio drink with a view. Popular dinner spots book up — reserve ahead.</p>
+
+        <div class="place-grid">
+            <div class="place-card reveal">
+                <div class="place-name">Creekside Coffee &amp; Bakery</div>
+                <p class="place-desc">Morning coffee with a view of Snoopy Rock from the upstairs deck. Pastries, breakfast burritos, easy parking.</p>
+                <div class="place-tags"><span class="tag">Coffee</span><span class="tag">Breakfast</span></div>
+                <div class="place-links"><a class="place-link" href="https://www.google.com/maps/search/?api=1&query=Creekside+Coffee+and+Bakery+Sedona+AZ" target="_blank" rel="noopener">📍 Map</a></div>
+            </div>
+            <div class="place-card reveal">
+                <div class="place-name">Indian Gardens Café &amp; Market</div>
+                <p class="place-desc">Tucked into Oak Creek Canyon — sandwiches, salads, and a shady back garden by the creek. Pair it with the scenic drive.</p>
+                <div class="place-tags"><span class="tag">Lunch</span><span class="tag">Garden</span></div>
+                <div class="place-links"><a class="place-link" href="https://www.google.com/maps/search/?api=1&query=Indian+Gardens+Cafe+and+Market+Sedona+AZ" target="_blank" rel="noopener">📍 Map</a></div>
+            </div>
+            <div class="place-card reveal">
+                <div class="place-name">Pisa Lisa</div>
+                <p class="place-desc">Wood-fired pizza, salads, and gelato. Casual, quick, and reliably great — a good group lunch that pleases everyone.</p>
+                <div class="place-tags"><span class="tag">Pizza</span><span class="tag">Casual</span></div>
+                <div class="place-links"><a class="place-link" href="https://www.google.com/maps/search/?api=1&query=Pisa+Lisa+Sedona+AZ" target="_blank" rel="noopener">📍 Map</a></div>
+            </div>
+            <div class="place-card reveal">
+                <div class="place-name">Mariposa Latin Inspired Grill</div>
+                <p class="place-desc">Sunset drinks on the patio with one of the best views in town. Pricier — think a cocktail and empanadas rather than a full meal.</p>
+                <div class="place-tags"><span class="tag warm">Sunset drinks</span><span class="tag">$$$</span></div>
+                <div class="place-links"><a class="place-link" href="https://www.google.com/maps/search/?api=1&query=Mariposa+Latin+Inspired+Grill+Sedona+AZ" target="_blank" rel="noopener">📍 Map</a></div>
+            </div>
+            <div class="place-card reveal">
+                <div class="place-name">Oak Creek Brewery &amp; Grill</div>
+                <p class="place-desc">Upstairs in Tlaquepaque — local beer, pub food, and a rooftop patio. Easy to fold into the Saturday wander.</p>
+                <div class="place-tags"><span class="tag">Beer</span><span class="tag">Rooftop</span></div>
+                <div class="place-links"><a class="place-link" href="https://www.google.com/maps/search/?api=1&query=Oak+Creek+Brewery+and+Grill+Tlaquepaque+Sedona+AZ" target="_blank" rel="noopener">📍 Map</a></div>
+            </div>
+            <div class="place-card reveal">
+                <div class="place-name">Elote Café</div>
+                <p class="place-desc">Sedona's most famous dinner — modern Mexican, the namesake elote, and a serious margarita list. Reservations essential.</p>
+                <div class="place-tags"><span class="tag">Dinner</span><span class="tag warm">Book ahead</span></div>
+                <div class="place-links"><a class="place-link" href="https://www.google.com/maps/search/?api=1&query=Elote+Cafe+Sedona+AZ" target="_blank" rel="noopener">📍 Map</a></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- WELLNESS -->
+    <section class="explore-section" id="wellness">
+        <div class="cat-header reveal">
+            <div class="cat-icon">🧘</div>
+            <h2 class="cat-title">Wellness &amp; Slow Down</h2>
+        </div>
+        <p class="cat-sub reveal">It's a wellness retreat, after all. Sedona is very good at this.</p>
+
+        <div class="place-grid">
+            <div class="place-card reveal">
+                <div class="place-name">Sound Bath or Vortex Session</div>
+                <p class="place-desc">Sedona is full of practitioners offering sound baths, guided meditations, and vortex walks — most can be booked same-day. Search "Sedona sound bath" and pick one that's near the house.</p>
+                <div class="place-tags"><span class="tag warm">Very Sedona</span><span class="tag">1–2 hrs</span></div>
+                <div class="place-links"><a class="place-link" href="https://www.google.com/maps/search/?api=1&query=sound+bath+Sedona+AZ" target="_blank" rel="noopener">📍 Find one nearby</a></div>
+            </div>
+            <div class="place-card reveal">
+                <div class="place-name">Spa Day</div>
+                <p class="place-desc">A massage after two days of hiking is a strong move. Sedona's New Day Spa and the resort spas around town take walk-ins when they can.</p>
+                <div class="place-tags"><span class="tag">Massage</span><span class="tag">Book ahead</span></div>
+                <div class="place-links"><a class="place-link" href="https://www.google.com/maps/search/?api=1&query=Sedona's+New+Day+Spa+Sedona+AZ" target="_blank" rel="noopener">📍 Map</a></div>
+            </div>
+            <div class="place-card reveal">
+                <div class="place-name">Slide Rock State Park</div>
+                <p class="place-desc">A natural red-rock water slide in Oak Creek Canyon. Cold water, warm rocks, very fun. Arrive early — the lot fills by late morning.</p>
+                <div class="place-tags"><span class="tag">Swim</span><span class="tag">$20–30 / car</span><span class="tag warm">Go early</span></div>
+                <div class="place-links"><a class="place-link" href="https://www.google.com/maps/search/?api=1&query=Slide+Rock+State+Park+Sedona+AZ" target="_blank" rel="noopener">📍 Map</a></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- DAY TRIPS -->
+    <section class="explore-section" id="trips">
+        <div class="cat-header reveal">
+            <div class="cat-icon">🚙</div>
+            <h2 class="cat-title">Adventures &amp; Day Trips</h2>
+        </div>
+        <p class="cat-sub reveal">If you've got a car and a free half-day. All within about an hour.</p>
+
+        <div class="place-grid">
+            <div class="place-card reveal">
+                <div class="place-name">Pink Jeep Tour</div>
+                <p class="place-desc">The iconic Sedona thing — an open-air jeep bouncing over slickrock on the Broken Arrow trail. Loud, fun, and all the views without the hike.</p>
+                <div class="place-tags"><span class="tag">2 hrs</span><span class="tag">$$$</span><span class="tag warm">Book ahead</span></div>
+                <div class="place-links"><a class="place-link" href="https://www.google.com/maps/search/?api=1&query=Pink+Jeep+Tours+Sedona+AZ" target="_blank" rel="noopener">📍 Map</a><a class="place-link secondary" href="https://www.pinkadventuretours.com/sedona/" target="_blank" rel="noopener">Book</a></div>
+            </div>
+            <div class="place-card reveal">
+                <div class="place-name">Jerome</div>
+                <p class="place-desc">A former copper-mining town clinging to a mountainside — now galleries, wine tasting rooms, and a very haunted hotel. About 45 minutes away.</p>
+                <div class="place-tags"><span class="tag">45 min drive</span><span class="tag">Wine</span><span class="tag">Half day</span></div>
+                <div class="place-links"><a class="place-link" href="https://www.google.com/maps/search/?api=1&query=Jerome+AZ" target="_blank" rel="noopener">📍 Map</a></div>
+            </div>
+            <div class="place-card reveal">
+                <div class="place-name">Montezuma Castle</div>
+                <p class="place-desc">A 900-year-old cliff dwelling built into a limestone wall, right off I-17. Quick, humbling stop — easy to pair with the drive to or from Phoenix.</p>
+                <div class="place-tags"><span class="tag">National Monument</span><span class="tag">45 min</span><span class="tag">On the way to PHX</span></div>
+                <div class="place-links"><a class="place-link" href="https://www.google.com/maps/search/?api=1&query=Montezuma+Castle+National+Monument" target="_blank" rel="noopener">📍 Map</a></div>
+            </div>
+            <div class="place-card reveal">
+                <div class="place-name">Sunrise Hot Air Balloon</div>
+                <p class="place-desc">Float over the red rocks at dawn. Splurge-y and an early wake-up, but a once-in-a-lifetime kind of morning.</p>
+                <div class="place-tags"><span class="tag">Sunrise</span><span class="tag">$$$$</span><span class="tag warm">Book ahead</span></div>
+                <div class="place-links"><a class="place-link" href="https://www.google.com/maps/search/?api=1&query=hot+air+balloon+rides+Sedona+AZ" target="_blank" rel="noopener">📍 Find operators</a></div>
+            </div>
+            <div class="place-card reveal">
+                <div class="place-name">Stargazing Tour</div>
+                <p class="place-desc">Sedona is an International Dark Sky Community. If the hot tub stargazing leaves you wanting more, local astronomers run telescope tours most clear nights.</p>
+                <div class="place-tags"><span class="tag">Night</span><span class="tag">Telescopes</span></div>
+                <div class="place-links"><a class="place-link" href="https://www.google.com/maps/search/?api=1&query=stargazing+tour+Sedona+AZ" target="_blank" rel="noopener">📍 Find a tour</a></div>
+            </div>
+            <div class="place-card reveal">
+                <div class="place-name">Verde Canyon Railroad</div>
+                <p class="place-desc">A 4-hour vintage train ride through a canyon you can't reach by road, from Clarkdale. Open-air cars, bald eagles, and a bar. Very relaxing.</p>
+                <div class="place-tags"><span class="tag">4 hrs</span><span class="tag">40 min drive</span><span class="tag warm">Book ahead</span></div>
+                <div class="place-links"><a class="place-link" href="https://www.google.com/maps/search/?api=1&query=Verde+Canyon+Railroad+Clarkdale+AZ" target="_blank" rel="noopener">📍 Map</a></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- TIPS -->
+    <section class="tips-strip">
+        <div class="tips-inner">
+            <div class="reveal">
+                <p class="section-overline">Good to Know</p>
+                <h2 class="section-title">Sedona Tips</h2>
+            </div>
+            <div class="tips-grid">
+                <div class="tip reveal">
+                    <div class="tip-icon">🎟</div>
+                    <div class="tip-title">Red Rock Pass</div>
+                    <div class="tip-desc">Most trailheads need a Red Rock Pass ($5/day) or an America the Beautiful pass on the dash. Kiosks at the lots take cards.</div>
+                </div>
+                <div class="tip reveal">
+                    <div class="tip-icon">🚌</div>
+                    <div class="tip-title">Sedona Shuttle</div>
+                    <div class="tip-desc">Thu–Sun, some popular trailheads (Cathedral Rock included) are shuttle-only during the day. Free — check sedonashuttle.com before you drive.</div>
+                </div>
+                <div class="tip reveal">
+                    <div class="tip-icon">💧</div>
+                    <div class="tip-title">Water, Always</div>
+                    <div class="tip-desc">It's high desert at 4,300 ft — dry air and strong sun. Carry more water than you think, even for the short stuff.</div>
+                </div>
+                <div class="tip reveal">
+                    <div class="tip-icon">🚗</div>
+                    <div class="tip-title">Grab a Car Buddy</div>
+                    <div class="tip-desc">Cars are shared, so coordinate in the group chat before heading out — and let Lara know so nobody's stranded for the hike.</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <p>The Big ॐ &nbsp;·&nbsp; Sedona 2026 &nbsp;·&nbsp; <a href="./index.html">Back to Retreat Details</a> &nbsp;·&nbsp; <a href="./schedule.html">Schedule &amp; Packing</a> &nbsp;·&nbsp; <a href="./flights.html">Flights &amp; Transport</a> &nbsp;·&nbsp; <a href="./crew.html">The Crew</a></p>
+    </footer>
+
+    <script>
+        const revealObserver = new IntersectionObserver((entries) => {
+            entries.forEach(entry => { if (entry.isIntersecting) entry.target.classList.add('active'); });
+        }, { threshold: 0.12, rootMargin: '0px 0px -40px 0px' });
+        document.querySelectorAll('.reveal').forEach(el => revealObserver.observe(el));
+
+        const jumpTabs = document.querySelectorAll('.jump-tab');
+        const sectionObserver = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    jumpTabs.forEach(t => t.classList.toggle('active', t.getAttribute('href') === '#' + entry.target.id));
+                }
+            });
+        }, { rootMargin: '-35% 0px -55% 0px' });
+        ['views', 'town', 'eat', 'wellness', 'trips'].forEach(id => {
+            const el = document.getElementById(id);
+            if (el) sectionObserver.observe(el);
+        });
+    </script>
+
+</body>
+</html>

@@ -532,6 +532,59 @@
             color: rgba(255,255,255,0.4);
         }
 
+        .tl-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.3rem;
+            font-family: 'Montserrat', sans-serif;
+            font-size: 0.62rem;
+            font-weight: 600;
+            letter-spacing: 0.12em;
+            text-transform: uppercase;
+            color: var(--night);
+            background: var(--gold);
+            text-decoration: none;
+            padding: 0.25rem 0.7rem;
+            border-radius: 20px;
+            margin-top: 0.35rem;
+            transition: all 0.25s;
+        }
+
+        .tl-link:hover {
+            background: #DCC08F;
+            transform: translateY(-1px);
+        }
+
+        .tl-link-soft {
+            color: var(--gold);
+            text-decoration: none;
+            border-bottom: 1px solid rgba(201, 169, 110, 0.4);
+        }
+
+        .explore-cta {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            margin-top: 1.4rem;
+            font-family: 'Montserrat', sans-serif;
+            font-size: 0.7rem;
+            font-weight: 600;
+            letter-spacing: 0.15em;
+            text-transform: uppercase;
+            color: var(--night);
+            background: linear-gradient(135deg, var(--gold), #DCC08F);
+            text-decoration: none;
+            padding: 0.8rem 1.6rem;
+            border-radius: 30px;
+            box-shadow: 0 4px 15px rgba(201, 169, 110, 0.3);
+            transition: all 0.3s;
+        }
+
+        .explore-cta:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 25px rgba(201, 169, 110, 0.45);
+        }
+
         .pack-today {
             display: flex;
             flex-wrap: wrap;
@@ -939,9 +992,11 @@
                 <h2 class="section-title">Day by Day</h2>
                 <p class="section-body" style="margin: 0 auto;">
                     A loose rhythm to guide the weekend — nothing is mandatory,
-                    everything is an invitation. Meals are a mix of group cooking
-                    and a few treats out; we'll finalize together.
+                    everything is an invitation. Hot tub and stargazing are on
+                    the menu every night. Not feeling a hike or want to get out
+                    of the house? There's a whole list of other things to do.
                 </p>
+                <a href="./explore.html" class="explore-cta">🌵 &nbsp;Explore Sedona — Other Things to Do</a>
             </div>
 
             <div class="days-grid">
@@ -959,15 +1014,16 @@
                     <div class="day-block-title">✦ Activities</div>
                     <div class="timeline">
                         <div class="timeline-item"><span class="timeline-time">Midday</span><span>Land in Phoenix, rental car groups head north<small>~2 hr scenic drive through red rock country</small></span></div>
-                        <div class="timeline-item"><span class="timeline-time">4:00 PM</span><span>Check in at the house, pick rooms, pool time<small>Lunch in town first if you arrive early · <a href="./flights.html" style="color: var(--gold); text-decoration: none;">house &amp; check-in details</a></small></span></div>
+                        <div class="timeline-item"><span class="timeline-time">4:00 PM</span><span>Check in at the house — rooms will be assigned, then pool time<small>Lunch in town first if you arrive early · <a href="./flights.html" class="tl-link-soft">house &amp; check-in details</a></small></span></div>
                         <div class="timeline-item"><span class="timeline-time">Sunset</span><span>Intention setting on the terrace</span></div>
                         <div class="timeline-item"><span class="timeline-time">Evening</span><span>Prompted conversation circles</span></div>
+                        <div class="timeline-item"><span class="timeline-time">Night</span><span>Hot tub &amp; stargazing</span></div>
                     </div>
 
                     <div class="day-block-title">🍽 Meals</div>
                     <div>
                         <div class="meal-row"><span class="meal-type">Lunch</span><span>On your own — grab something at PHX or on the drive up</span></div>
-                        <div class="meal-row"><span class="meal-type">Dinner</span><span>Welcome dinner at the house<small>Group cook — taco night</small></span></div>
+                        <div class="meal-row"><span class="meal-type">Dinner</span><span>Mexican night 🌮<small>Tacos al pastor, chicken &amp; carnitas with rice, beans, chips &amp; guac</small></span></div>
                     </div>
 
                     <div class="day-block-title">🎒 Have handy</div>
@@ -991,18 +1047,17 @@
 
                     <div class="day-block-title">✦ Activities</div>
                     <div class="timeline">
-                        <div class="timeline-item"><span class="timeline-time">Morning</span><span>Yoga on the deck</span></div>
-                        <div class="timeline-item"><span class="timeline-time">Late AM</span><span>Cathedral Rock hike<small>1.2 mi · 740 ft gain · short but steep — go before the heat</small></span></div>
-                        <div class="timeline-item"><span class="timeline-time">Afternoon</span><span>Pool, naps, free time</span></div>
-                        <div class="timeline-item"><span class="timeline-time">Sunset</span><span>Sunset DJ set on the terrace</span></div>
-                        <div class="timeline-item"><span class="timeline-time">Night</span><span>Stargazing &amp; mini lectures</span></div>
+                        <div class="timeline-item"><span class="timeline-time">Morning</span><span>Morning yoga on the deck</span></div>
+                        <div class="timeline-item"><span class="timeline-time">Midday</span><span>Free time — pool, naps, or get out and explore<small><a href="./explore.html" class="tl-link-soft">Other things to do in Sedona →</a></small></span></div>
+                        <div class="timeline-item"><span class="timeline-time">5:30 PM</span><span>Leave the Airbnb for the Cathedral Rock sunset hike<small>1.2 mi · 740 ft gain · short but steep · sunset ~6:37 PM</small><a href="https://www.google.com/maps/search/?api=1&query=Cathedral+Rock+Trailhead+Sedona+AZ" target="_blank" rel="noopener" class="tl-link">📍 Route to Cathedral Rock Trailhead</a></span></div>
+                        <div class="timeline-item"><span class="timeline-time">Night</span><span>Hot tub &amp; stargazing</span></div>
                     </div>
 
                     <div class="day-block-title">🍽 Meals</div>
                     <div>
-                        <div class="meal-row"><span class="meal-type">Breakfast</span><span>Breakfast at the house<small>Coffee, fruit, eggs, yogurt &amp; granola</small></span></div>
-                        <div class="meal-row"><span class="meal-type">Lunch</span><span>Post-hike lunch at the house<small>Build-your-own sandwiches &amp; salads</small></span></div>
-                        <div class="meal-row"><span class="meal-type">Dinner</span><span>Grill night on the deck<small>Group cook — burgers, veggies, sides</small></span></div>
+                        <div class="meal-row"><span class="meal-type">Breakfast</span><span>Eggs, turkey &amp; croissants</span></div>
+                        <div class="meal-row"><span class="meal-type">Lunch</span><span>Burgers for whoever's around</span></div>
+                        <div class="meal-row"><span class="meal-type">Dinner</span><span>Miso honey salmon<small>With rice, asparagus &amp; broccoli</small></span></div>
                     </div>
 
                     <div class="day-block-title">🎒 Have handy</div>
@@ -1011,7 +1066,8 @@
                         <span class="pack-chip">Hiking shoes</span>
                         <span class="pack-chip">Hat &amp; sunglasses</span>
                         <span class="pack-chip">Sunscreen</span>
-                        <span class="pack-chip">Hydration pack</span>
+                        <span class="pack-chip">Water bottle</span>
+                        <span class="pack-chip">Phone light for the walk down</span>
                         <span class="pack-chip">Sweatshirt for stargazing</span>
                     </div>
                 </div>
@@ -1028,17 +1084,18 @@
 
                     <div class="day-block-title">✦ Activities</div>
                     <div class="timeline">
-                        <div class="timeline-item"><span class="timeline-time">Morning</span><span>Yoga &amp; meditation</span></div>
-                        <div class="timeline-item"><span class="timeline-time">Late AM</span><span>Subway Cave hike via Boynton Canyon<small>4.8 mi out &amp; back · 574 ft gain · sandy washes &amp; piñon-juniper</small></span></div>
-                        <div class="timeline-item"><span class="timeline-time">Afternoon</span><span>Tlaquepaque Arts &amp; Shopping Village</span></div>
-                        <div class="timeline-item"><span class="timeline-time">Evening</span><span>Surprise guest ✨</span></div>
+                        <div class="timeline-item"><span class="timeline-time">Early</span><span>Yoga &amp; meditation for the early risers</span></div>
+                        <div class="timeline-item"><span class="timeline-time">8:00 AM</span><span>Leave for the Subway Cave hike via Boynton Canyon<small>4.8 mi out &amp; back · 574 ft gain · sandy washes &amp; piñon-juniper</small><a href="https://www.google.com/maps/search/?api=1&query=Boynton+Canyon+Trailhead+Sedona+AZ" target="_blank" rel="noopener" class="tl-link">📍 Route to Boynton Canyon Trailhead</a></span></div>
+                        <div class="timeline-item"><span class="timeline-time">Afternoon</span><span>Tlaquepaque Arts &amp; Shopping Village<small>Or pick something from <a href="./explore.html" class="tl-link-soft">the explore list</a></small></span></div>
+                        <div class="timeline-item"><span class="timeline-time">Evening</span><span>Projections by Mattaniah &amp; DJ set by Ryan ✨🎧</span></div>
+                        <div class="timeline-item"><span class="timeline-time">Night</span><span>Hot tub &amp; stargazing</span></div>
                     </div>
 
                     <div class="day-block-title">🍽 Meals</div>
                     <div>
-                        <div class="meal-row"><span class="meal-type">Breakfast</span><span>Breakfast at the house</span></div>
-                        <div class="meal-row"><span class="meal-type">Lunch</span><span>Lunch out in Tlaquepaque<small>On your own — lots of patios to pick from</small></span></div>
-                        <div class="meal-row"><span class="meal-type">Dinner</span><span>Farewell dinner<small>Family-style in the chef's kitchen</small></span></div>
+                        <div class="meal-row"><span class="meal-type">Breakfast</span><span>Eggs, turkey &amp; croissants</span></div>
+                        <div class="meal-row"><span class="meal-type">Lunch</span><span>Packed sandwiches for the trail</span></div>
+                        <div class="meal-row"><span class="meal-type">Dinner</span><span>Dinner by Chef Sasha Daddeh 👨‍🍳</span></div>
                     </div>
 
                     <div class="day-block-title">🎒 Have handy</div>
@@ -1070,7 +1127,7 @@
 
                     <div class="day-block-title">🍽 Meals</div>
                     <div>
-                        <div class="meal-row"><span class="meal-type">Breakfast</span><span>Grab-and-go breakfast<small>Finish up the leftovers!</small></span></div>
+                        <div class="meal-row"><span class="meal-type">Breakfast</span><span>Eggs, turkey &amp; croissants<small>And finish up the leftovers!</small></span></div>
                         <div class="meal-row"><span class="meal-type">Lunch</span><span>On the road or at the airport</span></div>
                     </div>
 
@@ -1200,7 +1257,7 @@
 
     <!-- ============ FOOTER ============ -->
     <footer>
-        <p>The Big ॐ &nbsp;·&nbsp; Sedona 2026 &nbsp;·&nbsp; <a href="./index.html">Back to Retreat Details</a> &nbsp;·&nbsp; <a href="./flights.html">Flights &amp; Transport</a> &nbsp;·&nbsp; <a href="./crew.html">The Crew</a></p>
+        <p>The Big ॐ &nbsp;·&nbsp; Sedona 2026 &nbsp;·&nbsp; <a href="./index.html">Back to Retreat Details</a> &nbsp;·&nbsp; <a href="./explore.html">Explore Sedona</a> &nbsp;·&nbsp; <a href="./flights.html">Flights &amp; Transport</a> &nbsp;·&nbsp; <a href="./crew.html">The Crew</a></p>
     </footer>
 
     <!-- ============ SCRIPTS ============ -->
